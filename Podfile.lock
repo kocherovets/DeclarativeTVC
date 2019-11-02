@@ -1,0 +1,21 @@
+PODS:
+  - DifferenceKit (1.1.3):
+    - DifferenceKit/Core (= 1.1.3)
+    - DifferenceKit/UIKitExtension (= 1.1.3)
+  - DifferenceKit/Core (1.1.3)
+  - DifferenceKit/UIKitExtension (1.1.3):
+    - DifferenceKit/Core
+
+DEPENDENCIES:
+  - DifferenceKit
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - DifferenceKit
+
+SPEC CHECKSUMS:
+  DifferenceKit: 5018791b6c1fc839921a3c171a0a539ace6ea60c
+
+PODFILE CHECKSUM: 3d1acea224c7e271fc7b52f9b12e9c4cd123a022
+
+COCOAPODS: 1.8.3
