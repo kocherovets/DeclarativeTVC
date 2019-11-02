@@ -10,7 +10,7 @@ import Foundation
 
 open class Command: Codable {
 
-    init(id: String = "unnamed",
+    public init(id: String = "unnamed",
          file: StaticString = #file,
          function: StaticString = #function,
          line: Int = #line,
@@ -72,7 +72,8 @@ extension Command: Hashable {
 }
 
 public final class CommandWith<T> {
-    init(id: String = "unnamed",
+    
+    public init(id: String = "unnamed",
          file: StaticString = #file,
          function: StaticString = #function,
          line: Int = #line,

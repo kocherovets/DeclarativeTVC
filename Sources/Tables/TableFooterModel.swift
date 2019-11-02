@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol TableFooterAnyModel {
+public protocol TableFooterAnyModel {
     
     static var footerAnyType: UIView.Type { get }
     
@@ -17,7 +17,7 @@ protocol TableFooterAnyModel {
     func innerHashValue() -> Int
 }
 
-protocol TableFooterModel: TableFooterAnyModel, Hashable {
+public protocol TableFooterModel: TableFooterAnyModel, Hashable {
     
     associatedtype FooterType: UIView
     

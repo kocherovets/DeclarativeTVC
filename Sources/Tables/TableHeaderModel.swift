@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol TableHeaderAnyModel {
+public protocol TableHeaderAnyModel {
     
     static var headerAnyType: UIView.Type { get }
     
@@ -17,7 +17,7 @@ protocol TableHeaderAnyModel {
     func innerHashValue() -> Int
 }
 
-protocol TableHeaderModel: TableHeaderAnyModel, Hashable {
+public protocol TableHeaderModel: TableHeaderAnyModel, Hashable {
     
     associatedtype HeaderType: UIView
     

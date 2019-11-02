@@ -11,9 +11,9 @@ import DifferenceKit
 
 public struct TableSection {
 
-    let header: TableHeaderAnyModel?
-    let footer: TableFooterAnyModel?
-    var rows: [CellAnyModel]
+    public let header: TableHeaderAnyModel?
+    public let footer: TableFooterAnyModel?
+    public var rows: [CellAnyModel]
 
     fileprivate var orderNumber: Int = 0
     

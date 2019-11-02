@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol SelectableCellModel {
+public protocol SelectableCellModel {
 
     var selectCommand: Command { get }
 }
