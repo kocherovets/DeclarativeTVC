@@ -9,18 +9,18 @@
 import UIKit
 import DifferenceKit
 
-class DeclarativeTVC: UITableViewController {
+open class DeclarativeTVC: UITableViewController {
 
     private static let stubCell = UITableViewCell()
 
     private var model: TableModel? = nil
 
-    func set(rows: [CellAnyModel], animations: Animations? = nil) {
+    open func set(rows: [CellAnyModel], animations: Animations? = nil) {
 
         set(model: TableModel(rows: rows), animations: animations)
     }
 
-    func set(model: TableModel, animations: Animations? = nil) {
+    open func set(model: TableModel, animations: Animations? = nil) {
 
         let newModel = model
 
@@ -53,15 +53,15 @@ class DeclarativeTVC: UITableViewController {
         }
     }
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    open override func numberOfSections(in tableView: UITableView) -> Int {
         return model?.sections.count ?? 0
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    open override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return model?.sections[section].rows.count ?? 0
     }
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    open override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         guard let vm = model?.sections[indexPath.section].rows[indexPath.row] else { return UITableViewCell() }
 
@@ -72,7 +72,7 @@ class DeclarativeTVC: UITableViewController {
         return cell
     }
 
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    open override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 
         if let vm = model?.sections[section].header {
             let header = tableView.dequeueReusableCell(withIdentifier: String(describing: type(of: vm).headerAnyType))!
@@ -82,7 +82,7 @@ class DeclarativeTVC: UITableViewController {
         return nil
     }
 
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    open override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
 
         if let _ = model?.sections[section].header {
             return UITableView.automaticDimension
@@ -90,7 +90,7 @@ class DeclarativeTVC: UITableViewController {
         return 0
     }
 
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    open override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
         guard let vm = model?.sections[indexPath.section].rows[indexPath.row] as? SelectableCellModel else { return }
 

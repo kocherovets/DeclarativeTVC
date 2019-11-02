@@ -11,7 +11,7 @@ import DifferenceKit
 
 extension DeclarativeTVC {
 
-    struct Animations: Equatable {
+    public struct Animations: Equatable {
         let deleteSectionsAnimation: UITableView.RowAnimation
         let insertSectionsAnimation: UITableView.RowAnimation
         let reloadSectionsAnimation: UITableView.RowAnimation
@@ -20,17 +20,17 @@ extension DeclarativeTVC {
         let reloadRowsAnimation: UITableView.RowAnimation
     }
 
-    static let fadeAnimations = Animations(deleteSectionsAnimation: .fade,
-                                           insertSectionsAnimation: .fade,
-                                           reloadSectionsAnimation: .fade,
-                                           deleteRowsAnimation: .fade,
-                                           insertRowsAnimation: .fade,
-                                           reloadRowsAnimation: .fade)
+    public static let fadeAnimations = Animations(deleteSectionsAnimation: .fade,
+                                                  insertSectionsAnimation: .fade,
+                                                  reloadSectionsAnimation: .fade,
+                                                  deleteRowsAnimation: .fade,
+                                                  insertRowsAnimation: .fade,
+                                                  reloadRowsAnimation: .fade)
 }
 
 extension UITableView {
 
-    func customReload<C>(
+    public func customReload<C>(
         using stagedChangeset: StagedChangeset<C>,
         with animations: DeclarativeTVC.Animations,
         interrupt: ((Changeset<C>) -> Bool)? = nil,
@@ -76,7 +76,7 @@ extension UITableView {
                 reloadSections(IndexSet(sectionUpdated),
                                with: animations.reloadSectionsAnimation)
             }
-            
+
             for (source, target) in sectionMoved {
                 moveSection(source, toSection: target)
             }

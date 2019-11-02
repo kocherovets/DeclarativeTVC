@@ -9,7 +9,7 @@
 import UIKit
 import DifferenceKit
 
-struct TableSection {
+public struct TableSection {
 
     let header: TableHeaderAnyModel?
     let footer: TableFooterAnyModel?
@@ -28,23 +28,23 @@ extension String: Differentiable { }
 
 extension TableSection: Differentiable {
 
-    var differenceIdentifier: String {
+    public var differenceIdentifier: String {
         if let hash = header?.innerHashValue() {
             return String(hash)
         }
         return "Section \(orderNumber)"
     }
 
-    func isContentEqual(to source: TableSection) -> Bool {
+    public func isContentEqual(to source: TableSection) -> Bool {
         return differenceIdentifier == source.differenceIdentifier
     }
 }
 
-struct TableModel: Equatable {
+public struct TableModel: Equatable {
 
-    var sections: [TableSection]
+    public var sections: [TableSection]
 
-    static func == (lhs: TableModel, rhs: TableModel) -> Bool {
+    public static func == (lhs: TableModel, rhs: TableModel) -> Bool {
 
         if lhs.sections.count != rhs.sections.count {
             return false
@@ -66,7 +66,7 @@ struct TableModel: Equatable {
         return true
     }
 
-    init(sections: [TableSection]) {
+    public init(sections: [TableSection]) {
 
         self.sections = sections
         
@@ -75,7 +75,7 @@ struct TableModel: Equatable {
         }
     }
 
-    init(rows: [CellAnyModel]) {
+    public init(rows: [CellAnyModel]) {
 
         self.sections = [TableSection(header: nil, rows: rows, footer: nil)]
     }

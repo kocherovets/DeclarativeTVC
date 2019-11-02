@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Command: Codable {
+open class Command: Codable {
 
     init(id: String = "unnamed",
          file: StaticString = #file,
@@ -30,7 +30,7 @@ class Command: Codable {
 
     private let action: () -> ()
 
-    func perform() {
+    open func perform() {
         print(self.debugQuickLookObject() ?? "")
         action()
     }
@@ -39,7 +39,7 @@ class Command: Codable {
 
     /// Support for Xcode quick look feature.
     @objc
-    func debugQuickLookObject() -> AnyObject? {
+    open func debugQuickLookObject() -> AnyObject? {
         return """
             ---COMMAND---
             type: \(String(describing: type(of: self)))
@@ -50,28 +50,28 @@ class Command: Codable {
             """ as NSString
     }
 
-    required convenience init(from decoder: Decoder) throws {
+    public required convenience init(from decoder: Decoder) throws {
         self.init { }
     }
 
-    func encode(to encoder: Encoder) throws { }
+    open func encode(to encoder: Encoder) throws { }
 }
 
 extension Command: Equatable {
 
-    static func == (lhs: Command, rhs: Command) -> Bool {
+    public static func == (lhs: Command, rhs: Command) -> Bool {
         return true
     }
 }
 
 extension Command: Hashable {
 
-    func hash(into hasher: inout Hasher) {
+    open func hash(into hasher: inout Hasher) {
         hasher.combine(1)
     }
 }
 
-final class CommandWith<T> {
+public final class CommandWith<T> {
     init(id: String = "unnamed",
          file: StaticString = #file,
          function: StaticString = #function,
@@ -91,9 +91,9 @@ final class CommandWith<T> {
     private let line: Int
     private let id: String
 
-    let action: (T) -> ()
+    private let action: (T) -> ()
 
-    func perform(with value: T) {
+    public func perform(with value: T) {
         if let debugQuickLookObject = debugQuickLookObject() {
             print("\(String(describing: debugQuickLookObject))\nparameter: \(value)")
         }
@@ -102,7 +102,7 @@ final class CommandWith<T> {
 
     /// Support for Xcode quick look feature.
     @objc
-    func debugQuickLookObject() -> AnyObject? {
+    public func debugQuickLookObject() -> AnyObject? {
         return """
                ---COMMAND---
                type: \(String(describing: type(of: self)))
@@ -113,15 +113,15 @@ final class CommandWith<T> {
                """ as NSString
     }
 
-    func bind(to value: T) -> Command {
+    public func bind(to value: T) -> Command {
         return Command { self.perform(with: value) }
     }
 
-    static var nop: CommandWith {
+    public static var nop: CommandWith {
         return CommandWith { _ in }
     }
 
-    func dispatched(on queue: DispatchQueue) -> CommandWith {
+    public func dispatched(on queue: DispatchQueue) -> CommandWith {
         return CommandWith { value in
             queue.async {
                 self.perform(with: value)
@@ -129,7 +129,7 @@ final class CommandWith<T> {
         }
     }
 
-    func then(_ another: CommandWith) -> CommandWith {
+    public func then(_ another: CommandWith) -> CommandWith {
         return CommandWith { value in
             self.perform(with: value)
             another.perform(with: value)
@@ -139,29 +139,29 @@ final class CommandWith<T> {
 
 extension CommandWith: Hashable {
 
-    func hash(into hasher: inout Hasher) {
+    public func hash(into hasher: inout Hasher) {
         hasher.combine(1)
     }
 }
 
 extension CommandWith: Equatable {
 
-    static func == (lhs: CommandWith, rhs: CommandWith) -> Bool {
+    public static func == (lhs: CommandWith, rhs: CommandWith) -> Bool {
         return true
     }
 }
 
 
 extension CommandWith: Codable {
-    convenience init(from decoder: Decoder) throws {
+    convenience public init(from decoder: Decoder) throws {
         self.init { _ in }
     }
 
-    func encode(to encoder: Encoder) throws { }
+    public func encode(to encoder: Encoder) throws { }
 }
 
 extension CommandWith {
-    func map<U>(transform: @escaping (U) -> T) -> CommandWith<U> {
+    public func map<U>(transform: @escaping (U) -> T) -> CommandWith<U> {
         return CommandWith<U> { u in
             self.perform(with: transform(u))
         }

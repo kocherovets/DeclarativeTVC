@@ -11,7 +11,7 @@ import DifferenceKit
 
 extension Int: Differentiable {}
 
-protocol CellAnyModel {
+public protocol CellAnyModel {
     
     static var cellAnyType: UITableViewCell.Type { get }
     
@@ -20,14 +20,14 @@ protocol CellAnyModel {
     func innerHashValue() -> Int
 }
 
-protocol CellModel: CellAnyModel, Hashable, Differentiable {
+public protocol CellModel: CellAnyModel, Hashable, Differentiable {
     
     associatedtype CellType: UITableViewCell
 
     func apply(to cell: CellType)
 }
 
-extension CellModel {
+public extension CellModel {
     
     static var cellAnyType: UITableViewCell.Type {
         return CellType.self

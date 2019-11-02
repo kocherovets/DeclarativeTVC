@@ -76,24 +76,24 @@
 		47ADB26A3B055DD96E0F3A2FCC13A940 /* Pods-DeclarativeTVCUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DeclarativeTVCUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4CF25DFBED2D437566162610A0F22136 /* DifferenceKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DifferenceKit-prefix.pch"; sourceTree = "<group>"; };
 		4E1F57AB6B119D3C33F015418C23DACC /* Pods-DeclarativeTVCTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DeclarativeTVCTests.debug.xcconfig"; sourceTree = "<group>"; };
-		50780418A760CD2823F1E479D55252C8 /* Pods_DeclarativeTVCTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_DeclarativeTVCTests.framework; path = "Pods-DeclarativeTVCTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		50780418A760CD2823F1E479D55252C8 /* Pods_DeclarativeTVCTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeclarativeTVCTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		585BF6B9B2CCE15E5E8BB6616738F1DE /* Pods-DeclarativeTVCUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DeclarativeTVCUITests-frameworks.sh"; sourceTree = "<group>"; };
 		5AE0FCA57B7B30A966A02F820B742910 /* Pods-DeclarativeTVC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DeclarativeTVC.debug.xcconfig"; sourceTree = "<group>"; };
 		5BDC675D05EEB8A6A25D36FC13A4227D /* Pods-DeclarativeTVCUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DeclarativeTVCUITests-umbrella.h"; sourceTree = "<group>"; };
 		6C767B5EBAC31B9E682443881E4DE53A /* Pods-DeclarativeTVC-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DeclarativeTVC-acknowledgements.markdown"; sourceTree = "<group>"; };
-		797B1BBC3E03CD39B8CB79D79BCFF843 /* DifferenceKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DifferenceKit.framework; path = DifferenceKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		797B1BBC3E03CD39B8CB79D79BCFF843 /* DifferenceKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DifferenceKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D74627A2F1AA3823CB8D27064CC8182 /* Pods-DeclarativeTVCUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DeclarativeTVCUITests-dummy.m"; sourceTree = "<group>"; };
 		8096E902142B1999E7CAC0FE27708794 /* AnyDifferentiable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnyDifferentiable.swift; path = Sources/AnyDifferentiable.swift; sourceTree = "<group>"; };
 		81DBE619A7A31078B42374A6F23AF94B /* DifferenceKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "DifferenceKit-Info.plist"; sourceTree = "<group>"; };
 		88D7E4F06D95E2A8EBCA92A5E4A76100 /* Pods-DeclarativeTVC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DeclarativeTVC.release.xcconfig"; sourceTree = "<group>"; };
 		8A1BE3E74EB29CF229D6445C4B74F9A9 /* Algorithm.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Algorithm.swift; path = Sources/Algorithm.swift; sourceTree = "<group>"; };
 		9318FB6668EC2BCDD3BB71E3B90B5371 /* Pods-DeclarativeTVCUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DeclarativeTVCUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		94C8757327C19682CC4AA0F0CC9A5D64 /* Pods_DeclarativeTVC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_DeclarativeTVC.framework; path = "Pods-DeclarativeTVC.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		94C8757327C19682CC4AA0F0CC9A5D64 /* Pods_DeclarativeTVC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeclarativeTVC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9540833E9A431CF248F8B93973F4AC23 /* ElementPath.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ElementPath.swift; path = Sources/ElementPath.swift; sourceTree = "<group>"; };
 		95C759787520A1E5E27D388C95C7D128 /* ArraySection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ArraySection.swift; path = Sources/ArraySection.swift; sourceTree = "<group>"; };
 		987ADABDDDA31A72DA0EA7AECA2527D0 /* Pods-DeclarativeTVC-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DeclarativeTVC-dummy.m"; sourceTree = "<group>"; };
 		9C5893BA4DCEE6CAE6879635584C9442 /* Pods-DeclarativeTVCTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DeclarativeTVCTests-Info.plist"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		B1A20871FCB9DF04F48146DC10EB5DEC /* Pods-DeclarativeTVCUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DeclarativeTVCUITests-Info.plist"; sourceTree = "<group>"; };
 		D20CE6769A996CF4AA081F08936BC73A /* DifferenceKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DifferenceKit.modulemap; sourceTree = "<group>"; };
 		D2578BE31976184138E04C2EFF7951B2 /* UIKitExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIKitExtension.swift; path = Sources/Extensions/UIKitExtension.swift; sourceTree = "<group>"; };
@@ -105,7 +105,7 @@
 		ECBF3024DEB18B710113C67452A58CA7 /* Pods-DeclarativeTVCTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DeclarativeTVCTests-umbrella.h"; sourceTree = "<group>"; };
 		ED22DC4B839568AC4149024D9CC417EC /* Pods-DeclarativeTVC-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DeclarativeTVC-acknowledgements.plist"; sourceTree = "<group>"; };
 		F00325317C7052D54A1B78F2A455D690 /* Pods-DeclarativeTVC-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DeclarativeTVC-umbrella.h"; sourceTree = "<group>"; };
-		F65888CF75A2E5E38457CD4A9945D6C7 /* Pods_DeclarativeTVCUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_DeclarativeTVCUITests.framework; path = "Pods-DeclarativeTVCUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F65888CF75A2E5E38457CD4A9945D6C7 /* Pods_DeclarativeTVCUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeclarativeTVCUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F928267292ABF784C8F9F5813DFB6B08 /* Pods-DeclarativeTVC-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DeclarativeTVC-frameworks.sh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -206,7 +206,6 @@
 				7BF3A8F65FBD9465319CE4D7CD54512D /* Support Files */,
 				E6098562B7A1384E9C87B5C604964BF7 /* UIKitExtension */,
 			);
-			name = DifferenceKit;
 			path = DifferenceKit;
 			sourceTree = "<group>";
 		};
@@ -431,6 +430,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
 			productRefGroup = 428AB426B5D963ECD00DCC9CBA397447 /* Products */;
