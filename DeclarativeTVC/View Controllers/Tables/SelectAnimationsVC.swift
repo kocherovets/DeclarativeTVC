@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SelectAnimationsVC: VC {
+class SelectAnimationsVC: TVC {
 
     override func data() -> Data {
         var top: [CellAnyModel] = [

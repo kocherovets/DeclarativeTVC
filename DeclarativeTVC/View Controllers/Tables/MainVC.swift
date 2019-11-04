@@ -8,11 +8,12 @@
 
 import UIKit
 
-class MainVC: VC {
+class MainVC: TVC {
 
     override func data() -> Data {
             .rows(
                 [
+                    HeaderCellVM(titleText: "Tables"),
                     SimpleSelectableCellVM(
                         titleText: "Several table cell types",
                         selectCommand: Command() {
@@ -42,6 +43,27 @@ class MainVC: VC {
                         selectCommand: Command() {
                             state.detailType = .tableRowEditing
                             self.show(DetailVC.self)
+                        }),
+                    
+                    HeaderCellVM(titleText: "Collections"),
+                    SimpleSelectableCellVM(
+                        titleText: "Vertical collection",
+                        selectCommand: Command() {
+                            state.detailType = .simpleCollection
+                            self.show(VerticalCVC.self)
+                        }),
+                    SimpleSelectableCellVM(
+                        titleText: "Horizontal collection",
+                        selectCommand: Command() {
+                            state.detailType = .simpleCollection
+                            self.show(HorizontalCVC.self)
+                        }),
+                    
+                    HeaderCellVM(titleText: "Table & Collection"),
+                    SimpleSelectableCellVM(
+                        titleText: "Horizontal collection as table row",
+                        selectCommand: Command() {
+                            self.show(CollectionRowVC.self)
                         }),
                 ]
             )

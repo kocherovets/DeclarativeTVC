@@ -1,5 +1,5 @@
 //
-//  VC.swift
+//  TVC.swift
 //  DeclarativeTVC
 //
 //  Created by Dmitry Kocherovets on 02.11.2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class VC: UIViewController {
+class TVC: UIViewController {
     
     enum Data {
         case rows([CellAnyModel])
@@ -47,7 +47,7 @@ class VC: UIViewController {
         return nil
     }
 
-    func show<T: VC>(_ type: T.Type) {
+    func show<T: UIViewController>(_ type: T.Type) {
         let vc = UIStoryboard(name: "Main", bundle: nil)
             .instantiateViewController(withIdentifier: String(describing: T.self)) as! T
         self.navigationController?.pushViewController(vc, animated: true)

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SelectAnimationOptionVC: VC {
+class SelectAnimationOptionVC: TVC {
 
     override func data() -> Data {
             .rows(

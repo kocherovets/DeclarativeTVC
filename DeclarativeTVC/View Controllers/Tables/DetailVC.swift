@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailVC: VC {
+class DetailVC: TVC {
 
     override func data() -> Data {
 
@@ -29,7 +29,7 @@ class DetailVC: VC {
             return .rows(tableRowEditing())
         case .tableRowEditing2:
             return .rows(tableRowEditing2())
-        case .none:
+        default:
             return .rows([])
         }
     }

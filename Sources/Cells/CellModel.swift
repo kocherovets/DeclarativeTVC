@@ -13,27 +13,27 @@ extension Int: Differentiable {}
 
 public protocol CellAnyModel {
     
-    static var cellAnyType: UITableViewCell.Type { get }
+    static var cellAnyType: UIView.Type { get }
     
-    func apply(to cell: UITableViewCell)
+    func apply(to cell: UIView)
     
     func innerHashValue() -> Int
 }
 
 public protocol CellModel: CellAnyModel, Hashable, Differentiable {
     
-    associatedtype CellType: UITableViewCell
+    associatedtype CellType: UIView
 
     func apply(to cell: CellType)
 }
 
 public extension CellModel {
     
-    static var cellAnyType: UITableViewCell.Type {
+    static var cellAnyType: UIView.Type {
         return CellType.self
     }
     
-    func apply(to cell: UITableViewCell) {
+    func apply(to cell: UIView) {
          apply(to: cell as! CellType)
     }
     

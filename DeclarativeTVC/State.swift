@@ -12,6 +12,7 @@ struct State {
 
     enum DetailType {
         case none
+
         case severalCellTypes
         case tableAnimations
         case tableAnimations2
@@ -20,6 +21,9 @@ struct State {
         case tableWithSections2
         case tableRowEditing
         case tableRowEditing2
+
+        case simpleCollection
+        case simpleCollection2
     }
     var detailType: DetailType = .none
 
