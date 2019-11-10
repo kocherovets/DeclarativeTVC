@@ -42,11 +42,9 @@ open class Command: Codable {
     open func debugQuickLookObject() -> AnyObject? {
         return """
             ---COMMAND---
-            type: \(String(describing: type(of: self)))
-            id: \(id)
-            file: \(file)
+            file: \(file):\(line)
             function: \(function)
-            line: \(line)
+            .
             """ as NSString
     }
 
@@ -105,12 +103,10 @@ public final class CommandWith<T> {
     @objc
     public func debugQuickLookObject() -> AnyObject? {
         return """
-               ---COMMAND---
-               type: \(String(describing: type(of: self)))
-               id: \(id)
-               file: \(file)
-               function: \(function)
-               line: \(line)
+                ---COMMAND---
+                file: \(file):\(line)
+                function: \(function)
+                .
                """ as NSString
     }
 
