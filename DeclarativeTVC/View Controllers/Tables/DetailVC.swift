@@ -46,7 +46,7 @@ extension DetailVC {
     private func severalCellTypesRows() -> [CellAnyModel] {
         [
             HeaderCellVM(titleText: "Header 1"),
-            SimpleCellVM(titleText: "Paragraph 1 jsdklf aslfj lkasfdjals kfda;ls dflkas fdlkasfasl"),
+            SimpleXibCellVM(titleText: "Paragraph 111 jsdklf aslfj lkasfdjals kfda;ls dflkas fdlkasfasl"),
             SimpleCellVM(titleText: "Paragraph 2 jsdklf aslfj "),
             SimpleCellVM(titleText: "Paragraph 3 jsdklf aslfj aksldfj askldfsalk fjlaks falksfdaslfj lkasfdjals kfda;ls dflkas fdlkasfasl")
         ]

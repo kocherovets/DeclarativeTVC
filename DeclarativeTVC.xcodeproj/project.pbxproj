@@ -114,6 +114,8 @@
 		C3FB1AED236F48D400C1B48A /* ColorSelectableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FB1AEC236F48D300C1B48A /* ColorSelectableCell.swift */; };
 		C3FB1AEE236F48D400C1B48A /* ColorSelectableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FB1AEC236F48D300C1B48A /* ColorSelectableCell.swift */; };
 		C3FB1AEF236F48D400C1B48A /* ColorSelectableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FB1AEC236F48D300C1B48A /* ColorSelectableCell.swift */; };
+		C3FCDA832394684D00EC716A /* SimpleXibCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FCDA812394684D00EC716A /* SimpleXibCell.swift */; };
+		C3FCDA842394684D00EC716A /* SimpleXibCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3FCDA822394684D00EC716A /* SimpleXibCell.xib */; };
 		D343C5B3D73A2C69A4F6FED8 /* Pods_DeclarativeTVCUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 967DC4376673D08F34B7353D /* Pods_DeclarativeTVCUITests.framework */; };
 		E7A3FFCA1BA8015CCB22CBC4 /* Pods_DeclarativeTVCTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04617872602990760F3E5ADF /* Pods_DeclarativeTVCTests.framework */; };
 /* End PBXBuildFile section */
@@ -190,6 +192,8 @@
 		C3FB1AE4236F345100C1B48A /* CVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVC.swift; sourceTree = "<group>"; };
 		C3FB1AE8236F470500C1B48A /* HorizontalCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalCVC.swift; sourceTree = "<group>"; };
 		C3FB1AEC236F48D300C1B48A /* ColorSelectableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSelectableCell.swift; sourceTree = "<group>"; };
+		C3FCDA812394684D00EC716A /* SimpleXibCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleXibCell.swift; sourceTree = "<group>"; };
+		C3FCDA822394684D00EC716A /* SimpleXibCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SimpleXibCell.xib; sourceTree = "<group>"; };
 		DB7544BC572233C2F8FE1574 /* Pods-DeclarativeTVCUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeclarativeTVCUITests.release.xcconfig"; path = "Target Support Files/Pods-DeclarativeTVCUITests/Pods-DeclarativeTVCUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -319,6 +323,8 @@
 			children = (
 				C38ECD0F236DC3EF00C27753 /* HeaderCell.swift */,
 				C38ECCFB236DC39500C27753 /* SimpleCell.swift */,
+				C3FCDA812394684D00EC716A /* SimpleXibCell.swift */,
+				C3FCDA822394684D00EC716A /* SimpleXibCell.xib */,
 				C38ECCFF236DC3A900C27753 /* TextFieldCell.swift */,
 				C38ECD07236DC3CE00C27753 /* SelectAnimationsCell.swift */,
 				C38ECCF7236DC38200C27753 /* ApplyAnimationsCell.swift */,
@@ -515,6 +521,7 @@
 				C38ECCA5236DBC5600C27753 /* LaunchScreen.storyboard in Resources */,
 				C38ECCA2236DBC5600C27753 /* Assets.xcassets in Resources */,
 				C38ECCA0236DBC5300C27753 /* Main.storyboard in Resources */,
+				C3FCDA842394684D00EC716A /* SimpleXibCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -694,6 +701,7 @@
 				C38ECD1D236DC45700C27753 /* DetailVC.swift in Sources */,
 				C38ECCE7236DC31D00C27753 /* DeclarativeTVC+Animations.swift in Sources */,
 				C38ECCFC236DC39500C27753 /* SimpleCell.swift in Sources */,
+				C3FCDA832394684D00EC716A /* SimpleXibCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
