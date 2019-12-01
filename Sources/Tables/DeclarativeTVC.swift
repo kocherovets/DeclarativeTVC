@@ -66,7 +66,6 @@ open class DeclarativeTVC: UITableViewController {
 
         guard let vm = model?.sections[indexPath.section].rows[indexPath.row] else { return UITableViewCell() }
 
-
         let cell: UITableViewCell
         if let storyBoardCell = tableView.dequeueReusableCell(withIdentifier: String(describing: type(of: vm).cellAnyType)) {
             cell = storyBoardCell
