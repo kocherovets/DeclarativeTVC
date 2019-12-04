@@ -14,7 +14,6 @@ target "DeclarativeTVC" do
     shared_pods
 end
 
-
 target "DeclarativeTVCTests" do
     project 'DeclarativeTVC'
 
@@ -22,6 +21,12 @@ target "DeclarativeTVCTests" do
 end
 
 target "DeclarativeTVCUITests" do
+    project 'DeclarativeTVC'
+
+    shared_pods
+end
+
+target "Framework" do
     project 'DeclarativeTVC'
 
     shared_pods
