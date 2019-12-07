@@ -21,6 +21,7 @@ struct State {
         case tableWithSections2
         case tableRowEditing
         case tableRowEditing2
+        case tableRowThreeTypes
 
         case simpleCollection
         case simpleCollection2

@@ -29,6 +29,8 @@ class DetailVC: TVC {
             return .rows(tableRowEditing())
         case .tableRowEditing2:
             return .rows(tableRowEditing2())
+        case .tableRowThreeTypes:
+            return .rows(tableRowThreeTypes())
         default:
             return .rows([])
         }
@@ -230,6 +232,19 @@ extension DetailVC {
             SimpleCellVM(titleText: "Paragraph 23 ksdf sajdf laksflsjlksjd lkaf safjsalkfsf"),
             TextFieldCellVM(text: nil, placeholder: "text field 2"),
             SimpleCellVM(titleText: "Paragraph 24 ksdf sajdf laksflsjlksjd lkaf safjsalkfsf"),
+        ]
+    }
+}
+
+//MARK: Example: Storyboard, xib and code rows
+
+extension DetailVC {
+
+    private func tableRowThreeTypes() -> [CellAnyModel] {
+        [
+            SimpleCellVM(titleText: "Storyboard cell"),
+            SimpleXibCellVM(titleText: "Xib cell"),
+            SimpleCodeCellVM(titleText: "Code cell")
         ]
     }
 }

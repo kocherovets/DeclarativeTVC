@@ -44,7 +44,13 @@ class MainVC: TVC {
                             state.detailType = .tableRowEditing
                             self.show(DetailVC.self)
                         }),
-                    
+                    SimpleSelectableCellVM(
+                        titleText: "Storyboard, xib and code rows",
+                        selectCommand: Command() {
+                            state.detailType = .tableRowThreeTypes
+                            self.show(DetailVC.self)
+                        }),
+
                     HeaderCellVM(titleText: "Collections"),
                     SimpleSelectableCellVM(
                         titleText: "Vertical collection",
