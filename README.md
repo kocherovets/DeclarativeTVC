@@ -27,7 +27,7 @@ Declarative UIKit collections
 
 ## Installation
 
-Swinject is available through [CocoaPods](https://cocoapods.org).
+DeclarativeTVC is available through [CocoaPods](https://cocoapods.org).
 
 ### CocoaPods
 
