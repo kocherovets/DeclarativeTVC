@@ -23,7 +23,7 @@ Declarative UIKit collections
 ## Requirements
 
 - iOS 11.0+
-- Swift 4.2 
+- Swift 4.2+
 
 ## Installation
 
