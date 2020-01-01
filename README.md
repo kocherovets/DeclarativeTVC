@@ -20,6 +20,7 @@ Declarative UIKit collections
 - Coded table and collection cells support
 - You can mix storyboard, xib and coded cells 
 - Animated items update for tables and collections
+- Hardcoded height for table cells
 
 ## Requirements
 
