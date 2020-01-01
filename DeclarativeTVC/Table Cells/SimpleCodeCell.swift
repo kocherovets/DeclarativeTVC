@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SimpleCodeCell: CodeTableViewCell {
+class SimpleCodeCell: CodedTableViewCell {
 
 }
 
@@ -18,6 +18,9 @@ struct SimpleCodeCellVM: CellModel {
 
     func apply(to cell: SimpleCodeCell) {
 
+        cell.textLabel?.numberOfLines = 0
         cell.textLabel?.text = titleText
     }
+    
+    var height: CGFloat? { 200 }
 }

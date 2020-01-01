@@ -116,6 +116,14 @@ open class TableDS: NSObject, UITableViewDelegate, UITableViewDataSource {
         return 0
     }
 
+    open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+
+        if let height = model?.sections[indexPath.section].rows[indexPath.row].height {
+            return height
+        }
+        return UITableView.automaticDimension
+    }
+    
     open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
         guard let vm = model?.sections[indexPath.section].rows[indexPath.row] as? SelectableCellModel else { return }

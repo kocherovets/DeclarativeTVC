@@ -244,7 +244,7 @@ extension DetailVC {
         [
             SimpleCellVM(titleText: "Storyboard cell"),
             SimpleXibCellVM(titleText: "Xib cell"),
-            SimpleCodeCellVM(titleText: "Code cell")
+            SimpleCodeCellVM(titleText: "Codeв cell. All table cells in this app use autolayout to calculate their heights. But this coded cell uses hardcoded height 200.")
         ]
     }
 }
