@@ -11,6 +11,10 @@ import DifferenceKit
 
 extension Int: Differentiable {}
 
+open class StoryboardTableViewCell: UITableViewCell {
+    
+}
+
 open class XibTableViewCell: UITableViewCell {
     
 }
@@ -36,6 +40,8 @@ public protocol CellAnyModel {
     func cellType() -> CellKind
     
     func register(tableView: UITableView, identifier: String)
+    
+    func register(collectionView: UICollectionView, identifier: String)
 }
 
 public protocol CellModel: CellAnyModel, Hashable, Differentiable {
@@ -47,6 +53,8 @@ public protocol CellModel: CellAnyModel, Hashable, Differentiable {
     func cellType() -> CellKind
     
     func register(tableView: UITableView, identifier: String)
+    
+    func register(collectionView: UICollectionView, identifier: String) 
 }
 
 public extension CellModel {
@@ -79,4 +87,8 @@ public extension CellModel {
         tableView.register(CellType.self, forCellReuseIdentifier: identifier)
     }
 
+    func register(collectionView: UICollectionView, identifier: String) {
+        
+        collectionView.register(CellType.self, forCellWithReuseIdentifier: identifier)
+    }
 }

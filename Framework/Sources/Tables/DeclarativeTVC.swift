@@ -86,17 +86,6 @@ open class DeclarativeTVC: UITableViewController {
             }
             cell = tableView.dequeueReusableCell(withIdentifier: cellTypeString, for: indexPath)
         }
-//        if let storyBoardCell = tableView.dequeueReusableCell(withIdentifier: String(describing: type(of: vm).cellAnyType)) {
-//            cell = storyBoardCell
-//        } else {
-//            let cellTypeString = String(describing: type(of: vm).cellAnyType)
-//            if registeredCells.firstIndex(where: { $0 == cellTypeString }) == nil {
-//                let nib = UINib.init(nibName: cellTypeString, bundle: nil)
-//                tableView.register(nib, forCellReuseIdentifier: cellTypeString)
-//                registeredCells.append(cellTypeString)
-//            }
-//            cell = tableView.dequeueReusableCell(withIdentifier: cellTypeString, for: indexPath)
-//        }
 
         vm.apply(to: cell)
 
