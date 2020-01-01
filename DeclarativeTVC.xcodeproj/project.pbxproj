@@ -16,6 +16,7 @@
 		C3320BB2236F660B00141724 /* CollectionRowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3320BB0236F660B00141724 /* CollectionRowVC.swift */; };
 		C3320BB3236F660B00141724 /* CollectionRowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3320BB0236F660B00141724 /* CollectionRowVC.swift */; };
 		C3709F6F239C5D4C00CC8DD8 /* SimpleCodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3709F6E239C5D4B00CC8DD8 /* SimpleCodeCell.swift */; };
+		C381AD8623BCF47900ED8035 /* TableDS.swift in Sources */ = {isa = PBXBuildFile; fileRef = C381AD8523BCF47900ED8035 /* TableDS.swift */; };
 		C38ECC99236DBC5300C27753 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38ECC98236DBC5300C27753 /* AppDelegate.swift */; };
 		C38ECC9B236DBC5300C27753 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38ECC9A236DBC5300C27753 /* SceneDelegate.swift */; };
 		C38ECCA0236DBC5300C27753 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C38ECC9E236DBC5300C27753 /* Main.storyboard */; };
@@ -171,6 +172,7 @@
 		C3320BA8236F61D600141724 /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		C3320BB0236F660B00141724 /* CollectionRowVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionRowVC.swift; sourceTree = "<group>"; };
 		C3709F6E239C5D4B00CC8DD8 /* SimpleCodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCodeCell.swift; sourceTree = "<group>"; };
+		C381AD8523BCF47900ED8035 /* TableDS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDS.swift; sourceTree = "<group>"; };
 		C38ECC95236DBC5300C27753 /* DeclarativeTVC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeclarativeTVC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C38ECC98236DBC5300C27753 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C38ECC9A236DBC5300C27753 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -443,6 +445,7 @@
 			children = (
 				C3FEAC362397EDD8009CCA25 /* DeclarativeTVC+Animations.swift */,
 				C3FEAC372397EDD8009CCA25 /* DeclarativeTVC.swift */,
+				C381AD8523BCF47900ED8035 /* TableDS.swift */,
 				C3FEAC382397EDD8009CCA25 /* TableFooterModel.swift */,
 				C3FEAC392397EDD8009CCA25 /* TableHeaderModel.swift */,
 				C3FEAC3A2397EDD8009CCA25 /* TableModel.swift */,
@@ -601,7 +604,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1120;
-				LastUpgradeCheck = 1120;
+				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Dmitry Kocherovets";
 				TargetAttributes = {
 					C38ECC94236DBC5300C27753 = {
@@ -935,6 +938,7 @@
 				C3FEAC4A2397EDD8009CCA25 /* SelectableCell.swift in Sources */,
 				C3FEAC462397EDD8009CCA25 /* TableHeaderModel.swift in Sources */,
 				C3FEAC492397EDD8009CCA25 /* Command.swift in Sources */,
+				C381AD8623BCF47900ED8035 /* TableDS.swift in Sources */,
 				C3FEAC4D2397EDD8009CCA25 /* CollectionModel.swift in Sources */,
 				C3FEAC472397EDD8009CCA25 /* TableModel.swift in Sources */,
 				C3FEAC482397EDD8009CCA25 /* CellModel.swift in Sources */,
@@ -1250,7 +1254,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E7CB23F6E5C7E2BF5FE0D85B /* Pods-Framework.debug.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -1280,7 +1284,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6FA18EADB8F83738F1D8CEA6 /* Pods-Framework.release.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;

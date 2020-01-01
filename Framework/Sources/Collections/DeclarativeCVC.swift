@@ -11,8 +11,6 @@ import DifferenceKit
 
 open class DeclarativeCVC: UICollectionViewController {
 
-    private static let stubCell = UICollectionViewCell()
-
     private var model: CollectionModel? = nil
     private var registeredCells = [String]()
 

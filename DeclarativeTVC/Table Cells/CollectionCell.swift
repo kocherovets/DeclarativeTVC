@@ -17,7 +17,7 @@ struct CollectionCellVM: CellModel {
     
     let items: [ColorCellVM]
     
-    private let collectionDS = CollectionDS(cellType: .storyboard)
+    private let collectionDS = CollectionDS()
 
     func apply(to cell: CollectionCell) {
 
