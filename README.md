@@ -16,8 +16,8 @@ Declarative UIKit collections
 - Declarative UICollectionViewController support
 - Declarative UICollectionView without UICollectionViewController support
 - Storyboard table and collection cells support
-- Xib table andcollection cells support
-- Coded table andcollection cells support
+- Xib table and collection cells support
+- Coded table and collection cells support
 - You can mix storyboard, xib and coded cells 
 - Animated items update for tables and collections
 
