@@ -130,34 +130,39 @@ extension DetailVC {
 
     private func tableWithSections() -> [TableSection] {
         [
-            TableSection(header: nil,
-                         rows: [
-                             SelectAnimationsCellVM(titleText: "Select animations",
-                                                    animationText: state.animationsTitle,
-                                                    selectCommand: Command {
-                                                        self.show(SelectAnimationsVC.self)
-                                                    }),
-                             ApplyAnimationsCellVM(titleText: "Apply animations",
-                                                   selectCommand: Command {
-                                                       state.detailType = .tableWithSections2
-                                                       self.reload()
-                                                   })
-                         ],
-                         footer: nil),
-            TableSection(header: HeaderViewVM(titleText: "Header 1"),
-                         rows: [
-                             SimpleCellVM(titleText: "Paragraph 11 jsdklf aslfj lkasfdjals kfda;ls dflkas fdlkasfasl"),
-                             SimpleCellVM(titleText: "Paragraph 12 jsdklf aslfj "),
-                             SimpleCellVM(titleText: "Paragraph 13 jsdklf aslfj aksldfj askldfsalk fjlaks falksfdaslfj lkasfdjals kfda;ls dflkas fdlkasfasl"),
-                         ],
-                         footer: nil),
-            TableSection(header: HeaderViewVM(titleText: "Header 2"),
-                         rows: [
-                             SimpleCellVM(titleText: "Paragraph 21 sdfj laksdjf aklsfaskld"),
-                             SimpleCellVM(titleText: "Paragraph 22 ksdf sajdf laksflsjlksjd lkaf safjsalkfsf"),
-                             SimpleCellVM(titleText: "Paragraph 23 sd fksf sdflsaklfj lksakl aslkdf alsfa")
-                         ],
-                         footer: nil),
+            TableSection(
+                header: nil,
+                rows: [
+                    SelectAnimationsCellVM(
+                        titleText: "Select animations",
+                        animationText: state.animationsTitle,
+                        selectCommand: Command {
+                            self.show(SelectAnimationsVC.self)
+                        }),
+                    ApplyAnimationsCellVM(
+                        titleText: "Apply animations",
+                        selectCommand: Command {
+                            state.detailType = .tableWithSections2
+                            self.reload()
+                        })
+                ],
+                footer: nil),
+            TableSection(
+                header: HeaderViewVM(titleText: "Header 1"),
+                rows: [
+                    SimpleCellVM(titleText: "Paragraph 11 jsdklf aslfj lkasfdjals kfda;ls dflkas fdlkasfasl"),
+                    SimpleCellVM(titleText: "Paragraph 12 jsdklf aslfj "),
+                    SimpleCellVM(titleText: "Paragraph 13 jsdklf aslfj aksldfj askldfsalk fjlaks falksfdaslfj lkasfdjals kfda;ls dflkas fdlkasfasl"),
+                ],
+                footer: nil),
+            TableSection(
+                header: HeaderViewVM(titleText: "Header 2"),
+                rows: [
+                    SimpleCellVM(titleText: "Paragraph 21 sdfj laksdjf aklsfaskld"),
+                    SimpleCellVM(titleText: "Paragraph 22 ksdf sajdf laksflsjlksjd lkaf safjsalkfsf"),
+                    SimpleCellVM(titleText: "Paragraph 23 sd fksf sdflsaklfj lksakl aslkdf alsfa")
+                ],
+                footer: nil),
         ]
     }
 

@@ -64,26 +64,26 @@ open class DeclarativeTVC: UITableViewController {
 
         guard let vm = model?.sections[indexPath.section].rows[indexPath.row] else { return UITableViewCell() }
 
+        let cellTypeString = String(describing: type(of: vm).cellAnyType)
+
         let cell: UITableViewCell
         switch vm.cellType() {
         case .storyboard:
-            cell = tableView.dequeueReusableCell(withIdentifier: String(describing: type(of: vm).cellAnyType))!
+            break
         case .xib:
-            let cellTypeString = String(describing: type(of: vm).cellAnyType)
             if registeredCells.firstIndex(where: { $0 == cellTypeString }) == nil {
                 let nib = UINib.init(nibName: cellTypeString, bundle: nil)
                 tableView.register(nib, forCellReuseIdentifier: cellTypeString)
                 registeredCells.append(cellTypeString)
             }
-            cell = tableView.dequeueReusableCell(withIdentifier: cellTypeString, for: indexPath)
         case .code:
-            let cellTypeString = String(describing: type(of: vm).cellAnyType)
             if registeredCells.firstIndex(where: { $0 == cellTypeString }) == nil {
                 vm.register(tableView: tableView, identifier: cellTypeString)
                 registeredCells.append(cellTypeString)
             }
-            cell = tableView.dequeueReusableCell(withIdentifier: cellTypeString, for: indexPath)
         }
+
+        cell = tableView.dequeueReusableCell(withIdentifier: cellTypeString, for: indexPath)
 
         vm.apply(to: cell)
 
