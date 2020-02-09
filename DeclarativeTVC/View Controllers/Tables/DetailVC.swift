@@ -31,6 +31,8 @@ class DetailVC: TVC {
             return .rows(tableRowEditing2())
         case .tableRowThreeTypes:
             return .rows(tableRowThreeTypes())
+        case .tableManySections:
+            return .sections(tableManySections())
         default:
             return .rows([])
         }
@@ -251,5 +253,33 @@ extension DetailVC {
             SimpleXibCellVM(titleText: "Xib cell"),
             SimpleCodeCellVM(titleText: "Codeв cell. All table cells in this app use autolayout to calculate their heights. But this coded cell uses hardcoded height 200.")
         ]
+    }
+}
+
+
+//
+
+extension DetailVC {
+
+    private func tableManySections() -> [TableSection] {
+
+        var result = [TableSection]()
+
+        for i in 0 ..< 100 {
+            result.append(
+                TableSection(
+                    header: HeaderViewVM(titleText: "Header \(i)"),
+                    rows: [
+                        SimpleCellVM(titleText: "\(i)")
+                    ],
+                    footer: FooterViewVM(
+                        titleText: "Footer \(i)",
+                        h: CGFloat(60 + i)
+                    )
+                )
+            )
+        }
+
+        return result
     }
 }

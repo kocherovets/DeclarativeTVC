@@ -24,3 +24,16 @@ struct HeaderViewVM: TableHeaderModel {
     }
 }
 
+struct FooterViewVM: TableFooterModel {
+
+    let titleText: String?
+    let h: CGFloat
+
+    func apply(to footer: HeaderView) {
+        
+        footer.titleLabel.text = titleText
+    }
+    
+    var height: CGFloat? { h }
+}
+

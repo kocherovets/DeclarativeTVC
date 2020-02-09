@@ -50,6 +50,12 @@ class MainVC: TVC {
                             state.detailType = .tableRowThreeTypes
                             self.show(DetailVC.self)
                         }),
+                    SimpleSelectableCellVM(
+                        titleText: "Many sections with headers and footers",
+                        selectCommand: Command() {
+                            state.detailType = .tableManySections
+                            self.show(DetailVC.self)
+                        }),
 
                     HeaderCellVM(titleText: "Collections"),
                     SimpleSelectableCellVM(
