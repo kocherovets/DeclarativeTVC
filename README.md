@@ -14,7 +14,7 @@ Declarative UIKit collections
   * [Requirements](#requirements)
   * [Installation](#installation)
     + [CocoaPods](#cocoapods)
-- [Цель проекта](#Цель проекта)
+- [Цель проекта](#Цель-проекта)
 - [Как пользоваться](#----------------)
   * [Создание view ячеек](#---------view------)
     + [Stryboard](#stryboard)
