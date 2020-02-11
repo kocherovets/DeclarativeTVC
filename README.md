@@ -9,6 +9,28 @@ DeclarativeTVC
 
 Declarative UIKit collections
 
+##### Table of Contents 
+  * [Features](#features)
+  * [Requirements](#requirements)
+  * [Installation](#installation)
+    + [CocoaPods](#cocoapods)
+- [Цель проекта](#------------)
+- [Как пользоваться](#----------------)
+  * [Создание view ячеек](#---------view------)
+    + [Stryboard](#stryboard)
+    + [Xib](#xib)
+    + [Программные ячейки](#------------------)
+  * [Создание view моделей для ячеек](#---------view------------------)
+    + [Выбираемые ячейки](#-----------------)
+    + [Высота ячейки](#-------------)
+    + [Требования к полям вьюмодели](#----------------------------)
+  * [Секции](#------)
+  * [Создание таблицы](#----------------)
+    + [DeclarativeTVC](#declarativetvc-1)
+    + [TableDS](#tableds)
+  * [Анимации](#--------)
+  * [Что нужно помнить](#-----------------)
+  
 ## Features
 
 - Declarative UITableViewController support
