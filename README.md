@@ -10,11 +10,12 @@ DeclarativeTVC
 Declarative UIKit collections
 
 ##### Table of Contents 
+- [Цель проекта](#Цель-проекта)
+  * [Пример](#Пример)
   * [Features](#features)
   * [Requirements](#requirements)
   * [Installation](#installation)
     + [CocoaPods](#cocoapods)
-- [Цель проекта](#Цель-проекта)
 - [Как пользоваться](#Как-пользоваться)
   * [Создание view ячеек](#Создание-view-ячеек)
     + [Stryboard](#stryboard)
@@ -31,6 +32,38 @@ Declarative UIKit collections
   * [Анимации](#Анимации)
   * [Что нужно помнить](#Что-нужно-помнить)
   
+  
+# Цель проекта
+DeclarativeTVC создана для упрощения работы с UIKit коллекциями переведя взаимодействие с ними к декларативному виду.
+
+## Пример
+Простейшая таблица может быть реализована таким образом
+```swift
+class TVC: DeclarativeTVC {
+
+    var rows: [CellAnyModel] {
+         didSet {
+            set(rows: rows)
+         }
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+   
+        rows = [
+            SimpleCellVM(
+                titleText: "1",
+                selectCommand: Command { print(1) }
+            ),
+            SimpleCellVM(
+                titleText: "2",
+                selectCommand: Command { print(2) }
+            )
+        ]
+    }
+}
+```
+
 ## Features
 
 - Declarative UITableViewController support
@@ -63,8 +96,6 @@ pod 'DeclarativeTVC'
 
 Then run `pod install` command. For details of the installation and usage of CocoaPods, visit [its official website](https://cocoapods.org).
 
-# Цель проекта
-DeclarativeTVC создана для упрощения работы с UIKit коллекциями переведя взаимодействие с ними к декларативному виду.
 # Как пользоваться 
 Рассмотрим создание простой таблицы с использованием DeclarativeTVC. 
 ## Создание view ячеек
