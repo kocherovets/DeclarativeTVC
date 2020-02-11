@@ -9,7 +9,6 @@ DeclarativeTVC
 
 Declarative UIKit collections
 
-##### Table of Contents 
 - [Цель проекта](#Цель-проекта)
   * [Пример](#Пример)
   * [Features](#features)
