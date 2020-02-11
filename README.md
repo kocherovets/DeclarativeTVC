@@ -14,7 +14,7 @@ Declarative UIKit collections
   * [Requirements](#requirements)
   * [Installation](#installation)
     + [CocoaPods](#cocoapods)
-- [Цель проекта](#------------)
+- [Цель проекта](#project-goal-ru)
 - [Как пользоваться](#----------------)
   * [Создание view ячеек](#---------view------)
     + [Stryboard](#stryboard)
@@ -63,6 +63,7 @@ pod 'DeclarativeTVC'
 
 Then run `pod install` command. For details of the installation and usage of CocoaPods, visit [its official website](https://cocoapods.org).
 
+<a name="project-goal-ru"/>
 # Цель проекта
 DeclarativeTVC создана для упрощения работы с UIKit коллекциями переведя взаимодействие с ними к декларативному виду.
 # Как пользоваться 
