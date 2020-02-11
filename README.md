@@ -229,7 +229,7 @@ struct HeaderViewVM: TableHeaderModel {
 ```swift
 open class DeclarativeTVC: UITableViewController {
 ```
-Если в варианте UITaleView, то используется TableDS.
+Если в варианте UITableView, то используется TableDS.
 ```swift
 open class TableDS: NSObject, UITableViewDelegate, UITableViewDataSource {
 ```
