@@ -214,12 +214,14 @@ open class DeclarativeTVC: UITableViewController {
     open override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     open override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     open override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-    open override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    open override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
     open override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    open override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    open override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
     open override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 }
 ```
-Соответственно в общем случае он берет на себя ответственность за расчет количества секций и ячеек, созданиие заголовков и ячеек, расчет высоты заголовков и ячеек, отработку нажатия на ячейку. 
+Соответственно в общем случае он берет на себя ответственность за расчет количества секций и ячеек, созданиие заголовков, подвалов и ячеек, расчет высоты заголовков, подвалов и ячеек, отработку нажатия на ячейку. 
 
 С помощью метода `set(rows: [CellAnyModel]` можно задать для таблицы массив ранее созданных вьюмоделей, что создаст таблицу без секций.
 
@@ -269,7 +271,7 @@ class TVC: DeclarativeTVC {
 ```
 Вариант с различными типами ячеек
 ```swift
-    private func tableRowThreeTypes() -> [CellAnyModel] {
+    func tableRowThreeTypes() -> [CellAnyModel] {
         [
             SimpleCellVM(titleText: "Storyboard cell"),
             SimpleXibCellVM(titleText: "Xib cell"),
@@ -279,7 +281,7 @@ class TVC: DeclarativeTVC {
 ```
 Вариант с секциямии
 ```swift
-    private func tableWithSections() -> [TableSection] {
+    func tableWithSections() -> [TableSection] {
         [
             TableSection(
                 header: nil,
@@ -324,7 +326,6 @@ class TVC: DeclarativeTVC {
 open class TableDS: NSObject, UITableViewDelegate, UITableViewDataSource {
 
     open func set(tableView: UITableView?, rows: [CellAnyModel], animations: DeclarativeTVC.Animations? = nil) {
-
     open func set(tableView: UITableView?, model: TableModel, animations: DeclarativeTVC.Animations? = nil) {
 ```
 **Нельзя** применять TableDS к tableView из UITableViewController. В этом случае используйте DeclarativeTVC.
