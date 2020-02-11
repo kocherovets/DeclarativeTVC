@@ -63,7 +63,6 @@ pod 'DeclarativeTVC'
 
 Then run `pod install` command. For details of the installation and usage of CocoaPods, visit [its official website](https://cocoapods.org).
 
-<a name="project-goal-ru"/>
 # Цель проекта
 DeclarativeTVC создана для упрощения работы с UIKit коллекциями переведя взаимодействие с ними к декларативному виду.
 # Как пользоваться 
