@@ -65,13 +65,13 @@ extension DetailVC {
         [
             SelectAnimationsCellVM(titleText: "Select animations",
                                    animationText: state.animationsTitle,
-                                   selectCommand: Command {
-                                       self.show(SelectAnimationsVC.self)
+                                   selectCommand: Command { [weak self] in
+                                    self?.show(SelectAnimationsVC.self)
                                    }),
             ApplyAnimationsCellVM(titleText: "Apply animations",
-                                  selectCommand: Command {
+                                  selectCommand: Command {[weak self] in
                                       state.detailType = .tableAnimations2
-                                      self.reload()
+                                    self?.reload()
                                   }),
             HeaderCellVM(titleText: "Header 1"),
             SimpleCellVM(titleText: "Paragraph 11 jsdklf aslfj lkasfdjals kfda;ls dflkas fdlkasfasl"),
@@ -87,9 +87,9 @@ extension DetailVC {
     private func tableAnimations2Rows() -> [CellAnyModel] {
         [
             ApplyAnimationsCellVM(titleText: "Reset rows",
-                                  selectCommand: Command {
+                                  selectCommand: Command {[weak self] in
                                       state.detailType = .tableAnimations
-                                      self.reload()
+                                    self?.reload()
                                   }),
             HeaderCellVM(titleText: "Header 1"),
             SimpleCellVM(titleText: "Paragraph 11 jsdklf aslfj lkasfdjals kfda;ls dflkas fdlkasfasl"),
@@ -138,14 +138,14 @@ extension DetailVC {
                     SelectAnimationsCellVM(
                         titleText: "Select animations",
                         animationText: state.animationsTitle,
-                        selectCommand: Command {
-                            self.show(SelectAnimationsVC.self)
+                        selectCommand: Command { [weak self] in
+                            self?.show(SelectAnimationsVC.self)
                         }),
                     ApplyAnimationsCellVM(
                         titleText: "Apply animations",
-                        selectCommand: Command {
+                        selectCommand: Command { [weak self] in
                             state.detailType = .tableWithSections2
-                            self.reload()
+                            self?.reload()
                         })
                 ],
                 footer: nil),
@@ -173,9 +173,9 @@ extension DetailVC {
             TableSection(header: nil,
                          rows: [
                              ApplyAnimationsCellVM(titleText: "Reset rows",
-                                                   selectCommand: Command {
+                                                   selectCommand: Command { [weak self] in
                                                        state.detailType = .tableWithSections
-                                                       self.reload()
+                                                       self?.reload()
                                                    })
                          ],
                          footer: nil),
@@ -204,13 +204,13 @@ extension DetailVC {
         [
             SelectAnimationsCellVM(titleText: "Select animations",
                                    animationText: state.animationsTitle,
-                                   selectCommand: Command {
-                                       self.show(SelectAnimationsVC.self)
+                                   selectCommand: Command {[weak self] in
+                                    self?.show(SelectAnimationsVC.self)
                                    }),
             ApplyAnimationsCellVM(titleText: "Apply animations",
-                                  selectCommand: Command {
+                                  selectCommand: Command {[weak self] in
                                       state.detailType = .tableRowEditing2
-                                      self.reload()
+                                    self?.reload()
                                   }),
             HeaderCellVM(titleText: "Text field does not lose focus while table reorder with setted animation"),
             TextFieldCellVM(text: nil, placeholder: "text field 1"),
@@ -227,9 +227,9 @@ extension DetailVC {
     private func tableRowEditing2() -> [CellAnyModel] {
         [
             ApplyAnimationsCellVM(titleText: "Reset rows",
-                                  selectCommand: Command {
+                                  selectCommand: Command {[weak self] in
                                       state.detailType = .tableRowEditing
-                                      self.reload()
+                                    self?.reload()
                                   }),
             HeaderCellVM(titleText: "Text field does not lose focus while table reorder with setted animation"),
             TextFieldCellVM(text: nil, placeholder: "text field 1"),

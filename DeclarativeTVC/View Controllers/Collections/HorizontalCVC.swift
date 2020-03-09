@@ -28,9 +28,9 @@ extension HorizontalCVC {
     private func coloredItems() -> [CellAnyModel] {
         [
             ColorSelectableCellVM(color: UIColor.systemRed,
-                                  selectCommand: Command {
+                                  selectCommand: Command {[weak self] in
                                       state.detailType = .simpleCollection2
-                                      self.reload()
+                                    self?.reload()
                                   }),
             ColorCellVM(color: UIColor.systemGreen),
             ColorCellVM(color: UIColor.systemBlue),
@@ -46,9 +46,9 @@ extension HorizontalCVC {
     private func coloredItems2() -> [CellAnyModel] {
         [
             ColorSelectableCellVM(color: UIColor.systemRed,
-                                  selectCommand: Command {
+                                  selectCommand: Command {[weak self] in
                                       state.detailType = .simpleCollection
-                                      self.reload()
+                                    self?.reload()
                                   }),
             ColorCellVM(color: UIColor.systemGreen),
             ColorCellVM(color: UIColor.systemBlue),

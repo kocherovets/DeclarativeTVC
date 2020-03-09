@@ -15,9 +15,9 @@ class SelectAnimationOptionVC: TVC {
                 UITableView.RowAnimation.allCases.map { rowAnimation in
                     CheckedCellVM(titleText: rowAnimation.title,
                                   checked: state.selectedAnymationTypeValue() == rowAnimation,
-                                  selectCommand: Command {
+                                  selectCommand: Command { [weak self] in
                                       state.setSelectedAnymationTypeValue(rowAnimation)
-                                      self.navigationController?.popViewController(animated: true)
+                                      self?.navigationController?.popViewController(animated: true)
                                   })
                 }
             )
