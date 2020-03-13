@@ -207,7 +207,9 @@ struct SimpleCellVM: CellModel, SelectableCellModel {
 }
 ```
 ## Секции
-Заголовки и подвалы реализованы аналогично ячейкам. Строятся они на базе UITableViewCell, а не UIView.
+Заголовки и подвалы реализованы аналогично ячейкам. Строятся они на базе UITableViewCell, а не UIView. 
+
+Регистрировать классы и xib не нужно, библиотека это сделает за вас. Но нужно соблюдать те же правила, что и при создании ячеек.
 ```swift
 class HeaderView: UITableViewCell {
 
