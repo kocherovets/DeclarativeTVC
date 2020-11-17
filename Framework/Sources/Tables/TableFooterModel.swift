@@ -65,7 +65,7 @@ public extension TableFooterModel {
     var height: CGFloat? { nil }
 }
 
-public struct OnlyTextTableFooterModel: TableFooterModel {
+public struct TitleWithoutViewTableFooterModel: TableFooterModel {
     
     public let title: String
     

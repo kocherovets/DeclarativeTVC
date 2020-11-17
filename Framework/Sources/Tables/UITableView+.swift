@@ -48,7 +48,7 @@ extension Table {
 
     func header(for section: Int) -> UIView? {
 
-        if let vm = model?.sections[section].header, !(vm is OnlyTextTableHeaderModel) {
+        if let vm = model?.sections[section].header, !(vm is TitleWithoutViewTableHeaderModel) {
 
             let typeString = String(describing: type(of: vm).headerAnyType)
 
@@ -76,12 +76,12 @@ extension Table {
     
     func headerTitle(for section: Int) -> String? {
         
-        (model?.sections[section].header as? OnlyTextTableHeaderModel)?.title
+        (model?.sections[section].header as? TitleWithoutViewTableHeaderModel)?.title
     }
 
     func footer(for section: Int) -> UIView? {
 
-        if let vm = model?.sections[section].footer, !(vm is OnlyTextTableFooterModel) {
+        if let vm = model?.sections[section].footer, !(vm is TitleWithoutViewTableFooterModel) {
 
             let typeString = String(describing: type(of: vm).footerAnyType)
 
@@ -110,7 +110,7 @@ extension Table {
     
     func footerTitle(for section: Int) -> String? {
         
-        (model?.sections[section].footer as? OnlyTextTableFooterModel)?.title
+        (model?.sections[section].footer as? TitleWithoutViewTableFooterModel)?.title
     }
     
     func heightForCell(at indexPath: IndexPath) -> CGFloat {

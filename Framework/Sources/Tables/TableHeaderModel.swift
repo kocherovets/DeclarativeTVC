@@ -65,7 +65,7 @@ public extension TableHeaderModel {
     var height: CGFloat? { nil }
 }
 
-public struct OnlyTextTableHeaderModel: TableHeaderModel {
+public struct TitleWithoutViewTableHeaderModel: TableHeaderModel {
     
     public let title: String
     
