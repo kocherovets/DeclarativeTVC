@@ -48,7 +48,7 @@ extension Table {
 
     func header(for section: Int) -> UIView? {
 
-        if let vm = model?.sections[section].header {
+        if let vm = model?.sections[section].header, !(vm is OnlyTextTableHeaderModel) {
 
             let typeString = String(describing: type(of: vm).headerAnyType)
 
@@ -73,10 +73,15 @@ extension Table {
         }
         return nil
     }
+    
+    func headerTitle(for section: Int) -> String? {
+        
+        (model?.sections[section].header as? OnlyTextTableHeaderModel)?.title
+    }
 
     func footer(for section: Int) -> UIView? {
 
-        if let vm = model?.sections[section].footer {
+        if let vm = model?.sections[section].footer, !(vm is OnlyTextTableFooterModel) {
 
             let typeString = String(describing: type(of: vm).footerAnyType)
 
@@ -103,6 +108,11 @@ extension Table {
         return nil
     }
     
+    func footerTitle(for section: Int) -> String? {
+        
+        (model?.sections[section].footer as? OnlyTextTableFooterModel)?.title
+    }
+    
     func heightForCell(at indexPath: IndexPath) -> CGFloat {
 
         if let height = model?.sections[indexPath.section].rows[indexPath.row].height {
@@ -113,7 +123,10 @@ extension Table {
 
     func heightForHeader(inSection section: Int) -> CGFloat {
 
-        if let height = model?.sections[section].header?.height {
+        guard let header = model?.sections[section].header else {
+            return 0
+        }
+        if let height = header.height {
             return height
         }
         return UITableView.automaticDimension
@@ -121,7 +134,10 @@ extension Table {
 
     func heightForFooter(inSection section: Int) -> CGFloat {
 
-        if let height = model?.sections[section].footer?.height {
+        guard let footer = model?.sections[section].footer else {
+            return 0
+        }
+        if let height = footer.height {
             return height
         }
         return UITableView.automaticDimension

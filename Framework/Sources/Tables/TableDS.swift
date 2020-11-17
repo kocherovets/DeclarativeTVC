@@ -91,9 +91,19 @@ open class TableDS: NSObject, UITableViewDelegate, UITableViewDataSource, Table 
         return header(for: section)
     }
 
+    open func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        headerTitle(for: section)
+    }
+
     open func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
 
         return footer(for: section)
+    }
+    
+    open func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+    
+        footerTitle(for: section)
     }
 
     open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

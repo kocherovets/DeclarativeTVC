@@ -64,3 +64,12 @@ public extension TableFooterModel {
     
     var height: CGFloat? { nil }
 }
+
+public struct OnlyTextTableFooterModel: TableFooterModel {
+    
+    public let title: String
+    
+    public init(title: String) {
+        self.title = title
+    }
+}

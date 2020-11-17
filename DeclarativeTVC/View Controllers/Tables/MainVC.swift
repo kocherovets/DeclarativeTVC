@@ -56,6 +56,11 @@ class MainVC: TVC {
                             state.detailType = .tableManySections
                             self.show(DetailVC.self)
                         }),
+                    SimpleSelectableCellVM(
+                        titleText: "Grouped table",
+                        selectCommand: Command() {
+                            self.show(GroupedTVC.self)
+                        }),
 
                     HeaderCellVM(titleText: "Collections"),
                     SimpleSelectableCellVM(
