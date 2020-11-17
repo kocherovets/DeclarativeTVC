@@ -472,8 +472,8 @@
 		C3FEAC3F2397EDD8009CCA25 /* Collections */ = {
 			isa = PBXGroup;
 			children = (
-				C3FEAC402397EDD8009CCA25 /* CollectionDS.swift */,
 				C3FEAC412397EDD8009CCA25 /* DeclarativeCVC.swift */,
+				C3FEAC402397EDD8009CCA25 /* CollectionDS.swift */,
 				C3FEAC422397EDD8009CCA25 /* CollectionModel.swift */,
 			);
 			path = Collections;

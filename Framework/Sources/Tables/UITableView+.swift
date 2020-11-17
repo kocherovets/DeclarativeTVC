@@ -126,10 +126,7 @@ extension Table {
         guard let header = model?.sections[section].header else {
             return 0
         }
-        if let height = header.height {
-            return height
-        }
-        return UITableView.automaticDimension
+        return header.height ?? UITableView.automaticDimension
     }
 
     func heightForFooter(inSection section: Int) -> CGFloat {
@@ -137,9 +134,6 @@ extension Table {
         guard let footer = model?.sections[section].footer else {
             return 0
         }
-        if let height = footer.height {
-            return height
-        }
-        return UITableView.automaticDimension
+        return footer.height ?? UITableView.automaticDimension
     }
 }
