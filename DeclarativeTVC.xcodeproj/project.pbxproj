@@ -3,12 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		517ABC2BD315E68A9C7CE544 /* Pods_Framework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 203B16280A28CBB8ACC36217 /* Pods_Framework.framework */; };
-		AEA36564A0609F82D289E28A /* Pods_DeclarativeTVC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7BC9971DEEC4C95876CD933 /* Pods_DeclarativeTVC.framework */; };
 		C3320BA9236F624200141724 /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3320BA8236F61D600141724 /* CollectionCell.swift */; };
 		C3320BAA236F624200141724 /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3320BA8236F61D600141724 /* CollectionCell.swift */; };
 		C3320BAB236F624300141724 /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3320BA8236F61D600141724 /* CollectionCell.swift */; };
@@ -16,9 +14,8 @@
 		C3320BB2236F660B00141724 /* CollectionRowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3320BB0236F660B00141724 /* CollectionRowVC.swift */; };
 		C3320BB3236F660B00141724 /* CollectionRowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3320BB0236F660B00141724 /* CollectionRowVC.swift */; };
 		C360A10D2563CCB900587CC3 /* GroupedTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C360A10C2563CCB900587CC3 /* GroupedTVC.swift */; };
-		C360A12C2563D56700587CC3 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = C360A12B2563D56700587CC3 /* Command.swift */; };
 		C3709F6F239C5D4C00CC8DD8 /* SimpleCodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3709F6E239C5D4B00CC8DD8 /* SimpleCodeCell.swift */; };
-		C381AD8623BCF47900ED8035 /* TableDS.swift in Sources */ = {isa = PBXBuildFile; fileRef = C381AD8523BCF47900ED8035 /* TableDS.swift */; };
+		C378D976256EF3DB0073189B /* DeclarativeTVC in Frameworks */ = {isa = PBXBuildFile; productRef = C378D975256EF3DB0073189B /* DeclarativeTVC */; };
 		C38ECC99236DBC5300C27753 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38ECC98236DBC5300C27753 /* AppDelegate.swift */; };
 		C38ECC9B236DBC5300C27753 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38ECC9A236DBC5300C27753 /* SceneDelegate.swift */; };
 		C38ECCA0236DBC5300C27753 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C38ECC9E236DBC5300C27753 /* Main.storyboard */; };
@@ -68,7 +65,6 @@
 		C38ECD25236DC47E00C27753 /* SelectAnimationOptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38ECD24236DC47E00C27753 /* SelectAnimationOptionVC.swift */; };
 		C38ECD26236DC47E00C27753 /* SelectAnimationOptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38ECD24236DC47E00C27753 /* SelectAnimationOptionVC.swift */; };
 		C38ECD27236DC47E00C27753 /* SelectAnimationOptionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38ECD24236DC47E00C27753 /* SelectAnimationOptionVC.swift */; };
-		C3C11BBC23F0578300258DBC /* UITableView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C11BBB23F0578300258DBC /* UITableView+.swift */; };
 		C3FB1AD6236F2FA300C1B48A /* TVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FB1AD5236F2FA300C1B48A /* TVC.swift */; };
 		C3FB1AD7236F2FA300C1B48A /* TVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FB1AD5236F2FA300C1B48A /* TVC.swift */; };
 		C3FB1AD8236F2FA300C1B48A /* TVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FB1AD5236F2FA300C1B48A /* TVC.swift */; };
@@ -89,23 +85,6 @@
 		C3FB1AEF236F48D400C1B48A /* ColorSelectableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FB1AEC236F48D300C1B48A /* ColorSelectableCell.swift */; };
 		C3FCDA832394684D00EC716A /* SimpleXibCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FCDA812394684D00EC716A /* SimpleXibCell.swift */; };
 		C3FCDA842394684D00EC716A /* SimpleXibCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3FCDA822394684D00EC716A /* SimpleXibCell.xib */; };
-		C3FEAC202397ED86009CCA25 /* Framework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3FEAC172397ED86009CCA25 /* Framework.framework */; };
-		C3FEAC272397ED86009CCA25 /* FrameworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FEAC262397ED86009CCA25 /* FrameworkTests.swift */; };
-		C3FEAC292397ED86009CCA25 /* Framework.h in Headers */ = {isa = PBXBuildFile; fileRef = C3FEAC192397ED86009CCA25 /* Framework.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C3FEAC2C2397ED86009CCA25 /* Framework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3FEAC172397ED86009CCA25 /* Framework.framework */; };
-		C3FEAC2D2397ED86009CCA25 /* Framework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C3FEAC172397ED86009CCA25 /* Framework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		C3FEAC432397EDD8009CCA25 /* DeclarativeTVC+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FEAC362397EDD8009CCA25 /* DeclarativeTVC+Animations.swift */; };
-		C3FEAC442397EDD8009CCA25 /* DeclarativeTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FEAC372397EDD8009CCA25 /* DeclarativeTVC.swift */; };
-		C3FEAC452397EDD8009CCA25 /* TableFooterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FEAC382397EDD8009CCA25 /* TableFooterModel.swift */; };
-		C3FEAC462397EDD8009CCA25 /* TableHeaderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FEAC392397EDD8009CCA25 /* TableHeaderModel.swift */; };
-		C3FEAC472397EDD8009CCA25 /* TableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FEAC3A2397EDD8009CCA25 /* TableModel.swift */; };
-		C3FEAC482397EDD8009CCA25 /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FEAC3C2397EDD8009CCA25 /* CellModel.swift */; };
-		C3FEAC4A2397EDD8009CCA25 /* SelectableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FEAC3E2397EDD8009CCA25 /* SelectableCell.swift */; };
-		C3FEAC4B2397EDD8009CCA25 /* CollectionDS.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FEAC402397EDD8009CCA25 /* CollectionDS.swift */; };
-		C3FEAC4C2397EDD8009CCA25 /* DeclarativeCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FEAC412397EDD8009CCA25 /* DeclarativeCVC.swift */; };
-		C3FEAC4D2397EDD8009CCA25 /* CollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FEAC422397EDD8009CCA25 /* CollectionModel.swift */; };
-		D343C5B3D73A2C69A4F6FED8 /* Pods_DeclarativeTVCUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 967DC4376673D08F34B7353D /* Pods_DeclarativeTVCUITests.framework */; };
-		E7A3FFCA1BA8015CCB22CBC4 /* Pods_DeclarativeTVCTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04617872602990760F3E5ADF /* Pods_DeclarativeTVCTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,27 +102,6 @@
 			remoteGlobalIDString = C38ECC94236DBC5300C27753;
 			remoteInfo = DeclarativeTVC;
 		};
-		C3FEAC212397ED86009CCA25 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C38ECC8D236DBC5300C27753 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C3FEAC162397ED86009CCA25;
-			remoteInfo = Framework;
-		};
-		C3FEAC232397ED86009CCA25 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C38ECC8D236DBC5300C27753 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C38ECC94236DBC5300C27753;
-			remoteInfo = DeclarativeTVC;
-		};
-		C3FEAC2A2397ED86009CCA25 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C38ECC8D236DBC5300C27753 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C3FEAC162397ED86009CCA25;
-			remoteInfo = Framework;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -153,7 +111,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				C3FEAC2D2397ED86009CCA25 /* Framework.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -161,33 +118,22 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		013969673DA119E0B35ADBA9 /* Pods-DeclarativeTVCTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeclarativeTVCTests.release.xcconfig"; path = "Target Support Files/Pods-DeclarativeTVCTests/Pods-DeclarativeTVCTests.release.xcconfig"; sourceTree = "<group>"; };
-		04617872602990760F3E5ADF /* Pods_DeclarativeTVCTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeclarativeTVCTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		10F4DDDA5284BBAE24543F84 /* Pods-DeclarativeTVCUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeclarativeTVCUITests.debug.xcconfig"; path = "Target Support Files/Pods-DeclarativeTVCUITests/Pods-DeclarativeTVCUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		203B16280A28CBB8ACC36217 /* Pods_Framework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Framework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5258606F4A0151DBD093C7EA /* Pods-DeclarativeTVC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeclarativeTVC.debug.xcconfig"; path = "Target Support Files/Pods-DeclarativeTVC/Pods-DeclarativeTVC.debug.xcconfig"; sourceTree = "<group>"; };
-		5C53DC7F322F6EFDA15A7261 /* Pods-DeclarativeTVCTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeclarativeTVCTests.debug.xcconfig"; path = "Target Support Files/Pods-DeclarativeTVCTests/Pods-DeclarativeTVCTests.debug.xcconfig"; sourceTree = "<group>"; };
-		5C8BA7FFD7702C9321410574 /* Pods-DeclarativeTVC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeclarativeTVC.release.xcconfig"; path = "Target Support Files/Pods-DeclarativeTVC/Pods-DeclarativeTVC.release.xcconfig"; sourceTree = "<group>"; };
-		6FA18EADB8F83738F1D8CEA6 /* Pods-Framework.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Framework.release.xcconfig"; path = "Target Support Files/Pods-Framework/Pods-Framework.release.xcconfig"; sourceTree = "<group>"; };
-		967DC4376673D08F34B7353D /* Pods_DeclarativeTVCUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeclarativeTVCUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A7BC9971DEEC4C95876CD933 /* Pods_DeclarativeTVC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeclarativeTVC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3320BA8236F61D600141724 /* CollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
 		C3320BB0236F660B00141724 /* CollectionRowVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionRowVC.swift; sourceTree = "<group>"; };
 		C360A10C2563CCB900587CC3 /* GroupedTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupedTVC.swift; sourceTree = "<group>"; };
-		C360A12B2563D56700587CC3 /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		C3709F6E239C5D4B00CC8DD8 /* SimpleCodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCodeCell.swift; sourceTree = "<group>"; };
-		C381AD8523BCF47900ED8035 /* TableDS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDS.swift; sourceTree = "<group>"; };
-		C38ECC95236DBC5300C27753 /* DeclarativeTVC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeclarativeTVC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C378D95E256EEE680073189B /* DeclarativeTVC */ = {isa = PBXFileReference; lastKnownFileType = folder; path = DeclarativeTVC; sourceTree = "<group>"; };
+		C38ECC95236DBC5300C27753 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C38ECC98236DBC5300C27753 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C38ECC9A236DBC5300C27753 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C38ECC9F236DBC5300C27753 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C38ECCA1236DBC5600C27753 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C38ECCA4236DBC5600C27753 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C38ECCA6236DBC5600C27753 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C38ECCAB236DBC5600C27753 /* DeclarativeTVCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeclarativeTVCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C38ECCAB236DBC5600C27753 /* ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C38ECCAF236DBC5600C27753 /* DeclarativeTVCTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeclarativeTVCTests.swift; sourceTree = "<group>"; };
 		C38ECCB1236DBC5600C27753 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C38ECCB6236DBC5600C27753 /* DeclarativeTVCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeclarativeTVCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C38ECCB6236DBC5600C27753 /* ExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C38ECCBA236DBC5600C27753 /* DeclarativeTVCUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeclarativeTVCUITests.swift; sourceTree = "<group>"; };
 		C38ECCBC236DBC5600C27753 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C38ECCEA236DC33B00C27753 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
@@ -204,7 +150,6 @@
 		C38ECD1C236DC45700C27753 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		C38ECD20236DC46A00C27753 /* SelectAnimationsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAnimationsVC.swift; sourceTree = "<group>"; };
 		C38ECD24236DC47E00C27753 /* SelectAnimationOptionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAnimationOptionVC.swift; sourceTree = "<group>"; };
-		C3C11BBB23F0578300258DBC /* UITableView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+.swift"; sourceTree = "<group>"; };
 		C3FB1AD5236F2FA300C1B48A /* TVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVC.swift; sourceTree = "<group>"; };
 		C3FB1ADC236F321C00C1B48A /* ColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCell.swift; sourceTree = "<group>"; };
 		C3FB1AE0236F339E00C1B48A /* VerticalCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalCVC.swift; sourceTree = "<group>"; };
@@ -213,24 +158,6 @@
 		C3FB1AEC236F48D300C1B48A /* ColorSelectableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSelectableCell.swift; sourceTree = "<group>"; };
 		C3FCDA812394684D00EC716A /* SimpleXibCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleXibCell.swift; sourceTree = "<group>"; };
 		C3FCDA822394684D00EC716A /* SimpleXibCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SimpleXibCell.xib; sourceTree = "<group>"; };
-		C3FEAC172397ED86009CCA25 /* Framework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Framework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C3FEAC192397ED86009CCA25 /* Framework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Framework.h; sourceTree = "<group>"; };
-		C3FEAC1A2397ED86009CCA25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C3FEAC1F2397ED86009CCA25 /* FrameworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FrameworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C3FEAC262397ED86009CCA25 /* FrameworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameworkTests.swift; sourceTree = "<group>"; };
-		C3FEAC282397ED86009CCA25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C3FEAC362397EDD8009CCA25 /* DeclarativeTVC+Animations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DeclarativeTVC+Animations.swift"; sourceTree = "<group>"; };
-		C3FEAC372397EDD8009CCA25 /* DeclarativeTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeclarativeTVC.swift; sourceTree = "<group>"; };
-		C3FEAC382397EDD8009CCA25 /* TableFooterModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableFooterModel.swift; sourceTree = "<group>"; };
-		C3FEAC392397EDD8009CCA25 /* TableHeaderModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableHeaderModel.swift; sourceTree = "<group>"; };
-		C3FEAC3A2397EDD8009CCA25 /* TableModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableModel.swift; sourceTree = "<group>"; };
-		C3FEAC3C2397EDD8009CCA25 /* CellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
-		C3FEAC3E2397EDD8009CCA25 /* SelectableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectableCell.swift; sourceTree = "<group>"; };
-		C3FEAC402397EDD8009CCA25 /* CollectionDS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionDS.swift; sourceTree = "<group>"; };
-		C3FEAC412397EDD8009CCA25 /* DeclarativeCVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeclarativeCVC.swift; sourceTree = "<group>"; };
-		C3FEAC422397EDD8009CCA25 /* CollectionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionModel.swift; sourceTree = "<group>"; };
-		DB7544BC572233C2F8FE1574 /* Pods-DeclarativeTVCUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeclarativeTVCUITests.release.xcconfig"; path = "Target Support Files/Pods-DeclarativeTVCUITests/Pods-DeclarativeTVCUITests.release.xcconfig"; sourceTree = "<group>"; };
-		E7CB23F6E5C7E2BF5FE0D85B /* Pods-Framework.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Framework.debug.xcconfig"; path = "Target Support Files/Pods-Framework/Pods-Framework.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,8 +165,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AEA36564A0609F82D289E28A /* Pods_DeclarativeTVC.framework in Frameworks */,
-				C3FEAC2C2397ED86009CCA25 /* Framework.framework in Frameworks */,
+				C378D976256EF3DB0073189B /* DeclarativeTVC in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,7 +173,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7A3FFCA1BA8015CCB22CBC4 /* Pods_DeclarativeTVCTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,71 +180,42 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D343C5B3D73A2C69A4F6FED8 /* Pods_DeclarativeTVCUITests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C3FEAC142397ED86009CCA25 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				517ABC2BD315E68A9C7CE544 /* Pods_Framework.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C3FEAC1C2397ED86009CCA25 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C3FEAC202397ED86009CCA25 /* Framework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3BDCFA049329CBA4CECEC177 /* Pods */ = {
+		C378D95B256EEDF90073189B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5258606F4A0151DBD093C7EA /* Pods-DeclarativeTVC.debug.xcconfig */,
-				5C8BA7FFD7702C9321410574 /* Pods-DeclarativeTVC.release.xcconfig */,
-				5C53DC7F322F6EFDA15A7261 /* Pods-DeclarativeTVCTests.debug.xcconfig */,
-				013969673DA119E0B35ADBA9 /* Pods-DeclarativeTVCTests.release.xcconfig */,
-				10F4DDDA5284BBAE24543F84 /* Pods-DeclarativeTVCUITests.debug.xcconfig */,
-				DB7544BC572233C2F8FE1574 /* Pods-DeclarativeTVCUITests.release.xcconfig */,
-				E7CB23F6E5C7E2BF5FE0D85B /* Pods-Framework.debug.xcconfig */,
-				6FA18EADB8F83738F1D8CEA6 /* Pods-Framework.release.xcconfig */,
+				C378D95E256EEE680073189B /* DeclarativeTVC */,
 			);
-			path = Pods;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		C38ECC8C236DBC5300C27753 = {
 			isa = PBXGroup;
 			children = (
-				C38ECC97236DBC5300C27753 /* DeclarativeTVC */,
-				C38ECCAE236DBC5600C27753 /* DeclarativeTVCTests */,
-				C38ECCB9236DBC5600C27753 /* DeclarativeTVCUITests */,
-				C3FEAC182397ED86009CCA25 /* Framework */,
-				C3FEAC252397ED86009CCA25 /* FrameworkTests */,
+				C38ECC97236DBC5300C27753 /* Example */,
+				C38ECCAE236DBC5600C27753 /* ExampleTests */,
+				C38ECCB9236DBC5600C27753 /* ExampleUITests */,
 				C38ECC96236DBC5300C27753 /* Products */,
-				3BDCFA049329CBA4CECEC177 /* Pods */,
-				E6198B2D2F9024C54D46DDDB /* Frameworks */,
+				C378D95B256EEDF90073189B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		C38ECC96236DBC5300C27753 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C38ECC95236DBC5300C27753 /* DeclarativeTVC.app */,
-				C38ECCAB236DBC5600C27753 /* DeclarativeTVCTests.xctest */,
-				C38ECCB6236DBC5600C27753 /* DeclarativeTVCUITests.xctest */,
-				C3FEAC172397ED86009CCA25 /* Framework.framework */,
-				C3FEAC1F2397ED86009CCA25 /* FrameworkTests.xctest */,
+				C38ECC95236DBC5300C27753 /* Example.app */,
+				C38ECCAB236DBC5600C27753 /* ExampleTests.xctest */,
+				C38ECCB6236DBC5600C27753 /* ExampleUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C38ECC97236DBC5300C27753 /* DeclarativeTVC */ = {
+		C38ECC97236DBC5300C27753 /* Example */ = {
 			isa = PBXGroup;
 			children = (
 				C38ECC9E236DBC5300C27753 /* Main.storyboard */,
@@ -333,25 +229,25 @@
 				C38ECCA3236DBC5600C27753 /* LaunchScreen.storyboard */,
 				C38ECCA6236DBC5600C27753 /* Info.plist */,
 			);
-			path = DeclarativeTVC;
+			path = Example;
 			sourceTree = "<group>";
 		};
-		C38ECCAE236DBC5600C27753 /* DeclarativeTVCTests */ = {
+		C38ECCAE236DBC5600C27753 /* ExampleTests */ = {
 			isa = PBXGroup;
 			children = (
 				C38ECCAF236DBC5600C27753 /* DeclarativeTVCTests.swift */,
 				C38ECCB1236DBC5600C27753 /* Info.plist */,
 			);
-			path = DeclarativeTVCTests;
+			path = ExampleTests;
 			sourceTree = "<group>";
 		};
-		C38ECCB9236DBC5600C27753 /* DeclarativeTVCUITests */ = {
+		C38ECCB9236DBC5600C27753 /* ExampleUITests */ = {
 			isa = PBXGroup;
 			children = (
 				C38ECCBA236DBC5600C27753 /* DeclarativeTVCUITests.swift */,
 				C38ECCBC236DBC5600C27753 /* Info.plist */,
 			);
-			path = DeclarativeTVCUITests;
+			path = ExampleUITests;
 			sourceTree = "<group>";
 		};
 		C38ECCEE236DC34A00C27753 /* Table Cells */ = {
@@ -416,192 +312,65 @@
 			path = "Collection Cells";
 			sourceTree = "<group>";
 		};
-		C3FEAC182397ED86009CCA25 /* Framework */ = {
-			isa = PBXGroup;
-			children = (
-				C3FEAC342397EDD8009CCA25 /* Sources */,
-				C3FEAC192397ED86009CCA25 /* Framework.h */,
-				C3FEAC1A2397ED86009CCA25 /* Info.plist */,
-			);
-			path = Framework;
-			sourceTree = "<group>";
-		};
-		C3FEAC252397ED86009CCA25 /* FrameworkTests */ = {
-			isa = PBXGroup;
-			children = (
-				C3FEAC262397ED86009CCA25 /* FrameworkTests.swift */,
-				C3FEAC282397ED86009CCA25 /* Info.plist */,
-			);
-			path = FrameworkTests;
-			sourceTree = "<group>";
-		};
-		C3FEAC342397EDD8009CCA25 /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				C3FEAC352397EDD8009CCA25 /* Tables */,
-				C3FEAC3B2397EDD8009CCA25 /* Cells */,
-				C3FEAC3F2397EDD8009CCA25 /* Collections */,
-			);
-			path = Sources;
-			sourceTree = "<group>";
-		};
-		C3FEAC352397EDD8009CCA25 /* Tables */ = {
-			isa = PBXGroup;
-			children = (
-				C3FEAC362397EDD8009CCA25 /* DeclarativeTVC+Animations.swift */,
-				C3FEAC372397EDD8009CCA25 /* DeclarativeTVC.swift */,
-				C381AD8523BCF47900ED8035 /* TableDS.swift */,
-				C3FEAC392397EDD8009CCA25 /* TableHeaderModel.swift */,
-				C3FEAC382397EDD8009CCA25 /* TableFooterModel.swift */,
-				C3FEAC3A2397EDD8009CCA25 /* TableModel.swift */,
-				C3C11BBB23F0578300258DBC /* UITableView+.swift */,
-			);
-			path = Tables;
-			sourceTree = "<group>";
-		};
-		C3FEAC3B2397EDD8009CCA25 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				C3FEAC3C2397EDD8009CCA25 /* CellModel.swift */,
-				C3FEAC3E2397EDD8009CCA25 /* SelectableCell.swift */,
-				C360A12B2563D56700587CC3 /* Command.swift */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		C3FEAC3F2397EDD8009CCA25 /* Collections */ = {
-			isa = PBXGroup;
-			children = (
-				C3FEAC412397EDD8009CCA25 /* DeclarativeCVC.swift */,
-				C3FEAC402397EDD8009CCA25 /* CollectionDS.swift */,
-				C3FEAC422397EDD8009CCA25 /* CollectionModel.swift */,
-			);
-			path = Collections;
-			sourceTree = "<group>";
-		};
-		E6198B2D2F9024C54D46DDDB /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				A7BC9971DEEC4C95876CD933 /* Pods_DeclarativeTVC.framework */,
-				04617872602990760F3E5ADF /* Pods_DeclarativeTVCTests.framework */,
-				967DC4376673D08F34B7353D /* Pods_DeclarativeTVCUITests.framework */,
-				203B16280A28CBB8ACC36217 /* Pods_Framework.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		C3FEAC122397ED86009CCA25 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C3FEAC292397ED86009CCA25 /* Framework.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
-		C38ECC94236DBC5300C27753 /* DeclarativeTVC */ = {
+		C38ECC94236DBC5300C27753 /* Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C38ECCBF236DBC5600C27753 /* Build configuration list for PBXNativeTarget "DeclarativeTVC" */;
+			buildConfigurationList = C38ECCBF236DBC5600C27753 /* Build configuration list for PBXNativeTarget "Example" */;
 			buildPhases = (
-				6E4792187273B2CB4E07E4CC /* [CP] Check Pods Manifest.lock */,
 				C38ECC91236DBC5300C27753 /* Sources */,
 				C38ECC92236DBC5300C27753 /* Frameworks */,
 				C38ECC93236DBC5300C27753 /* Resources */,
-				9D44F7091374057AC737D513 /* [CP] Embed Pods Frameworks */,
 				C3FEAC0B2397ED17009CCA25 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				C3FEAC2B2397ED86009CCA25 /* PBXTargetDependency */,
 			);
-			name = DeclarativeTVC;
+			name = Example;
+			packageProductDependencies = (
+				C378D975256EF3DB0073189B /* DeclarativeTVC */,
+			);
 			productName = DeclarativeTVC;
-			productReference = C38ECC95236DBC5300C27753 /* DeclarativeTVC.app */;
+			productReference = C38ECC95236DBC5300C27753 /* Example.app */;
 			productType = "com.apple.product-type.application";
 		};
-		C38ECCAA236DBC5600C27753 /* DeclarativeTVCTests */ = {
+		C38ECCAA236DBC5600C27753 /* ExampleTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C38ECCC2236DBC5600C27753 /* Build configuration list for PBXNativeTarget "DeclarativeTVCTests" */;
+			buildConfigurationList = C38ECCC2236DBC5600C27753 /* Build configuration list for PBXNativeTarget "ExampleTests" */;
 			buildPhases = (
-				3D07BCBC5EF8ADF7958F5A63 /* [CP] Check Pods Manifest.lock */,
 				C38ECCA7236DBC5600C27753 /* Sources */,
 				C38ECCA8236DBC5600C27753 /* Frameworks */,
 				C38ECCA9236DBC5600C27753 /* Resources */,
-				51A91523359BF848EC1F071B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				C38ECCAD236DBC5600C27753 /* PBXTargetDependency */,
 			);
-			name = DeclarativeTVCTests;
+			name = ExampleTests;
 			productName = DeclarativeTVCTests;
-			productReference = C38ECCAB236DBC5600C27753 /* DeclarativeTVCTests.xctest */;
+			productReference = C38ECCAB236DBC5600C27753 /* ExampleTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		C38ECCB5236DBC5600C27753 /* DeclarativeTVCUITests */ = {
+		C38ECCB5236DBC5600C27753 /* ExampleUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C38ECCC5236DBC5600C27753 /* Build configuration list for PBXNativeTarget "DeclarativeTVCUITests" */;
+			buildConfigurationList = C38ECCC5236DBC5600C27753 /* Build configuration list for PBXNativeTarget "ExampleUITests" */;
 			buildPhases = (
-				DF5F4CD712A161C07A8DB174 /* [CP] Check Pods Manifest.lock */,
 				C38ECCB2236DBC5600C27753 /* Sources */,
 				C38ECCB3236DBC5600C27753 /* Frameworks */,
 				C38ECCB4236DBC5600C27753 /* Resources */,
-				5CB2565CBEF6C434116C85EE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				C38ECCB8236DBC5600C27753 /* PBXTargetDependency */,
 			);
-			name = DeclarativeTVCUITests;
+			name = ExampleUITests;
 			productName = DeclarativeTVCUITests;
-			productReference = C38ECCB6236DBC5600C27753 /* DeclarativeTVCUITests.xctest */;
+			productReference = C38ECCB6236DBC5600C27753 /* ExampleUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
-		};
-		C3FEAC162397ED86009CCA25 /* Framework */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C3FEAC2E2397ED86009CCA25 /* Build configuration list for PBXNativeTarget "Framework" */;
-			buildPhases = (
-				05B027EA8D546622C90AA451 /* [CP] Check Pods Manifest.lock */,
-				C3FEAC122397ED86009CCA25 /* Headers */,
-				C3FEAC132397ED86009CCA25 /* Sources */,
-				C3FEAC142397ED86009CCA25 /* Frameworks */,
-				C3FEAC152397ED86009CCA25 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Framework;
-			productName = Framework;
-			productReference = C3FEAC172397ED86009CCA25 /* Framework.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		C3FEAC1E2397ED86009CCA25 /* FrameworkTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C3FEAC312397ED86009CCA25 /* Build configuration list for PBXNativeTarget "FrameworkTests" */;
-			buildPhases = (
-				C3FEAC1B2397ED86009CCA25 /* Sources */,
-				C3FEAC1C2397ED86009CCA25 /* Frameworks */,
-				C3FEAC1D2397ED86009CCA25 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				C3FEAC222397ED86009CCA25 /* PBXTargetDependency */,
-				C3FEAC242397ED86009CCA25 /* PBXTargetDependency */,
-			);
-			name = FrameworkTests;
-			productName = FrameworkTests;
-			productReference = C3FEAC1F2397ED86009CCA25 /* FrameworkTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -610,7 +379,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1120;
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 1220;
 				ORGANIZATIONNAME = "Dmitry Kocherovets";
 				TargetAttributes = {
 					C38ECC94236DBC5300C27753 = {
@@ -622,13 +391,6 @@
 					};
 					C38ECCB5236DBC5600C27753 = {
 						CreatedOnToolsVersion = 11.2;
-						TestTargetID = C38ECC94236DBC5300C27753;
-					};
-					C3FEAC162397ED86009CCA25 = {
-						CreatedOnToolsVersion = 11.2.1;
-					};
-					C3FEAC1E2397ED86009CCA25 = {
-						CreatedOnToolsVersion = 11.2.1;
 						TestTargetID = C38ECC94236DBC5300C27753;
 					};
 				};
@@ -646,11 +408,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C38ECC94236DBC5300C27753 /* DeclarativeTVC */,
-				C38ECCAA236DBC5600C27753 /* DeclarativeTVCTests */,
-				C38ECCB5236DBC5600C27753 /* DeclarativeTVCUITests */,
-				C3FEAC162397ED86009CCA25 /* Framework */,
-				C3FEAC1E2397ED86009CCA25 /* FrameworkTests */,
+				C38ECC94236DBC5300C27753 /* Example */,
+				C38ECCAA236DBC5600C27753 /* ExampleTests */,
+				C38ECCB5236DBC5600C27753 /* ExampleUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -681,163 +441,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C3FEAC152397ED86009CCA25 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C3FEAC1D2397ED86009CCA25 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		05B027EA8D546622C90AA451 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Framework-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3D07BCBC5EF8ADF7958F5A63 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-DeclarativeTVCTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		51A91523359BF848EC1F071B /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DeclarativeTVCTests/Pods-DeclarativeTVCTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DeclarativeTVCTests/Pods-DeclarativeTVCTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DeclarativeTVCTests/Pods-DeclarativeTVCTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5CB2565CBEF6C434116C85EE /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DeclarativeTVCUITests/Pods-DeclarativeTVCUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DeclarativeTVCUITests/Pods-DeclarativeTVCUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DeclarativeTVCUITests/Pods-DeclarativeTVCUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6E4792187273B2CB4E07E4CC /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-DeclarativeTVC-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9D44F7091374057AC737D513 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DeclarativeTVC/Pods-DeclarativeTVC-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DeclarativeTVC/Pods-DeclarativeTVC-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DeclarativeTVC/Pods-DeclarativeTVC-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DF5F4CD712A161C07A8DB174 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-DeclarativeTVCUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C38ECC91236DBC5300C27753 /* Sources */ = {
@@ -934,61 +538,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C3FEAC132397ED86009CCA25 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C3FEAC442397EDD8009CCA25 /* DeclarativeTVC.swift in Sources */,
-				C3FEAC452397EDD8009CCA25 /* TableFooterModel.swift in Sources */,
-				C3FEAC4B2397EDD8009CCA25 /* CollectionDS.swift in Sources */,
-				C3FEAC432397EDD8009CCA25 /* DeclarativeTVC+Animations.swift in Sources */,
-				C360A12C2563D56700587CC3 /* Command.swift in Sources */,
-				C3FEAC4A2397EDD8009CCA25 /* SelectableCell.swift in Sources */,
-				C3FEAC462397EDD8009CCA25 /* TableHeaderModel.swift in Sources */,
-				C3C11BBC23F0578300258DBC /* UITableView+.swift in Sources */,
-				C381AD8623BCF47900ED8035 /* TableDS.swift in Sources */,
-				C3FEAC4D2397EDD8009CCA25 /* CollectionModel.swift in Sources */,
-				C3FEAC472397EDD8009CCA25 /* TableModel.swift in Sources */,
-				C3FEAC482397EDD8009CCA25 /* CellModel.swift in Sources */,
-				C3FEAC4C2397EDD8009CCA25 /* DeclarativeCVC.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C3FEAC1B2397ED86009CCA25 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C3FEAC272397ED86009CCA25 /* FrameworkTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
 		C38ECCAD236DBC5600C27753 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C38ECC94236DBC5300C27753 /* DeclarativeTVC */;
+			target = C38ECC94236DBC5300C27753 /* Example */;
 			targetProxy = C38ECCAC236DBC5600C27753 /* PBXContainerItemProxy */;
 		};
 		C38ECCB8236DBC5600C27753 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C38ECC94236DBC5300C27753 /* DeclarativeTVC */;
+			target = C38ECC94236DBC5300C27753 /* Example */;
 			targetProxy = C38ECCB7236DBC5600C27753 /* PBXContainerItemProxy */;
-		};
-		C3FEAC222397ED86009CCA25 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C3FEAC162397ED86009CCA25 /* Framework */;
-			targetProxy = C3FEAC212397ED86009CCA25 /* PBXContainerItemProxy */;
-		};
-		C3FEAC242397ED86009CCA25 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C38ECC94236DBC5300C27753 /* DeclarativeTVC */;
-			targetProxy = C3FEAC232397ED86009CCA25 /* PBXContainerItemProxy */;
-		};
-		C3FEAC2B2397ED86009CCA25 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C3FEAC162397ED86009CCA25 /* Framework */;
-			targetProxy = C3FEAC2A2397ED86009CCA25 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1038,6 +599,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1098,6 +660,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1128,19 +691,17 @@
 		};
 		C38ECCC0236DBC5600C27753 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5258606F4A0151DBD093C7EA /* Pods-DeclarativeTVC.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 42K94E5YQD;
-				INFOPLIST_FILE = DeclarativeTVC/Info.plist;
+				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kocherovets.DeclarativeTVC;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kocherovets.ExampleDeclarartiveTVC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -1150,19 +711,17 @@
 		};
 		C38ECCC1236DBC5600C27753 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5C8BA7FFD7702C9321410574 /* Pods-DeclarativeTVC.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 42K94E5YQD;
-				INFOPLIST_FILE = DeclarativeTVC/Info.plist;
+				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kocherovets.DeclarativeTVC;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kocherovets.ExampleDeclarartiveTVC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -1172,13 +731,12 @@
 		};
 		C38ECCC3236DBC5600C27753 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5C53DC7F322F6EFDA15A7261 /* Pods-DeclarativeTVCTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 42K94E5YQD;
-				INFOPLIST_FILE = DeclarativeTVCTests/Info.plist;
+				INFOPLIST_FILE = ExampleTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1189,19 +747,18 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DeclarativeTVC.app/DeclarativeTVC";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Example.app/Example";
 			};
 			name = Debug;
 		};
 		C38ECCC4236DBC5600C27753 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 013969673DA119E0B35ADBA9 /* Pods-DeclarativeTVCTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 42K94E5YQD;
-				INFOPLIST_FILE = DeclarativeTVCTests/Info.plist;
+				INFOPLIST_FILE = ExampleTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1212,18 +769,17 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DeclarativeTVC.app/DeclarativeTVC";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Example.app/Example";
 			};
 			name = Release;
 		};
 		C38ECCC6236DBC5600C27753 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 10F4DDDA5284BBAE24543F84 /* Pods-DeclarativeTVCUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 42K94E5YQD;
-				INFOPLIST_FILE = DeclarativeTVCUITests/Info.plist;
+				INFOPLIST_FILE = ExampleUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1239,12 +795,11 @@
 		};
 		C38ECCC7236DBC5600C27753 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DB7544BC572233C2F8FE1574 /* Pods-DeclarativeTVCUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 42K94E5YQD;
-				INFOPLIST_FILE = DeclarativeTVCUITests/Info.plist;
+				INFOPLIST_FILE = ExampleUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1255,108 +810,6 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = DeclarativeTVC;
-			};
-			name = Release;
-		};
-		C3FEAC2F2397ED86009CCA25 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E7CB23F6E5C7E2BF5FE0D85B /* Pods-Framework.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 42K94E5YQD;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Framework/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kocherovets.Framework;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		C3FEAC302397ED86009CCA25 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6FA18EADB8F83738F1D8CEA6 /* Pods-Framework.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 42K94E5YQD;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Framework/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kocherovets.Framework;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		C3FEAC322397ED86009CCA25 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 42K94E5YQD;
-				INFOPLIST_FILE = FrameworkTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kocherovets.FrameworkTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DeclarativeTVC.app/DeclarativeTVC";
-			};
-			name = Debug;
-		};
-		C3FEAC332397ED86009CCA25 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 42K94E5YQD;
-				INFOPLIST_FILE = FrameworkTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kocherovets.FrameworkTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DeclarativeTVC.app/DeclarativeTVC";
 			};
 			name = Release;
 		};
@@ -1372,7 +825,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C38ECCBF236DBC5600C27753 /* Build configuration list for PBXNativeTarget "DeclarativeTVC" */ = {
+		C38ECCBF236DBC5600C27753 /* Build configuration list for PBXNativeTarget "Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C38ECCC0236DBC5600C27753 /* Debug */,
@@ -1381,7 +834,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C38ECCC2236DBC5600C27753 /* Build configuration list for PBXNativeTarget "DeclarativeTVCTests" */ = {
+		C38ECCC2236DBC5600C27753 /* Build configuration list for PBXNativeTarget "ExampleTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C38ECCC3236DBC5600C27753 /* Debug */,
@@ -1390,7 +843,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C38ECCC5236DBC5600C27753 /* Build configuration list for PBXNativeTarget "DeclarativeTVCUITests" */ = {
+		C38ECCC5236DBC5600C27753 /* Build configuration list for PBXNativeTarget "ExampleUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C38ECCC6236DBC5600C27753 /* Debug */,
@@ -1399,25 +852,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C3FEAC2E2397ED86009CCA25 /* Build configuration list for PBXNativeTarget "Framework" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C3FEAC2F2397ED86009CCA25 /* Debug */,
-				C3FEAC302397ED86009CCA25 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C3FEAC312397ED86009CCA25 /* Build configuration list for PBXNativeTarget "FrameworkTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C3FEAC322397ED86009CCA25 /* Debug */,
-				C3FEAC332397ED86009CCA25 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C378D975256EF3DB0073189B /* DeclarativeTVC */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DeclarativeTVC;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C38ECC8D236DBC5300C27753 /* Project object */;
 }

@@ -1,6 +1,0 @@
-framework module Pods_DeclarativeTVC {
-  umbrella header "Pods-DeclarativeTVC-umbrella.h"
-
-  export *
-  module * { export * }
-}
