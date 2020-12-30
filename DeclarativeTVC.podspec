@@ -10,7 +10,7 @@ s.license = { :type => "MIT", :file => "LICENSE" }
 s.homepage = 'https://github.com/kocherovets/DeclarativeTVC'
 s.author = { 'Dmitry Kocherovets' => 'kocherovets@gmail.com' }
 
-s.version = "1.0.22"
+s.version = "1.0.23"
 s.source = { :git => 'https://github.com/kocherovets/DeclarativeTVC.git', :tag => s.version.to_s  }
 s.source_files = "Sources/**/*.{swift}"
 

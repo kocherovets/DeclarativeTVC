@@ -28,7 +28,7 @@ extension Table {
             break
         case .xib:
             if registeredCells.firstIndex(where: { $0 == cellTypeString }) == nil {
-                let nib = UINib.init(nibName: cellTypeString, bundle: nil)
+                let nib = UINib.init(nibName: cellTypeString, bundle: Bundle(for: type(of: vm).cellAnyType))
                 tableView.register(nib, forCellReuseIdentifier: cellTypeString)
                 registeredCells.append(cellTypeString)
             }
@@ -57,7 +57,7 @@ extension Table {
                 break
             case .xib:
                 if registeredCells.firstIndex(where: { $0 == typeString }) == nil {
-                    let nib = UINib.init(nibName: typeString, bundle: nil)
+                    let nib = UINib.init(nibName: typeString, bundle: Bundle(for: type(of: vm).headerAnyType))
                     tableView.register(nib, forCellReuseIdentifier: typeString)
                     registeredCells.append(typeString)
                 }
@@ -90,7 +90,7 @@ extension Table {
                 break
             case .xib:
                 if registeredCells.firstIndex(where: { $0 == typeString }) == nil {
-                    let nib = UINib.init(nibName: typeString, bundle: nil)
+                    let nib = UINib.init(nibName: typeString, bundle: Bundle(for: type(of: vm).footerAnyType))
                     tableView.register(nib, forCellReuseIdentifier: typeString)
                     registeredCells.append(typeString)
                 }

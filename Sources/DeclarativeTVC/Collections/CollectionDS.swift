@@ -79,7 +79,7 @@ open class CollectionDS: NSObject, UICollectionViewDataSource, UICollectionViewD
         case .xib:
             let cellTypeString = String(describing: type(of: vm).cellAnyType)
             if registeredCells.firstIndex(where: { $0 == cellTypeString }) == nil {
-                let nib = UINib.init(nibName: cellTypeString, bundle: nil)
+                let nib = UINib.init(nibName: cellTypeString, bundle: Bundle(for: type(of: vm).cellAnyType))
                 collectionView.register(nib, forCellWithReuseIdentifier: cellTypeString)
                 registeredCells.append(cellTypeString)
             }
