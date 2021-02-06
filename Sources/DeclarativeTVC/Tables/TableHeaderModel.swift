@@ -16,6 +16,8 @@ public protocol TableHeaderAnyModel {
     
     func innerHashValue() -> Int
     
+    func innerContentEquatableValue() -> Int
+
     func cellType() -> CellKind
     
     func register(tableView: UITableView, identifier: String)
@@ -46,6 +48,10 @@ public extension TableHeaderModel {
         return hashValue
     }
     
+    func innerContentEquatableValue() -> Int {
+        return hashValue
+    }
+
     func cellType() -> CellKind {
         switch HeaderType.self {
         case is XibTableViewCell.Type, is XibCollectionViewCell.Type:

@@ -6,33 +6,27 @@
 //  Copyright © 2019 Dmitry Kocherovets. All rights reserved.
 //
 
-import UIKit
 import DifferenceKit
+import UIKit
 
 extension Int: Differentiable {}
 
 open class StoryboardTableViewCell: UITableViewCell {
-    
 }
 
 open class XibTableViewCell: UITableViewCell {
-    
 }
 
 open class CodedTableViewCell: UITableViewCell {
-    
 }
 
 open class StoryboardCollectionViewCell: UICollectionViewCell {
-    
 }
 
 open class XibCollectionViewCell: UICollectionViewCell {
-    
 }
 
 open class CodedCollectionViewCell: UICollectionViewCell {
-    
 }
 
 public enum CellKind {
@@ -41,46 +35,62 @@ public enum CellKind {
     case code
 }
 
+public struct CellDifferentiable: Differentiable {
+    public func isContentEqual(to source: CellDifferentiable) -> Bool {
+        contentEquatable == source.contentEquatable
+    }
+
+    public var differenceIdentifier: DifferenceIdentifier { hash }
+
+    public typealias DifferenceIdentifier = Int
+
+    let hash: Int
+    let contentEquatable: Int
+}
+
 public protocol CellAnyModel {
-    
     static var cellAnyType: UIView.Type { get }
-    
+
     func apply(to cell: UIView)
-    
+
     func innerHashValue() -> Int
 
+    func innerContentEquatableValue() -> Int
+
     func cellType() -> CellKind
-    
+
     func register(tableView: UITableView, identifier: String)
-    
+
     func register(collectionView: UICollectionView, identifier: String)
-    
+
     var height: CGFloat? { get }
 }
 
 public protocol CellModel: CellAnyModel, Hashable, Differentiable {
-    
     associatedtype CellType: UIView
 
     func apply(to cell: CellType)
-    
+
     func cellType() -> CellKind
 }
 
 public extension CellModel {
-    
     static var cellAnyType: UIView.Type {
         return CellType.self
     }
-    
+
     func apply(to cell: UIView) {
-         apply(to: cell as! CellType)
+        apply(to: cell as! CellType)
     }
-    
+
     func innerHashValue() -> Int {
         return hashValue
     }
-    
+
+    func innerContentEquatableValue() -> Int {
+        return hashValue
+    }
+
     func cellType() -> CellKind {
         switch CellType.self {
         case is XibTableViewCell.Type, is XibCollectionViewCell.Type:
@@ -93,14 +103,12 @@ public extension CellModel {
     }
 
     func register(tableView: UITableView, identifier: String) {
-        
         tableView.register(CellType.self, forCellReuseIdentifier: identifier)
     }
 
     func register(collectionView: UICollectionView, identifier: String) {
-        
         collectionView.register(CellType.self, forCellWithReuseIdentifier: identifier)
     }
-    
+
     var height: CGFloat? { nil }
 }

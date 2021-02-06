@@ -20,17 +20,14 @@ public struct CollectionSection {
     }
 }
 
-extension CollectionSection: Differentiable {
-
-    public var differenceIdentifier: String {
-        return "Section \(orderNumber)"
-    }
-
-    public func isContentEqual(to source: CollectionSection) -> Bool {
-        return differenceIdentifier == source.differenceIdentifier
+extension CollectionSection {
+    var cellDifferentiable: CellDifferentiable {
+        let hashValue = orderNumber
+        let contentEquatableValue = orderNumber
+        return CellDifferentiable(hash: hashValue,
+                                  contentEquatable: contentEquatableValue)
     }
 }
-
 public struct CollectionModel: Equatable {
 
     public var sections: [CollectionSection]

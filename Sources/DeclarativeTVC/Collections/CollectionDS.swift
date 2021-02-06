@@ -33,13 +33,19 @@ open class CollectionDS: NSObject, UICollectionViewDataSource, UICollectionViewD
 
         if animated, let model = self.model {
 
-            let source: [ArraySection<String, Int>] = model.sections.map { section in
-                ArraySection(model: section.differenceIdentifier,
-                             elements: section.items.map { $0.innerHashValue() })
+            let source: [ArraySection<CellDifferentiable, CellDifferentiable>] = model.sections.map { section in
+                ArraySection(model: section.cellDifferentiable,
+                             elements: section.items.map {
+                                 CellDifferentiable(hash: $0.innerHashValue(),
+                                                    contentEquatable: $0.innerContentEquatableValue())
+                             })
             }
-            let target: [ArraySection<String, Int>] = newModel.sections.map { section in
-                ArraySection(model: section.differenceIdentifier,
-                             elements: section.items.map { $0.innerHashValue() })
+            let target: [ArraySection<CellDifferentiable, CellDifferentiable>] = newModel.sections.map { section in
+                ArraySection(model: section.cellDifferentiable,
+                             elements: section.items.map {
+                                 CellDifferentiable(hash: $0.innerHashValue(),
+                                                    contentEquatable: $0.innerContentEquatableValue())
+                             })
             }
 
             let changeset = StagedChangeset(

@@ -22,4 +22,8 @@ struct SimpleCellVM: CellModel {
 
         cell.titleLabel.text = titleText
     }
+    
+    func innerContentEquatableValue() -> Int {
+        return UUID().hashValue
+    }
 }
