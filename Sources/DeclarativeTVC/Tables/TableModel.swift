@@ -23,22 +23,6 @@ public struct TableSection {
     }
 }
 
-// extension String: Differentiable { }
-//
-// extension TableSection: Differentiable {
-//
-//    public var differenceIdentifier: String {
-//        if let hash = header?.innerHashValue() {
-//            return String(hash)
-//        }
-//        return "Section \(orderNumber)"
-//    }
-//
-//    public func isContentEqual(to source: TableSection) -> Bool {
-//        return differenceIdentifier == source.differenceIdentifier
-//    }
-// }
-
 extension TableSection {
     var cellDifferentiable: CellDifferentiable {
         var hashValue = orderNumber

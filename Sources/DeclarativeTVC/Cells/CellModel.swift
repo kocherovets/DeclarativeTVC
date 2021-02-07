@@ -33,6 +33,7 @@ public enum CellKind {
     case storyboard
     case xib
     case code
+    case notCell
 }
 
 public struct CellDifferentiable: Differentiable {
@@ -97,8 +98,10 @@ public extension CellModel {
             return .xib
         case is CodedTableViewCell.Type, is CodedCollectionViewCell.Type:
             return .code
-        default:
+        case is UITableViewCell.Type, is StoryboardTableViewCell.Type, is UICollectionViewCell.Type, is StoryboardCollectionViewCell.Type:
             return .storyboard
+        default:
+            return .notCell
         }
     }
 

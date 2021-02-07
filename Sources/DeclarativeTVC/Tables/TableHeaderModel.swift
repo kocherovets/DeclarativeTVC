@@ -58,8 +58,10 @@ public extension TableHeaderModel {
             return .xib
         case is CodedTableViewCell.Type, is CodedCollectionViewCell.Type:
             return .code
-        default:
+        case is UITableViewCell.Type, is UICollectionViewCell.Type, is StoryboardTableViewCell.Type, is StoryboardCollectionViewCell.Type:
             return .storyboard
+        default:
+            return .notCell
         }
     }
     

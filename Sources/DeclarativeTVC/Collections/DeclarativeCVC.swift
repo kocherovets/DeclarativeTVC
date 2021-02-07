@@ -83,6 +83,8 @@ open class DeclarativeCVC: UICollectionViewController {
                 registeredCells.append(cellTypeString)
             }
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellTypeString, for: indexPath)
+        case .notCell:
+            fatalError()
         }
 
         vm.apply(to: cell)
