@@ -11,7 +11,7 @@ import DifferenceKit
 
 open class CollectionDS: NSObject, UICollectionViewDataSource, UICollectionViewDelegate {
 
-    private var model: CollectionModel? = nil
+    public private(set) var model: CollectionModel? = nil
     private var registeredCells = [String]()
 
     private var collectionView: UICollectionView?

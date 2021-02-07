@@ -11,7 +11,7 @@ import DifferenceKit
 
 open class TableDS: NSObject, UITableViewDelegate, UITableViewDataSource, Table {
 
-    var model: TableModel? = nil
+    public private(set) var model: TableModel? = nil
     var registeredCells = [String]()
     var tableView: UITableView!
 

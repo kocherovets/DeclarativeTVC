@@ -10,7 +10,7 @@ import DifferenceKit
 import UIKit
 
 open class DeclarativeTVC: UITableViewController, Table {
-    var model: TableModel?
+    public private(set) var model: TableModel?
     var registeredCells = [String]()
 
     open func set(rows: [CellAnyModel], animations: Animations? = nil, completion: (() -> Void)? = nil) {

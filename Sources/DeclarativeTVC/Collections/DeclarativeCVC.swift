@@ -10,7 +10,7 @@ import DifferenceKit
 import UIKit
 
 open class DeclarativeCVC: UICollectionViewController {
-    private var model: CollectionModel?
+    public private(set) var model: CollectionModel?
     private var registeredCells = [String]()
 
     open func set(items: [CellAnyModel], animated: Bool) {
