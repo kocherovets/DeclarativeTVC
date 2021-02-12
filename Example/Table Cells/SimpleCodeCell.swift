@@ -23,5 +23,5 @@ struct SimpleCodeCellVM: CellModel {
         cell.textLabel?.text = titleText
     }
     
-    var height: CGFloat? { 200 }
+    func height(tableFrame: CGRect) -> CGFloat? { 200 }
 }

@@ -22,7 +22,7 @@ public protocol TableHeaderAnyModel {
     
     func register(tableView: UITableView, identifier: String)
     
-    var height: CGFloat? { get }
+    func height(tableFrame: CGRect) -> CGFloat?
 }
 
 public protocol TableHeaderModel: TableHeaderAnyModel, Hashable {
@@ -70,7 +70,9 @@ public extension TableHeaderModel {
         tableView.register(HeaderType.self, forCellReuseIdentifier: identifier)
     }
     
-    var height: CGFloat? { nil }
+    func height(tableFrame: CGRect) -> CGFloat? {
+        nil
+    }
 }
 
 public struct TitleWithoutViewTableHeaderModel: TableHeaderModel {

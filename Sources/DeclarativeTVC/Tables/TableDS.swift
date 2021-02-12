@@ -108,15 +108,15 @@ open class TableDS: NSObject, UITableViewDelegate, UITableViewDataSource, Table 
     }
 
     open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        heightForCell(at: indexPath)
+        heightForCell(at: indexPath, tableFrame: tableView.frame)
     }
 
     open func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        heightForHeader(inSection: section)
+        heightForHeader(inSection: section, tableFrame: tableView.frame)
     }
 
     open func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        heightForFooter(inSection: section)
+        heightForFooter(inSection: section, tableFrame: tableView.frame)
     }
 
     open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

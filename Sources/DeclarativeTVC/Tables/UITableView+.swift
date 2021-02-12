@@ -123,24 +123,24 @@ extension Table {
         (model?.sections[section].footer as? TitleWithoutViewTableFooterModel)?.title
     }
 
-    func heightForCell(at indexPath: IndexPath) -> CGFloat {
-        if let height = model?.sections[indexPath.section].rows[indexPath.row].height {
+    func heightForCell(at indexPath: IndexPath, tableFrame: CGRect) -> CGFloat {
+        if let height = model?.sections[indexPath.section].rows[indexPath.row].height(tableFrame: tableFrame) {
             return height
         }
         return UITableView.automaticDimension
     }
 
-    func heightForHeader(inSection section: Int) -> CGFloat {
+    func heightForHeader(inSection section: Int, tableFrame: CGRect) -> CGFloat {
         guard let header = model?.sections[section].header else {
             return 0
         }
-        return header.height ?? UITableView.automaticDimension
+        return header.height(tableFrame: tableFrame) ?? UITableView.automaticDimension
     }
 
-    func heightForFooter(inSection section: Int) -> CGFloat {
+    func heightForFooter(inSection section: Int, tableFrame: CGRect) -> CGFloat {
         guard let footer = model?.sections[section].footer else {
             return 0
         }
-        return footer.height ?? UITableView.automaticDimension
+        return footer.height(tableFrame: tableFrame) ?? UITableView.automaticDimension
     }
 }

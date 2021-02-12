@@ -20,7 +20,7 @@ public protocol TableFooterAnyModel {
     
     func register(tableView: UITableView, identifier: String)
     
-    var height: CGFloat? { get }
+    func height(tableFrame: CGRect) -> CGFloat?
 }
 
 public protocol TableFooterModel: TableFooterAnyModel, Hashable {
@@ -62,7 +62,9 @@ public extension TableFooterModel {
         tableView.register(FooterType.self, forCellReuseIdentifier: identifier)
     }
     
-    var height: CGFloat? { nil }
+    func height(tableFrame: CGRect) -> CGFloat? {
+        nil
+    }
 }
 
 public struct TitleWithoutViewTableFooterModel: TableFooterModel {

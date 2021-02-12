@@ -35,6 +35,6 @@ struct FooterViewVM: TableFooterModel {
         footer.titleLabel.text = titleText
     }
     
-    var height: CGFloat? { h }
+    func height(tableFrame: CGRect) -> CGFloat? { h }
 }
 

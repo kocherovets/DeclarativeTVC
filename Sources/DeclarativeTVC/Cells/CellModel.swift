@@ -64,7 +64,7 @@ public protocol CellAnyModel {
 
     func register(collectionView: UICollectionView, identifier: String)
 
-    var height: CGFloat? { get }
+    func height(tableFrame: CGRect) -> CGFloat?
 }
 
 public protocol CellModel: CellAnyModel, Hashable, Differentiable {
@@ -113,5 +113,7 @@ public extension CellModel {
         collectionView.register(CellType.self, forCellWithReuseIdentifier: identifier)
     }
 
-    var height: CGFloat? { nil }
+    func height(tableFrame: CGRect) -> CGFloat? {
+        nil
+    }
 }
