@@ -37,14 +37,14 @@ open class CollectionDS: NSObject, UICollectionViewDataSource, UICollectionViewD
                 ArraySection(model: section.cellDifferentiable,
                              elements: section.items.map {
                                  CellDifferentiable(hash: $0.innerHashValue(),
-                                                    contentEquatable: $0.innerContentEquatableValue())
+                                                    contentEquatable: $0.innerRowAnimationEquatableValue())
                              })
             }
             let target: [ArraySection<CellDifferentiable, CellDifferentiable>] = newModel.sections.map { section in
                 ArraySection(model: section.cellDifferentiable,
                              elements: section.items.map {
                                  CellDifferentiable(hash: $0.innerHashValue(),
-                                                    contentEquatable: $0.innerContentEquatableValue())
+                                                    contentEquatable: $0.innerRowAnimationEquatableValue())
                              })
             }
 

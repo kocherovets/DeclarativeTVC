@@ -56,7 +56,9 @@ public protocol CellAnyModel {
 
     func innerHashValue() -> Int
 
-    func innerContentEquatableValue() -> Int
+    func innerEquatableValue() -> Int
+
+    func innerRowAnimationEquatableValue() -> Int
 
     func cellType() -> CellKind
 
@@ -88,8 +90,12 @@ public extension CellModel {
         return hashValue
     }
 
-    func innerContentEquatableValue() -> Int {
-        return hashValue
+    func innerEquatableValue() -> Int {
+        innerRowAnimationEquatableValue()
+    }
+
+    func innerRowAnimationEquatableValue() -> Int {
+        hashValue
     }
 
     func cellType() -> CellKind {

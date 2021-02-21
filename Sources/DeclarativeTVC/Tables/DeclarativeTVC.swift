@@ -25,14 +25,14 @@ open class DeclarativeTVC: UITableViewController, Table {
                 ArraySection(model: section.cellDifferentiable,
                              elements: section.rows.map {
                                  CellDifferentiable(hash: $0.innerHashValue(),
-                                                    contentEquatable: $0.innerContentEquatableValue())
+                                                    contentEquatable: $0.innerRowAnimationEquatableValue())
                              })
             }
             let target: [ArraySection<CellDifferentiable, CellDifferentiable>] = newModel.sections.map { section in
                 ArraySection(model: section.cellDifferentiable,
                              elements: section.rows.map {
                                  CellDifferentiable(hash: $0.innerHashValue(),
-                                                    contentEquatable: $0.innerContentEquatableValue())
+                                                    contentEquatable: $0.innerRowAnimationEquatableValue())
                              })
             }
 
