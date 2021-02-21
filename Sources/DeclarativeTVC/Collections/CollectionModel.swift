@@ -45,7 +45,7 @@ public struct CollectionModel: Equatable {
             }
 
             for ii in 0 ..< lhs.sections[i].items.count {
-                if lhs.sections[i].items[ii].innerHashValue() != rhs.sections[i].items[ii].innerHashValue() {
+                if lhs.sections[i].items[ii].innerEquatableValue() != rhs.sections[i].items[ii].innerEquatableValue() {
                     return false
                 }
             }

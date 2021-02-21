@@ -53,7 +53,7 @@ public struct TableModel: Equatable {
             }
 
             for ii in 0 ..< lhs.sections[i].rows.count {
-                if lhs.sections[i].rows[ii].innerHashValue() != rhs.sections[i].rows[ii].innerHashValue() {
+                if lhs.sections[i].rows[ii].innerEquatableValue() != rhs.sections[i].rows[ii].innerEquatableValue() {
                     return false
                 }
             }
