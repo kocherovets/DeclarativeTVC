@@ -13,6 +13,7 @@ open class TableDS: NSObject, UITableViewDelegate, UITableViewDataSource, Table 
 
     public private(set) var model: TableModel? = nil
     var registeredCells = [String]()
+    var registeredHeadersAndFooters = [String]()
     var tableView: UITableView!
 
     open func set(tableView: UITableView?,

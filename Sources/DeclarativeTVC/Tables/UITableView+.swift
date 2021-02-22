@@ -11,6 +11,7 @@ import UIKit
 protocol Table: class {
     var model: TableModel? { get }
     var registeredCells: [String] { get set }
+    var registeredHeadersAndFooters: [String] { get set }
     var tableView: UITableView! { get }
 }
 
@@ -34,8 +35,6 @@ extension Table {
                 vm.register(tableView: tableView, identifier: cellTypeString)
                 registeredCells.append(cellTypeString)
             }
-        case .notCell:
-            fatalError()
         }
 
         let cell = tableView.dequeueReusableCell(withIdentifier: cellTypeString, for: indexPath)
@@ -55,24 +54,20 @@ extension Table {
                 vm.apply(to: header)
                 return header.contentView
             case .xib:
-                if registeredCells.firstIndex(where: { $0 == typeString }) == nil {
+                if registeredHeadersAndFooters.firstIndex(where: { $0 == typeString }) == nil {
                     let nib = UINib(nibName: typeString, bundle: Bundle(for: type(of: vm).headerAnyType))
-                    tableView.register(nib, forCellReuseIdentifier: typeString)
-                    registeredCells.append(typeString)
+                    tableView.register(nib, forHeaderFooterViewReuseIdentifier: typeString)
+                    registeredHeadersAndFooters.append(typeString)
                 }
-                let header = tableView.dequeueReusableCell(withIdentifier: typeString)!
+                let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: typeString)!
                 vm.apply(to: header)
-                return header.contentView
+                return header
             case .code:
-                if registeredCells.firstIndex(where: { $0 == typeString }) == nil {
+                if registeredHeadersAndFooters.firstIndex(where: { $0 == typeString }) == nil {
                     vm.register(tableView: tableView, identifier: typeString)
-                    registeredCells.append(typeString)
+                    registeredHeadersAndFooters.append(typeString)
                 }
-                let header = tableView.dequeueReusableCell(withIdentifier: typeString)!
-                vm.apply(to: header)
-                return header.contentView
-            case .notCell:
-                let header = type(of: vm).headerAnyType.init()
+                let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: typeString)!
                 vm.apply(to: header)
                 return header
             }
@@ -96,22 +91,18 @@ extension Table {
             case .xib:
                 if registeredCells.firstIndex(where: { $0 == typeString }) == nil {
                     let nib = UINib(nibName: typeString, bundle: Bundle(for: type(of: vm).footerAnyType))
-                    tableView.register(nib, forCellReuseIdentifier: typeString)
+                    tableView.register(nib, forHeaderFooterViewReuseIdentifier: typeString)
                     registeredCells.append(typeString)
                 }
-                let footer = tableView.dequeueReusableCell(withIdentifier: typeString)!
+                let footer = tableView.dequeueReusableHeaderFooterView(withIdentifier: typeString)!
                 vm.apply(to: footer)
-                return footer.contentView
+                return footer
             case .code:
                 if registeredCells.firstIndex(where: { $0 == typeString }) == nil {
                     vm.register(tableView: tableView, identifier: typeString)
                     registeredCells.append(typeString)
                 }
-                let footer = tableView.dequeueReusableCell(withIdentifier: typeString)!
-                vm.apply(to: footer)
-                return footer.contentView
-            case .notCell:
-                let footer = type(of: vm).footerAnyType.init()
+                let footer = tableView.dequeueReusableHeaderFooterView(withIdentifier: typeString)!
                 vm.apply(to: footer)
                 return footer
             }

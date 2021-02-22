@@ -12,6 +12,7 @@ import UIKit
 open class DeclarativeTVC: UITableViewController, Table {
     public private(set) var model: TableModel?
     var registeredCells = [String]()
+    var registeredHeadersAndFooters = [String]()
 
     open func set(rows: [CellAnyModel], animations: Animations? = nil, completion: (() -> Void)? = nil) {
         set(model: TableModel(rows: rows), animations: animations, completion: completion)

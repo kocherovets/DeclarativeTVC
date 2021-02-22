@@ -48,9 +48,9 @@ public extension TableFooterModel {
 
     func cellType() -> CellKind {
         switch FooterType.self {
-        case is XibTableViewCell.Type, is XibCollectionViewCell.Type:
+        case is XibTableViewHeaderFooterView.Type:
             return .xib
-        case is CodedTableViewCell.Type, is CodedCollectionViewCell.Type:
+        case is CodedTableViewHeaderFooterView.Type:
             return .code
         default:
             return .storyboard
@@ -59,7 +59,7 @@ public extension TableFooterModel {
     
     func register(tableView: UITableView, identifier: String) {
         
-        tableView.register(FooterType.self, forCellReuseIdentifier: identifier)
+        tableView.register(FooterType.self, forHeaderFooterViewReuseIdentifier: identifier)
     }
     
     func height(tableFrame: CGRect) -> CGFloat? {

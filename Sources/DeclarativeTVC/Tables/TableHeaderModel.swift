@@ -8,6 +8,12 @@
 
 import UIKit
 
+open class XibTableViewHeaderFooterView: UITableViewHeaderFooterView {
+}
+
+open class CodedTableViewHeaderFooterView: UITableViewHeaderFooterView {
+}
+
 public protocol TableHeaderAnyModel {
     
     static var headerAnyType: UIView.Type { get }
@@ -16,7 +22,9 @@ public protocol TableHeaderAnyModel {
     
     func innerHashValue() -> Int
     
-    func innerContentEquatableValue() -> Int
+    func innerEquatableValue() -> Int
+
+    func innerRowAnimationEquatableValue() -> Int
 
     func cellType() -> CellKind
     
@@ -48,26 +56,28 @@ public extension TableHeaderModel {
         return hashValue
     }
     
-    func innerContentEquatableValue() -> Int {
-        return hashValue
+    func innerEquatableValue() -> Int {
+        innerRowAnimationEquatableValue()
+    }
+
+    func innerRowAnimationEquatableValue() -> Int {
+        hashValue
     }
 
     func cellType() -> CellKind {
         switch HeaderType.self {
-        case is XibTableViewCell.Type, is XibCollectionViewCell.Type:
+        case is XibTableViewHeaderFooterView.Type:
             return .xib
-        case is CodedTableViewCell.Type, is CodedCollectionViewCell.Type:
+        case is CodedTableViewHeaderFooterView.Type:
             return .code
-        case is UITableViewCell.Type, is UICollectionViewCell.Type, is StoryboardTableViewCell.Type, is StoryboardCollectionViewCell.Type:
-            return .storyboard
         default:
-            return .notCell
+            return .storyboard
         }
     }
     
     func register(tableView: UITableView, identifier: String) {
         
-        tableView.register(HeaderType.self, forCellReuseIdentifier: identifier)
+        tableView.register(HeaderType.self, forHeaderFooterViewReuseIdentifier: identifier)
     }
     
     func height(tableFrame: CGRect) -> CGFloat? {
@@ -81,5 +91,9 @@ public struct TitleWithoutViewTableHeaderModel: TableHeaderModel {
     
     public init(title: String) {
         self.title = title
+    }
+    
+    public func apply(to header: UITableViewHeaderFooterView) {
+        
     }
 }
