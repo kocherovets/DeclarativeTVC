@@ -24,7 +24,7 @@ public protocol TableHeaderAnyModel {
     
     func innerEquatableValue() -> Int
 
-    func innerRowAnimationEquatableValue() -> Int
+    func innerAnimationEquatableValue() -> Int
 
     func cellType() -> CellKind
     
@@ -57,10 +57,10 @@ public extension TableHeaderModel {
     }
     
     func innerEquatableValue() -> Int {
-        innerRowAnimationEquatableValue()
+        innerAnimationEquatableValue()
     }
 
-    func innerRowAnimationEquatableValue() -> Int {
+    func innerAnimationEquatableValue() -> Int {
         hashValue
     }
 

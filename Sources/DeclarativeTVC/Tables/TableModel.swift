@@ -31,7 +31,7 @@ extension TableSection {
             hashValue = hash
             contentEquatableValue = hash
         }
-        if let contentEquatable = header?.innerRowAnimationEquatableValue() {
+        if let contentEquatable = header?.innerAnimationEquatableValue() {
             contentEquatableValue = contentEquatable
         }
         return CellDifferentiable(hash: hashValue,

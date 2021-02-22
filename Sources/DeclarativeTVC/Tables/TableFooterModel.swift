@@ -16,6 +16,10 @@ public protocol TableFooterAnyModel {
 
     func innerHashValue() -> Int
 
+    func innerEquatableValue() -> Int
+
+    func innerAnimationEquatableValue() -> Int
+
     func cellType() -> CellKind
     
     func register(tableView: UITableView, identifier: String)
@@ -44,6 +48,14 @@ public extension TableFooterModel {
 
     func innerHashValue() -> Int {
         return hashValue
+    }
+
+    func innerEquatableValue() -> Int {
+        innerAnimationEquatableValue()
+    }
+
+    func innerAnimationEquatableValue() -> Int {
+        hashValue
     }
 
     func cellType() -> CellKind {

@@ -25,14 +25,14 @@ open class DeclarativeCVC: UICollectionViewController {
                 ArraySection(model: section.cellDifferentiable,
                              elements: section.items.map {
                                  CellDifferentiable(hash: $0.innerHashValue(),
-                                                    contentEquatable: $0.innerRowAnimationEquatableValue())
+                                                    contentEquatable: $0.innerAnimationEquatableValue())
                              })
             }
             let target: [ArraySection<CellDifferentiable, CellDifferentiable>] = newModel.sections.map { section in
                 ArraySection(model: section.cellDifferentiable,
                              elements: section.items.map {
                                  CellDifferentiable(hash: $0.innerHashValue(),
-                                                    contentEquatable: $0.innerRowAnimationEquatableValue())
+                                                    contentEquatable: $0.innerAnimationEquatableValue())
                              })
             }
 
