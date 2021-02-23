@@ -38,6 +38,8 @@ extension Table {
         }
 
         let cell = tableView.dequeueReusableCell(withIdentifier: cellTypeString, for: indexPath)
+        cell.frame = CGRect(origin: cell.frame.origin,
+                            size: CGSize(width: tableView.bounds.width, height: cell.bounds.height))
 
         vm.apply(to: cell)
 
@@ -51,6 +53,8 @@ extension Table {
             switch vm.cellType() {
             case .storyboard:
                 let header = tableView.dequeueReusableCell(withIdentifier: typeString)!
+                header.frame = CGRect(origin: header.frame.origin,
+                                      size: CGSize(width: tableView.bounds.width, height: header.bounds.height))
                 vm.apply(to: header)
                 return header.contentView
             case .xib:
@@ -60,6 +64,8 @@ extension Table {
                     registeredHeadersAndFooters.append(typeString)
                 }
                 let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: typeString)!
+                header.frame = CGRect(origin: header.frame.origin,
+                                      size: CGSize(width: tableView.bounds.width, height: header.bounds.height))
                 vm.apply(to: header)
                 return header
             case .code:
@@ -68,6 +74,8 @@ extension Table {
                     registeredHeadersAndFooters.append(typeString)
                 }
                 let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: typeString)!
+                header.frame = CGRect(origin: header.frame.origin,
+                                      size: CGSize(width: tableView.bounds.width, height: header.bounds.height))
                 vm.apply(to: header)
                 return header
             }
@@ -86,6 +94,8 @@ extension Table {
             switch vm.cellType() {
             case .storyboard:
                 let footer = tableView.dequeueReusableCell(withIdentifier: typeString)!
+                footer.frame = CGRect(origin: footer.frame.origin,
+                                      size: CGSize(width: tableView.bounds.width, height: footer.bounds.height))
                 vm.apply(to: footer)
                 return footer.contentView
             case .xib:
@@ -95,6 +105,8 @@ extension Table {
                     registeredCells.append(typeString)
                 }
                 let footer = tableView.dequeueReusableHeaderFooterView(withIdentifier: typeString)!
+                footer.frame = CGRect(origin: footer.frame.origin,
+                                      size: CGSize(width: tableView.bounds.width, height: footer.bounds.height))
                 vm.apply(to: footer)
                 return footer
             case .code:
@@ -103,6 +115,8 @@ extension Table {
                     registeredCells.append(typeString)
                 }
                 let footer = tableView.dequeueReusableHeaderFooterView(withIdentifier: typeString)!
+                footer.frame = CGRect(origin: footer.frame.origin,
+                                      size: CGSize(width: tableView.bounds.width, height: footer.bounds.height))
                 vm.apply(to: footer)
                 return footer
             }
