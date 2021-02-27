@@ -85,7 +85,7 @@ open class DeclarativeCVC: UICollectionViewController {
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellTypeString, for: indexPath)
         }
 
-        vm.apply(to: cell)
+        vm.apply(to: cell, containerView: collectionView)
 
         return cell
     }

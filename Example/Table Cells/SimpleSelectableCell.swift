@@ -19,7 +19,7 @@ struct SimpleSelectableCellVM: CellModel, SelectableCellModel {
     let titleText: String
     let selectCommand: Command
 
-    func apply(to cell: SimpleSelectableCell) {
+    func apply(to cell: SimpleSelectableCell, containerView: UIScrollView) {
 
         cell.titleLabel.text = titleText
     }

@@ -12,7 +12,7 @@ public protocol TableFooterAnyModel {
 
     static var footerAnyType: UIView.Type { get }
 
-    func apply(to footer: UIView)
+    func apply(to footer: UIView, containerView: UIScrollView)
 
     func innerHashValue() -> Int
 
@@ -24,14 +24,14 @@ public protocol TableFooterAnyModel {
     
     func register(tableView: UITableView, identifier: String)
     
-    func height(tableFrame: CGRect) -> CGFloat?
+    func height(containerView: UIScrollView) -> CGFloat?
 }
 
 public protocol TableFooterModel: TableFooterAnyModel, Hashable {
 
     associatedtype FooterType: UIView
 
-    func apply(to footer: FooterType)
+    func apply(to footer: FooterType, containerView: UIScrollView)
 
     func cellType() -> CellKind
 }
@@ -42,8 +42,8 @@ public extension TableFooterModel {
         return FooterType.self
     }
 
-    func apply(to footer: UIView) {
-        apply(to: footer as! FooterType)
+    func apply(to footer: UIView, containerView: UIScrollView) {
+        apply(to: footer as! FooterType, containerView: containerView)
     }
 
     func innerHashValue() -> Int {
@@ -74,7 +74,7 @@ public extension TableFooterModel {
         tableView.register(FooterType.self, forHeaderFooterViewReuseIdentifier: identifier)
     }
     
-    func height(tableFrame: CGRect) -> CGFloat? {
+    func height(containerView: UIScrollView) -> CGFloat? {
         nil
     }
 }

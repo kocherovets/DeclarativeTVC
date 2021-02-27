@@ -38,10 +38,8 @@ extension Table {
         }
 
         let cell = tableView.dequeueReusableCell(withIdentifier: cellTypeString, for: indexPath)
-        cell.frame = CGRect(origin: cell.frame.origin,
-                            size: CGSize(width: tableView.bounds.width, height: cell.bounds.height))
 
-        vm.apply(to: cell)
+        vm.apply(to: cell, containerView: tableView)
 
         return cell
     }
@@ -55,7 +53,7 @@ extension Table {
                 let header = tableView.dequeueReusableCell(withIdentifier: typeString)!
                 header.frame = CGRect(origin: header.frame.origin,
                                       size: CGSize(width: tableView.bounds.width, height: header.bounds.height))
-                vm.apply(to: header)
+                vm.apply(to: header, containerView: tableView)
                 return header.contentView
             case .xib:
                 if registeredHeadersAndFooters.firstIndex(where: { $0 == typeString }) == nil {
@@ -66,7 +64,7 @@ extension Table {
                 let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: typeString)!
                 header.frame = CGRect(origin: header.frame.origin,
                                       size: CGSize(width: tableView.bounds.width, height: header.bounds.height))
-                vm.apply(to: header)
+                vm.apply(to: header, containerView: tableView)
                 return header
             case .code:
                 if registeredHeadersAndFooters.firstIndex(where: { $0 == typeString }) == nil {
@@ -76,7 +74,7 @@ extension Table {
                 let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: typeString)!
                 header.frame = CGRect(origin: header.frame.origin,
                                       size: CGSize(width: tableView.bounds.width, height: header.bounds.height))
-                vm.apply(to: header)
+                vm.apply(to: header, containerView: tableView)
                 return header
             }
         }
@@ -96,7 +94,7 @@ extension Table {
                 let footer = tableView.dequeueReusableCell(withIdentifier: typeString)!
                 footer.frame = CGRect(origin: footer.frame.origin,
                                       size: CGSize(width: tableView.bounds.width, height: footer.bounds.height))
-                vm.apply(to: footer)
+                vm.apply(to: footer, containerView: tableView)
                 return footer.contentView
             case .xib:
                 if registeredCells.firstIndex(where: { $0 == typeString }) == nil {
@@ -107,7 +105,7 @@ extension Table {
                 let footer = tableView.dequeueReusableHeaderFooterView(withIdentifier: typeString)!
                 footer.frame = CGRect(origin: footer.frame.origin,
                                       size: CGSize(width: tableView.bounds.width, height: footer.bounds.height))
-                vm.apply(to: footer)
+                vm.apply(to: footer, containerView: tableView)
                 return footer
             case .code:
                 if registeredCells.firstIndex(where: { $0 == typeString }) == nil {
@@ -117,7 +115,7 @@ extension Table {
                 let footer = tableView.dequeueReusableHeaderFooterView(withIdentifier: typeString)!
                 footer.frame = CGRect(origin: footer.frame.origin,
                                       size: CGSize(width: tableView.bounds.width, height: footer.bounds.height))
-                vm.apply(to: footer)
+                vm.apply(to: footer, containerView: tableView)
                 return footer
             }
         }
@@ -128,24 +126,24 @@ extension Table {
         (model?.sections[section].footer as? TitleWithoutViewTableFooterModel)?.title
     }
 
-    func heightForCell(at indexPath: IndexPath, tableFrame: CGRect) -> CGFloat {
-        if let height = model?.sections[indexPath.section].rows[indexPath.row].height(tableFrame: tableFrame) {
+    func heightForCell(at indexPath: IndexPath, containerView: UIScrollView) -> CGFloat {
+        if let height = model?.sections[indexPath.section].rows[indexPath.row].height(containerView: containerView) {
             return height
         }
         return UITableView.automaticDimension
     }
 
-    func heightForHeader(inSection section: Int, tableFrame: CGRect) -> CGFloat {
+    func heightForHeader(inSection section: Int, containerView: UIScrollView) -> CGFloat {
         guard let header = model?.sections[section].header else {
             return 0
         }
-        return header.height(tableFrame: tableFrame) ?? UITableView.automaticDimension
+        return header.height(containerView: containerView) ?? UITableView.automaticDimension
     }
 
-    func heightForFooter(inSection section: Int, tableFrame: CGRect) -> CGFloat {
+    func heightForFooter(inSection section: Int, containerView: UIScrollView) -> CGFloat {
         guard let footer = model?.sections[section].footer else {
             return 0
         }
-        return footer.height(tableFrame: tableFrame) ?? UITableView.automaticDimension
+        return footer.height(containerView: containerView) ?? UITableView.automaticDimension
     }
 }

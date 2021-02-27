@@ -17,11 +17,11 @@ struct SimpleCodeCellVM: CellModel {
 
     let titleText: String?
 
-    func apply(to cell: SimpleCodeCell) {
+    func apply(to cell: SimpleCodeCell, containerView: UIScrollView) {
 
         cell.textLabel?.numberOfLines = 0
         cell.textLabel?.text = titleText
     }
     
-    func height(tableFrame: CGRect) -> CGFloat? { 200 }
+    func height(containerView: UIScrollView) -> CGFloat? { 200 }
 }

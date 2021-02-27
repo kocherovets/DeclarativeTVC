@@ -91,15 +91,15 @@ open class DeclarativeTVC: UITableViewController, Table {
     }
 
     override open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        heightForCell(at: indexPath, tableFrame: tableView.frame)
+        heightForCell(at: indexPath, containerView: tableView)
     }
 
     override open func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        heightForHeader(inSection: section, tableFrame: tableView.frame)
+        heightForHeader(inSection: section, containerView: tableView)
     }
 
     override open func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        heightForFooter(inSection: section, tableFrame: tableView.frame)
+        heightForFooter(inSection: section, containerView: tableView)
     }
 
     override open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

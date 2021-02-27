@@ -19,7 +19,7 @@ struct ApplyAnimationsCellVM: CellModel, SelectableCellModel {
     let titleText: String
     let selectCommand: Command
 
-    func apply(to cell: ApplyAnimationsCell) {
+    func apply(to cell: ApplyAnimationsCell, containerView: UIScrollView) {
 
         cell.titleLabel.text = titleText
     }

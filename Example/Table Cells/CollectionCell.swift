@@ -20,7 +20,7 @@ struct CollectionCellVM: CellModel {
     
     private let collectionDS = CollectionDS()
 
-    func apply(to cell: CollectionCell) {
+    func apply(to cell: CollectionCell, containerView: UIScrollView) {
 
         collectionDS.set(collectionView: cell.collectionView, items: items, animated: false)
     }

@@ -18,7 +18,7 @@ struct SimpleCellVM: CellModel {
 
     let titleText: String?
 
-    func apply(to cell: SimpleCell) {
+    func apply(to cell: SimpleCell, containerView: UIScrollView) {
 
         cell.titleLabel.text = titleText
     }

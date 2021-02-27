@@ -31,7 +31,7 @@ struct TextFieldCellVM: CellModel {
     let text: String?
     let placeholder: String?
 
-    func apply(to cell: TextFieldCell) {
+    func apply(to cell: TextFieldCell, containerView: UIScrollView) {
 
         cell.textField.text = text
         cell.textField.placeholder = placeholder

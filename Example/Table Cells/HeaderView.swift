@@ -19,7 +19,7 @@ struct HeaderViewVM: TableHeaderModel {
 
     let titleText: String?
 
-    func apply(to header: HeaderView) {
+    func apply(to header: HeaderView, containerView: UIScrollView) {
         
         header.titleLabel.text = titleText
     }
@@ -30,7 +30,7 @@ struct FooterViewVM: TableFooterModel {
     let titleText: String?
     let h: CGFloat
 
-    func apply(to footer: HeaderView) {
+    func apply(to footer: HeaderView, containerView: UIScrollView) {
         
         footer.titleLabel.text = titleText
     }

@@ -99,7 +99,7 @@ open class CollectionDS: NSObject, UICollectionViewDataSource, UICollectionViewD
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellTypeString, for: indexPath)
         }
 
-        vm.apply(to: cell)
+        vm.apply(to: cell, containerView: collectionView)
 
         return cell
     }

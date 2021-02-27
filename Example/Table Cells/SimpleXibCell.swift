@@ -30,7 +30,7 @@ struct SimpleXibCellVM: CellModel {
 
     let titleText: String?
 
-    func apply(to cell: SimpleXibCell) {
+    func apply(to cell: SimpleXibCell, containerView: UIScrollView) {
 
         cell.titleLabel.text = titleText
     }

@@ -21,7 +21,7 @@ struct AnimationTypeSelectCellVM: CellModel, SelectableCellModel {
     let valueText: String
     let selectCommand: Command
 
-    func apply(to cell: AnimationTypeSelectCell) {
+    func apply(to cell: AnimationTypeSelectCell, containerView: UIScrollView) {
 
         cell.titleLabel.text = titleText
         cell.valueLabel.text = valueText

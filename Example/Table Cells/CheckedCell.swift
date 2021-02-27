@@ -20,7 +20,7 @@ struct CheckedCellVM: CellModel, SelectableCellModel {
     let checked: Bool
     let selectCommand: Command
 
-    func apply(to cell: CheckedCell) {
+    func apply(to cell: CheckedCell, containerView: UIScrollView) {
 
         cell.titleLabel.text = titleText
         cell.accessoryType = checked ? .checkmark : .none

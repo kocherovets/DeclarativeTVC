@@ -18,7 +18,7 @@ public protocol TableHeaderAnyModel {
     
     static var headerAnyType: UIView.Type { get }
     
-    func apply(to header: UIView)
+    func apply(to header: UIView, containerView: UIScrollView)
     
     func innerHashValue() -> Int
     
@@ -30,14 +30,14 @@ public protocol TableHeaderAnyModel {
     
     func register(tableView: UITableView, identifier: String)
     
-    func height(tableFrame: CGRect) -> CGFloat?
+    func height(containerView: UIScrollView) -> CGFloat?
 }
 
 public protocol TableHeaderModel: TableHeaderAnyModel, Hashable {
     
     associatedtype HeaderType: UIView
     
-    func apply(to header: HeaderType)
+    func apply(to header: HeaderType, containerView: UIScrollView)
     
     func cellType() -> CellKind
 }
@@ -48,8 +48,8 @@ public extension TableHeaderModel {
         return HeaderType.self
     }
     
-    func apply(to header: UIView) {
-        apply(to: header as! HeaderType)
+    func apply(to header: UIView, containerView: UIScrollView) {
+        apply(to: header as! HeaderType, containerView: containerView)
     }
     
     func innerHashValue() -> Int {
@@ -80,7 +80,7 @@ public extension TableHeaderModel {
         tableView.register(HeaderType.self, forHeaderFooterViewReuseIdentifier: identifier)
     }
     
-    func height(tableFrame: CGRect) -> CGFloat? {
+    func height(containerView: UIScrollView) -> CGFloat? {
         nil
     }
 }
@@ -93,7 +93,7 @@ public struct TitleWithoutViewTableHeaderModel: TableHeaderModel {
         self.title = title
     }
     
-    public func apply(to header: UITableViewHeaderFooterView) {
+    public func apply(to header: UITableViewHeaderFooterView, containerView: UIScrollView) {
         
     }
 }

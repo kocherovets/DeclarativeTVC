@@ -51,7 +51,7 @@ public struct CellDifferentiable: Differentiable {
 public protocol CellAnyModel {
     static var cellAnyType: UIView.Type { get }
 
-    func apply(to cell: UIView)
+    func apply(to cell: UIView, containerView: UIScrollView)
 
     func innerHashValue() -> Int
 
@@ -65,13 +65,13 @@ public protocol CellAnyModel {
 
     func register(collectionView: UICollectionView, identifier: String)
 
-    func height(tableFrame: CGRect) -> CGFloat?
+    func height(containerView: UIScrollView) -> CGFloat?
 }
 
 public protocol CellModel: CellAnyModel, Hashable, Differentiable {
     associatedtype CellType: UIView
 
-    func apply(to cell: CellType)
+    func apply(to cell: CellType, containerView: UIScrollView)
 
     func cellType() -> CellKind
 }
@@ -81,8 +81,8 @@ public extension CellModel {
         return CellType.self
     }
 
-    func apply(to cell: UIView) {
-        apply(to: cell as! CellType)
+    func apply(to cell: UIView, containerView: UIScrollView) {
+        apply(to: cell as! CellType, containerView: containerView)
     }
 
     func innerHashValue() -> Int {
@@ -116,7 +116,7 @@ public extension CellModel {
         collectionView.register(CellType.self, forCellWithReuseIdentifier: identifier)
     }
 
-    func height(tableFrame: CGRect) -> CGFloat? {
+    func height(containerView: UIScrollView) -> CGFloat? {
         nil
     }
 }
