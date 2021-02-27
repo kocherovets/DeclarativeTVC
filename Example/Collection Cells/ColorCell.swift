@@ -18,7 +18,7 @@ struct ColorCellVM: CellModel {
 
     let color: UIColor?
 
-    func apply(to cell: ColorCell) {
+    func apply(to cell: ColorCell, containerView: UIScrollView) {
 
         cell.coloredV.backgroundColor = color
     }

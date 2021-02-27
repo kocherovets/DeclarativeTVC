@@ -19,7 +19,7 @@ struct ColorSelectableCellVM: CellModel, SelectableCellModel {
     let color: UIColor?
     let selectCommand: Command
 
-    func apply(to cell: ColorSelectableCell) {
+    func apply(to cell: ColorSelectableCell, containerView: UIScrollView) {
 
         cell.coloredV.backgroundColor = color
     }
