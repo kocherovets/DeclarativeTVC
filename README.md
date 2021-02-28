@@ -9,7 +9,7 @@ DeclarativeTVC
 
 Declarative UIKit collections
 
-Документация для [версии 1](https://github.com/kocherovets/DeclarativeTVC/blob/feature/contentEquatable/READMEv1.md)
+Документация для [версии 1](https://github.com/kocherovets/DeclarativeTVC/blob/master/READMEv1.md)
 
 - [Цель проекта](#Цель-проекта)
   * [Пример](#Пример)
