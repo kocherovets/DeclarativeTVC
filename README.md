@@ -144,7 +144,7 @@ struct SimpleCellVM: CellModel {
 
     let titleText: String?
 
-    func apply(to cell: SimpleCell) {
+    func apply(to cell: SimpleCell, containerView: UIScrollView) {
 
         cell.titleLabel.text = titleText
     }
@@ -159,7 +159,7 @@ struct SimpleCellVM: CellModel, SelectableCellModel {
     let titleText: String?
     let selectCommand: Command
 
-    func apply(to cell: SimpleCell) {
+    func apply(to cell: SimpleCell, containerView: UIScrollView) {
 
         cell.titleLabel.text = titleText
     }
@@ -173,7 +173,7 @@ struct SimpleCellVM: CellModel, SelectableCellModel {
     let titleText: String?
     let selectCommand: Command
 
-    func apply(to cell: SimpleCell) {
+    func apply(to cell: SimpleCell, containerView: UIScrollView) {
 
         cell.titleLabel.text = titleText
     }
@@ -196,12 +196,12 @@ struct SimpleCellVM: CellModel, SelectableCellModel {
     let titleText: String?
     let selectCommand: Command
 
-    func apply(to cell: SimpleCell) {
+    func apply(to cell: SimpleCell, containerView: UIScrollView) {
 
         cell.titleLabel.text = titleText
     }
 
-    var height: CGFloat? { 200 }
+    func height(containerView: UIScrollView) -> CGFloat? { 200 }
 
     func hash(into hasher: inout Hasher) {
         hasher.combine(titleText)
@@ -224,7 +224,7 @@ struct HeaderViewVM: TableHeaderModel {
 
     let titleText: String?
 
-    func apply(to header: HeaderView) {
+    func apply(to header: HeaderView, containerView: UIScrollView) {
         
         header.titleLabel.text = titleText
     }
