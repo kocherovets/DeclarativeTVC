@@ -227,6 +227,14 @@ struct SimpleCellVM: CellModel, SelectableCellModel {
 
 Регистрировать классы и xib не нужно, библиотека это сделает за вас. Но нужно соблюдать те же правила, что и при создании ячеек.
 ```swift
+open class XibTableViewHeaderFooterView: UITableViewHeaderFooterView {
+}
+
+open class CodedTableViewHeaderFooterView: UITableViewHeaderFooterView {
+}
+
+...
+
 class HeaderView: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
