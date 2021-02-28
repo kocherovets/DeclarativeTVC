@@ -178,9 +178,10 @@ struct SimpleCellVM: CellModel, SelectableCellModel {
         cell.titleLabel.text = titleText
     }
 
-    var height: CGFloat? { 200 }
+    func height(containerView: UIScrollView) -> CGFloat? { 200 }
 }
 ```
+containerView здесь - это tableView для этой ячейки
 ### Требования к полям вьюмодели
 Для расчета анимаций обновления таблицы библиотека должна различать ячейки между собой. Для этого протокол CellModel удовлетворяет протоколу Hashable. И все поля во вьюмодели должны также удовлетворять этому протоколу. Простые типы удовлетворяют ему автоматически. Экземпляры Command различаются по своему id. По умолчаниию id пустой и все команды равны друг другу.
 ```swift
