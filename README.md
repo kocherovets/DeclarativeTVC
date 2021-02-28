@@ -224,17 +224,16 @@ struct SimpleCellVM: CellModel, SelectableCellModel {
 `innerEquatableValue` - не используется в этой библиотеке, но используется в других библиотеках, написанных на основе этой. Смысл сравнения - выяснить после применения этой функции ко всем моделям таблицы, нужно ли вообще обновлять таблицу или можно пропустить этот шаг. По умолчанию возвращает `innerAnimationEquatableValue()`.
 ## Секции
 Заголовки и подвалы реализованы аналогично ячейкам. В случая сторибордов они строятся они на базе UITableViewCell, а не UIView. В случае ксибов и реализации в коде они наследуются от UITableViewHeaderFooterView. В случае сторибордов заголовком будет contentView ячейки, поэтому если регистрировать экшены на ячейку, то они работать не будут.
-
-Регистрировать классы и xib не нужно, библиотека это сделает за вас. Но нужно соблюдать те же правила, что и при создании ячеек.
 ```swift
 open class XibTableViewHeaderFooterView: UITableViewHeaderFooterView {
 }
 
 open class CodedTableViewHeaderFooterView: UITableViewHeaderFooterView {
 }
+```
 
-...
-
+Регистрировать классы и xib не нужно, библиотека это сделает за вас. Но нужно соблюдать те же правила, что и при создании ячеек.
+```swift
 class HeaderView: UITableViewCell {
 
     @IBOutlet weak var titleLabel: UILabel!
