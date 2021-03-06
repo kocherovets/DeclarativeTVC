@@ -19,7 +19,7 @@ extension Table {
     func cell(for indexPath: IndexPath) -> UITableViewCell {
         guard let vm = model?.sections[indexPath.section].rows[indexPath.row] else { return UITableViewCell() }
 
-        let cellTypeString = String(describing: type(of: vm).cellAnyType)
+        let cellTypeString = vm.reuseIdentifier ?? String(describing: type(of: vm).cellAnyType)
 
         switch vm.cellType() {
         case .storyboard:
@@ -46,7 +46,7 @@ extension Table {
 
     func header(for section: Int) -> UIView? {
         if let vm = model?.sections[section].header, !(vm is TitleWithoutViewTableHeaderModel) {
-            let typeString = String(describing: type(of: vm).headerAnyType)
+            let typeString = vm.reuseIdentifier ?? String(describing: type(of: vm).headerAnyType)
 
             switch vm.cellType() {
             case .storyboard:
@@ -81,7 +81,7 @@ extension Table {
 
     func footer(for section: Int) -> UIView? {
         if let vm = model?.sections[section].footer, !(vm is TitleWithoutViewTableFooterModel) {
-            let typeString = String(describing: type(of: vm).footerAnyType)
+            let typeString = vm.reuseIdentifier ?? String(describing: type(of: vm).footerAnyType)
 
             switch vm.cellType() {
             case .storyboard:

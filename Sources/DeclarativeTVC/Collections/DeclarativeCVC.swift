@@ -69,7 +69,7 @@ open class DeclarativeCVC: UICollectionViewController {
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: type(of: vm).cellAnyType),
                                                       for: indexPath)
         case .xib:
-            let cellTypeString = String(describing: type(of: vm).cellAnyType)
+            let cellTypeString = vm.reuseIdentifier ?? String(describing: type(of: vm).cellAnyType)
             if registeredCells.firstIndex(where: { $0 == cellTypeString }) == nil {
                 let nib = UINib(nibName: cellTypeString, bundle: Bundle(for: type(of: vm).cellAnyType))
                 collectionView.register(nib, forCellWithReuseIdentifier: cellTypeString)
@@ -77,7 +77,7 @@ open class DeclarativeCVC: UICollectionViewController {
             }
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellTypeString, for: indexPath)
         case .code:
-            let cellTypeString = String(describing: type(of: vm).cellAnyType)
+            let cellTypeString = vm.reuseIdentifier ?? String(describing: type(of: vm).cellAnyType)
             if registeredCells.firstIndex(where: { $0 == cellTypeString }) == nil {
                 vm.register(collectionView: collectionView, identifier: cellTypeString)
                 registeredCells.append(cellTypeString)

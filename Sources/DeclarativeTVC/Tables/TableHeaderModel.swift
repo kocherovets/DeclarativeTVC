@@ -31,6 +31,8 @@ public protocol TableHeaderAnyModel {
     func register(tableView: UITableView, identifier: String)
     
     func height(containerView: UIScrollView) -> CGFloat?
+
+    var reuseIdentifier: String? { get }
 }
 
 public protocol TableHeaderModel: TableHeaderAnyModel, Hashable {
@@ -83,6 +85,8 @@ public extension TableHeaderModel {
     func height(containerView: UIScrollView) -> CGFloat? {
         nil
     }
+    
+    var reuseIdentifier: String? { nil }
 }
 
 public struct TitleWithoutViewTableHeaderModel: TableHeaderModel {

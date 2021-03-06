@@ -25,6 +25,8 @@ public protocol TableFooterAnyModel {
     func register(tableView: UITableView, identifier: String)
     
     func height(containerView: UIScrollView) -> CGFloat?
+
+    var reuseIdentifier: String? { get }
 }
 
 public protocol TableFooterModel: TableFooterAnyModel, Hashable {
@@ -77,6 +79,8 @@ public extension TableFooterModel {
     func height(containerView: UIScrollView) -> CGFloat? {
         nil
     }
+    
+    var reuseIdentifier: String? { nil }
 }
 
 public struct TitleWithoutViewTableFooterModel: TableFooterModel {
