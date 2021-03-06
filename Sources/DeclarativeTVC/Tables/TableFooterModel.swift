@@ -27,6 +27,8 @@ public protocol TableFooterAnyModel {
     func height(containerView: UIScrollView) -> CGFloat?
 
     var reuseIdentifier: String? { get }
+    
+    var bundle: Bundle? { get }
 }
 
 public protocol TableFooterModel: TableFooterAnyModel, Hashable {
@@ -81,6 +83,8 @@ public extension TableFooterModel {
     }
     
     var reuseIdentifier: String? { nil }
+    
+    var bundle: Bundle? { nil }
 }
 
 public struct TitleWithoutViewTableFooterModel: TableFooterModel {

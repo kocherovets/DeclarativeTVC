@@ -68,6 +68,8 @@ public protocol CellAnyModel {
     func height(containerView: UIScrollView) -> CGFloat?
     
     var reuseIdentifier: String? { get }
+
+    var bundle: Bundle? { get }
 }
 
 public protocol CellModel: CellAnyModel, Hashable, Differentiable {
@@ -123,4 +125,6 @@ public extension CellModel {
     }
     
     var reuseIdentifier: String? { nil }
+    
+    var bundle: Bundle? { nil }
 }

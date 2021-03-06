@@ -26,7 +26,7 @@ extension Table {
             break
         case .xib:
             if registeredCells.firstIndex(where: { $0 == cellTypeString }) == nil {
-                let nib = UINib(nibName: cellTypeString, bundle: Bundle(for: type(of: vm).cellAnyType))
+                let nib = UINib(nibName: cellTypeString, bundle: vm.bundle ?? Bundle(for: type(of: vm).cellAnyType))
                 tableView.register(nib, forCellReuseIdentifier: cellTypeString)
                 registeredCells.append(cellTypeString)
             }
@@ -55,7 +55,7 @@ extension Table {
                 return header.contentView
             case .xib:
                 if registeredHeadersAndFooters.firstIndex(where: { $0 == typeString }) == nil {
-                    let nib = UINib(nibName: typeString, bundle: Bundle(for: type(of: vm).headerAnyType))
+                    let nib = UINib(nibName: typeString, bundle: vm.bundle ?? Bundle(for: type(of: vm).headerAnyType))
                     tableView.register(nib, forHeaderFooterViewReuseIdentifier: typeString)
                     registeredHeadersAndFooters.append(typeString)
                 }
@@ -90,7 +90,7 @@ extension Table {
                 return footer.contentView
             case .xib:
                 if registeredCells.firstIndex(where: { $0 == typeString }) == nil {
-                    let nib = UINib(nibName: typeString, bundle: Bundle(for: type(of: vm).footerAnyType))
+                    let nib = UINib(nibName: typeString, bundle: vm.bundle ?? Bundle(for: type(of: vm).footerAnyType))
                     tableView.register(nib, forHeaderFooterViewReuseIdentifier: typeString)
                     registeredCells.append(typeString)
                 }

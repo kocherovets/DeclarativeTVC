@@ -33,6 +33,8 @@ public protocol TableHeaderAnyModel {
     func height(containerView: UIScrollView) -> CGFloat?
 
     var reuseIdentifier: String? { get }
+    
+    var bundle: Bundle? { get }
 }
 
 public protocol TableHeaderModel: TableHeaderAnyModel, Hashable {
@@ -87,6 +89,8 @@ public extension TableHeaderModel {
     }
     
     var reuseIdentifier: String? { nil }
+    
+    var bundle: Bundle? { nil }
 }
 
 public struct TitleWithoutViewTableHeaderModel: TableHeaderModel {
