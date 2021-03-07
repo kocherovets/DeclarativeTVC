@@ -15,7 +15,7 @@ public struct CollectionSection {
 
     fileprivate var orderNumber: Int = 0
     
-    init(items: [CellAnyModel]) {
+    public init(items: [CellAnyModel]) {
         self.items = items
     }
 }
