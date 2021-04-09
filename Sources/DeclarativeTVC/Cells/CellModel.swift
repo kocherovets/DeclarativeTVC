@@ -59,7 +59,9 @@ public protocol CellAnyModel {
 
     func innerAnimationEquatableValue() -> Int
 
-    func cellType() -> CellKind
+    func cellKind() -> CellKind
+
+    func cellType() -> UIView.Type
 
     func register(tableView: UITableView, identifier: String)
 
@@ -77,7 +79,9 @@ public protocol CellModel: CellAnyModel, Hashable, Differentiable {
 
     func apply(to cell: CellType, containerView: UIScrollView)
 
-    func cellType() -> CellKind
+    func cellKind() -> CellKind
+
+    func cellType() -> UIView.Type
 }
 
 public extension CellModel {
@@ -101,7 +105,7 @@ public extension CellModel {
         hashValue
     }
 
-    func cellType() -> CellKind {
+    func cellKind() -> CellKind {
         switch CellType.self {
         case is XibTableViewCell.Type, is XibCollectionViewCell.Type:
             return .xib
@@ -110,6 +114,10 @@ public extension CellModel {
         default:
             return .storyboard
         }
+    }
+
+    func cellType() -> UIView.Type {
+        CellType.self
     }
 
     func register(tableView: UITableView, identifier: String) {

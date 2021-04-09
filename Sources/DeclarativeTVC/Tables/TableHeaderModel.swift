@@ -26,7 +26,7 @@ public protocol TableHeaderAnyModel {
 
     func innerAnimationEquatableValue() -> Int
 
-    func cellType() -> CellKind
+    func cellKind() -> CellKind
     
     func register(tableView: UITableView, identifier: String)
     
@@ -43,7 +43,7 @@ public protocol TableHeaderModel: TableHeaderAnyModel, Hashable {
     
     func apply(to header: HeaderType, containerView: UIScrollView)
     
-    func cellType() -> CellKind
+    func cellKind() -> CellKind
 }
 
 public extension TableHeaderModel {
@@ -68,7 +68,7 @@ public extension TableHeaderModel {
         hashValue
     }
 
-    func cellType() -> CellKind {
+    func cellKind() -> CellKind {
         switch HeaderType.self {
         case is XibTableViewHeaderFooterView.Type:
             return .xib

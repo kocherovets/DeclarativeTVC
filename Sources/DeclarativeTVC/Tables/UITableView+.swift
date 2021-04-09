@@ -21,7 +21,7 @@ extension Table {
 
         let cellTypeString = vm.reuseIdentifier ?? String(describing: type(of: vm).cellAnyType)
 
-        switch vm.cellType() {
+        switch vm.cellKind() {
         case .storyboard:
             break
         case .xib:
@@ -48,7 +48,7 @@ extension Table {
         if let vm = model?.sections[section].header, !(vm is TitleWithoutViewTableHeaderModel) {
             let typeString = vm.reuseIdentifier ?? String(describing: type(of: vm).headerAnyType)
 
-            switch vm.cellType() {
+            switch vm.cellKind() {
             case .storyboard:
                 let header = tableView.dequeueReusableCell(withIdentifier: typeString)!
                 vm.apply(to: header, containerView: tableView)
@@ -83,7 +83,7 @@ extension Table {
         if let vm = model?.sections[section].footer, !(vm is TitleWithoutViewTableFooterModel) {
             let typeString = vm.reuseIdentifier ?? String(describing: type(of: vm).footerAnyType)
 
-            switch vm.cellType() {
+            switch vm.cellKind() {
             case .storyboard:
                 let footer = tableView.dequeueReusableCell(withIdentifier: typeString)!
                 vm.apply(to: footer, containerView: tableView)

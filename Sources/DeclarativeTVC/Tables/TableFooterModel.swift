@@ -20,7 +20,7 @@ public protocol TableFooterAnyModel {
 
     func innerAnimationEquatableValue() -> Int
 
-    func cellType() -> CellKind
+    func cellKind() -> CellKind
     
     func register(tableView: UITableView, identifier: String)
     
@@ -37,7 +37,7 @@ public protocol TableFooterModel: TableFooterAnyModel, Hashable {
 
     func apply(to footer: FooterType, containerView: UIScrollView)
 
-    func cellType() -> CellKind
+    func cellKind() -> CellKind
 }
 
 public extension TableFooterModel {
@@ -62,7 +62,7 @@ public extension TableFooterModel {
         hashValue
     }
 
-    func cellType() -> CellKind {
+    func cellKind() -> CellKind {
         switch FooterType.self {
         case is XibTableViewHeaderFooterView.Type:
             return .xib

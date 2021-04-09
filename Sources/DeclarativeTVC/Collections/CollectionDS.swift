@@ -78,7 +78,7 @@ open class CollectionDS: NSObject, UICollectionViewDataSource, UICollectionViewD
         guard let vm = model?.sections[indexPath.section].items[indexPath.row] else { return UICollectionViewCell() }
 
         let cell: UICollectionViewCell
-        switch vm.cellType() {
+        switch vm.cellKind() {
         case .storyboard:
             cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: type(of: vm).cellAnyType),
                                                       for: indexPath)
