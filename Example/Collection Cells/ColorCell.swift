@@ -6,20 +6,21 @@
 //  Copyright © 2019 Dmitry Kocherovets. All rights reserved.
 //
 
-import UIKit
 import DeclarativeTVC
+import UIKit
 
 class ColorCell: UICollectionViewCell {
-
-    @IBOutlet weak var coloredV: UIView!
+    @IBOutlet var coloredV: UIView!
 }
 
-struct ColorCellVM: CellModel {
-
+struct ColorCellVM: CollectionCellModel {
     let color: UIColor?
 
     func apply(to cell: ColorCell, containerView: UIScrollView) {
-
         cell.coloredV.backgroundColor = color
+    }
+
+    func size(containerView: UIScrollView) -> CGSize? {
+        CGSize(width: 50, height: 50)
     }
 }

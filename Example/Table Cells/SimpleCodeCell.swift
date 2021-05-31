@@ -14,7 +14,6 @@ class SimpleCodeCell: CodedTableViewCell {
 }
 
 struct SimpleCodeCellVM: CellModel {
-
     let titleText: String?
 
     func apply(to cell: SimpleCodeCell, containerView: UIScrollView) {

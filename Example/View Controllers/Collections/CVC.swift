@@ -12,7 +12,7 @@ import DeclarativeTVC
 class CVC: DeclarativeCVC {
     
     enum Data {
-        case items([CellAnyModel])
+        case items([CollectionCellAnyModel])
         case sections([CollectionSection])
     }
 

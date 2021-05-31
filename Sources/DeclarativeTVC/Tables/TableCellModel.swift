@@ -20,15 +20,6 @@ open class XibTableViewCell: UITableViewCell {
 open class CodedTableViewCell: UITableViewCell {
 }
 
-open class StoryboardCollectionViewCell: UICollectionViewCell {
-}
-
-open class XibCollectionViewCell: UICollectionViewCell {
-}
-
-open class CodedCollectionViewCell: UICollectionViewCell {
-}
-
 public enum CellKind {
     case storyboard
     case xib
@@ -64,8 +55,6 @@ public protocol CellAnyModel {
     func cellType() -> UIView.Type
 
     func register(tableView: UITableView, identifier: String)
-
-    func register(collectionView: UICollectionView, identifier: String)
 
     func height(containerView: UIScrollView) -> CGFloat?
     
@@ -122,10 +111,6 @@ public extension CellModel {
 
     func register(tableView: UITableView, identifier: String) {
         tableView.register(CellType.self, forCellReuseIdentifier: identifier)
-    }
-
-    func register(collectionView: UICollectionView, identifier: String) {
-        collectionView.register(CellType.self, forCellWithReuseIdentifier: identifier)
     }
 
     func height(containerView: UIScrollView) -> CGFloat? {

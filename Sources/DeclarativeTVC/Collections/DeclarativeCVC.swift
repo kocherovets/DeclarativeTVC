@@ -9,11 +9,12 @@
 import DifferenceKit
 import UIKit
 
-open class DeclarativeCVC: UICollectionViewController {
+open class DeclarativeCVC: UICollectionViewController, Collection {
     public private(set) var model: CollectionModel?
-    private var registeredCells = [String]()
+    var registeredCells = [String]()
+    var registeredHeadersAndFooters: [String] = []
 
-    open func set(items: [CellAnyModel], animated: Bool) {
+    open func set(items: [CollectionCellAnyModel], animated: Bool) {
         set(model: CollectionModel(items: items), animated: animated)
     }
 
@@ -60,39 +61,34 @@ open class DeclarativeCVC: UICollectionViewController {
         return model?.sections[section].items.count ?? 0
     }
 
-    override open func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let vm = model?.sections[indexPath.section].items[indexPath.row] else { return UICollectionViewCell() }
+    override open func collectionView(_ collectionView: UICollectionView,
+                                      cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        cell(for: indexPath)
+    }
 
-        let cell: UICollectionViewCell
-        switch vm.cellKind() {
-        case .storyboard:
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: type(of: vm).cellAnyType),
-                                                      for: indexPath)
-        case .xib:
-            let cellTypeString = vm.reuseIdentifier ?? String(describing: type(of: vm).cellAnyType)
-            if registeredCells.firstIndex(where: { $0 == cellTypeString }) == nil {
-                let nib = UINib(nibName: cellTypeString, bundle: Bundle(for: type(of: vm).cellAnyType))
-                collectionView.register(nib, forCellWithReuseIdentifier: cellTypeString)
-                registeredCells.append(cellTypeString)
-            }
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellTypeString, for: indexPath)
-        case .code:
-            let cellTypeString = vm.reuseIdentifier ?? String(describing: type(of: vm).cellAnyType)
-            if registeredCells.firstIndex(where: { $0 == cellTypeString }) == nil {
-                vm.register(collectionView: collectionView, identifier: cellTypeString)
-                registeredCells.append(cellTypeString)
-            }
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellTypeString, for: indexPath)
-        }
-
-        vm.apply(to: cell, containerView: collectionView)
-
-        return cell
+    override open func collectionView(_ collectionView: UICollectionView,
+                                      viewForSupplementaryElementOfKind kind: String,
+                                      at indexPath: IndexPath) -> UICollectionReusableView {
+        supplementaryElement(for: indexPath, ofKind: kind)
     }
 
     override open func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let vm = model?.sections[indexPath.section].items[indexPath.row] as? SelectableCellModel else { return }
 
         vm.selectCommand.perform()
+    }
+}
+
+extension DeclarativeCVC: UICollectionViewDelegateFlowLayout {
+    open func collectionView(_ collectionView: UICollectionView,
+                             layout collectionViewLayout: UICollectionViewLayout,
+                             sizeForItemAt indexPath: IndexPath) -> CGSize {
+        sizeForCell(at: indexPath, containerView: collectionView)
+    }
+
+    open func collectionView(_ collectionView: UICollectionView,
+                             layout collectionViewLayout: UICollectionViewLayout,
+                             referenceSizeForHeaderInSection section: Int) -> CGSize {
+        sizeHeaderView(inSection: section, containerView: collectionView)
     }
 }

@@ -1,20 +1,19 @@
 //
-//  TableHeaderModel.swift
+//  CollectionHeaderAnyModel.swift
 //  DeclarativeTVC
 //
-//  Created by Dmitry Kocherovets on 02.11.2019.
-//  Copyright © 2019 Dmitry Kocherovets. All rights reserved.
+//  Created by Dmitry Kocherovets on 31.05.2021.
 //
 
 import UIKit
 
-open class XibTableViewHeaderFooterView: UITableViewHeaderFooterView {
+open class XibCollectionHeaderFooterView: UICollectionReusableView {
 }
 
-open class CodedTableViewHeaderFooterView: UITableViewHeaderFooterView {
+open class CodedCollectionHeaderFooterView: UICollectionReusableView {
 }
 
-public protocol TableHeaderAnyModel {
+public protocol CollectionHeaderAnyModel {
     
     static var headerAnyType: UIView.Type { get }
     
@@ -28,18 +27,16 @@ public protocol TableHeaderAnyModel {
 
     func cellKind() -> CellKind
     
-    func register(tableView: UITableView, identifier: String)
-
     func register(collectionView: UICollectionView, kind: String, identifier: String)
 
-    func height(containerView: UIScrollView) -> CGFloat?
+    func size(containerView: UIScrollView) -> CGSize?
 
     var reuseIdentifier: String? { get }
     
     var bundle: Bundle? { get }
 }
 
-public protocol TableHeaderModel: TableHeaderAnyModel, Hashable {
+public protocol CollectionHeaderModel: CollectionHeaderAnyModel, Hashable {
     
     associatedtype HeaderType: UIView
     
@@ -48,7 +45,7 @@ public protocol TableHeaderModel: TableHeaderAnyModel, Hashable {
     func cellKind() -> CellKind
 }
 
-public extension TableHeaderModel {
+public extension CollectionHeaderModel {
     
     static var headerAnyType: UIView.Type {
         return HeaderType.self
@@ -72,41 +69,24 @@ public extension TableHeaderModel {
 
     func cellKind() -> CellKind {
         switch HeaderType.self {
-        case is XibTableViewHeaderFooterView.Type:
+        case is XibCollectionHeaderFooterView.Type:
             return .xib
-        case is CodedTableViewHeaderFooterView.Type:
+        case is CodedCollectionHeaderFooterView.Type:
             return .code
         default:
             return .storyboard
         }
     }
-    
-    func register(tableView: UITableView, identifier: String) {
         
-        tableView.register(HeaderType.self, forHeaderFooterViewReuseIdentifier: identifier)
-    }
-    
     func register(collectionView: UICollectionView, kind: String, identifier: String) {
         collectionView.register(HeaderType.self, forSupplementaryViewOfKind: kind, withReuseIdentifier: identifier)
     }
 
-    func height(containerView: UIScrollView) -> CGFloat? {
+    func size(containerView: UIScrollView) -> CGSize? {
         nil
     }
     
     var reuseIdentifier: String? { nil }
     
     var bundle: Bundle? { nil }
-}
-
-public struct TitleWithoutViewTableHeaderModel: TableHeaderModel {
-    public let title: String
-    
-    public init(title: String) {
-        self.title = title
-    }
-    
-    public func apply(to header: UITableViewHeaderFooterView, containerView: UIScrollView) {
-        
-    }
 }

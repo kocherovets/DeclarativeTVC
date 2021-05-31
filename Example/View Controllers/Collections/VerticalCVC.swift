@@ -26,7 +26,7 @@ class VerticalCVC: CVC {
 
 extension VerticalCVC {
 
-    private func coloredItems() -> [CellAnyModel] {
+    private func coloredItems() -> [CollectionCellAnyModel] {
         [
             ColorSelectableCellVM(color: UIColor.systemRed,
                                   selectCommand: Command {[weak self] in
@@ -44,7 +44,7 @@ extension VerticalCVC {
         ]
     }
 
-    private func coloredItems2() -> [CellAnyModel] {
+    private func coloredItems2() -> [CollectionCellAnyModel] {
         [
             ColorSelectableCellVM(color: UIColor.systemRed,
                                   selectCommand: Command {[weak self] in

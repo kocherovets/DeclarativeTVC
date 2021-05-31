@@ -11,23 +11,35 @@ import DifferenceKit
 
 public struct CollectionSection {
 
-    public var items: [CellAnyModel]
+    public let header: CollectionHeaderAnyModel?
+    public let footer: CollectionFooterAnyModel?
+    public var items: [CollectionCellAnyModel]
 
     fileprivate var orderNumber: Int = 0
     
-    public init(items: [CellAnyModel]) {
+    public init(header: CollectionHeaderAnyModel?, items: [CollectionCellAnyModel], footer: CollectionFooterAnyModel?) {
+        self.header = header
         self.items = items
+        self.footer = footer
     }
 }
 
 extension CollectionSection {
     var cellDifferentiable: CellDifferentiable {
-        let hashValue = orderNumber
-        let contentEquatableValue = orderNumber
+        var hashValue = orderNumber
+        var contentEquatableValue = orderNumber
+        if let hash = header?.innerHashValue() {
+            hashValue = hash
+            contentEquatableValue = hash
+        }
+        if let contentEquatable = header?.innerAnimationEquatableValue() {
+            contentEquatableValue = contentEquatable
+        }
         return CellDifferentiable(hash: hashValue,
                                   contentEquatable: contentEquatableValue)
     }
 }
+
 public struct CollectionModel: Equatable {
 
     public var sections: [CollectionSection]
@@ -63,8 +75,8 @@ public struct CollectionModel: Equatable {
         }
     }
 
-    public init(items: [CellAnyModel]) {
+    public init(items: [CollectionCellAnyModel]) {
 
-        self.sections = [CollectionSection(items: items)]
+        self.sections = [CollectionSection(header: nil, items: items, footer: nil)]
     }
 }
