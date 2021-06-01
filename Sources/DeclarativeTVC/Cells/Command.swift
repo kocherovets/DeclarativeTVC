@@ -13,7 +13,7 @@ public class CommandLogger {
     public static var logger: ((String) -> ())?
 }
 
-open class Command: Codable {
+open class Command {
 
     public init(id: String = "",
          file: StaticString = #file,
@@ -54,12 +54,6 @@ open class Command: Codable {
             .
             """ as NSString
     }
-
-    public required convenience init(from decoder: Decoder) throws {
-        self.init { }
-    }
-
-    open func encode(to encoder: Encoder) throws { }
 }
 
 extension Command: Equatable {
@@ -153,15 +147,6 @@ extension CommandWith: Equatable {
     public static func == (lhs: CommandWith, rhs: CommandWith) -> Bool {
         return lhs.id == rhs.id
     }
-}
-
-
-extension CommandWith: Codable {
-    convenience public init(from decoder: Decoder) throws {
-        self.init { _ in }
-    }
-
-    public func encode(to encoder: Encoder) throws { }
 }
 
 extension CommandWith {
