@@ -18,7 +18,7 @@ open class DeclarativeCVC: UICollectionViewController, Collection {
         set(model: CollectionModel(items: items), animated: animated)
     }
 
-    open func set(model: CollectionModel, animated: Bool) {
+    open func set(model: CollectionModel, animated: Bool, completion: (() -> Void)? = nil) {
         let newModel = model
 
         if animated, let model = self.model {
@@ -44,9 +44,14 @@ open class DeclarativeCVC: UICollectionViewController, Collection {
 
             self.model = newModel
 
-            collectionView.reload(using: changeset, interrupt: { $0.changeCount > 100 }) { [weak self] _ in
-                self?.model = newModel
-            }
+            collectionView.customReload(using: changeset,
+                                        interrupt: { $0.changeCount > 100 },
+                                        setData: { [weak self] in
+                                            self?.model = newModel
+                                        },
+                                        completion: {
+                                            completion?()
+                                        })
         } else {
             self.model = newModel
             collectionView.reloadData()
