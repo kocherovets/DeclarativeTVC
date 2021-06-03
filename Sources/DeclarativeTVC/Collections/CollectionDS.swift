@@ -51,9 +51,14 @@ open class CollectionDS: NSObject, UICollectionViewDataSource, UICollectionViewD
 
             self.model = newModel
 
-            collectionView?.reload(using: changeset, interrupt: { $0.changeCount > 100 }) { [weak self] _ in
-                self?.model = newModel
-            }
+            collectionView?.customReload(using: changeset,
+                                         interrupt: { $0.changeCount > 100 },
+                                         setData: { [weak self] in
+                                             self?.model = newModel
+                                         },
+                                         completion: {
+                                         })
+
         } else {
             self.model = newModel
             self.collectionView?.reloadData()
@@ -85,7 +90,6 @@ open class CollectionDS: NSObject, UICollectionViewDataSource, UICollectionViewD
         vm.selectCommand.perform()
     }
 }
-
 
 extension CollectionDS: UICollectionViewDelegateFlowLayout {
     open func collectionView(_ collectionView: UICollectionView,

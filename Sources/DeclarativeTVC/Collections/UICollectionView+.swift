@@ -80,14 +80,21 @@ extension Collection {
     }
 
     func sizeForCell(at indexPath: IndexPath, containerView: UIScrollView) -> CGSize {
-        if let size = model?.sections[indexPath.section].items[indexPath.item].size(containerView: collectionView) {
+        guard let model = model,
+              model.sections.count > indexPath.section,
+              model.sections[indexPath.section].items.count > indexPath.item
+        else {
+            return .zero
+        }
+        if let size = model.sections[indexPath.section].items[indexPath.item].size(containerView: collectionView) {
             return size
         }
         return UICollectionViewFlowLayout.automaticSize
     }
 
     func sizeHeaderView(inSection section: Int, containerView: UIScrollView) -> CGSize {
-        if let size = model?.sections[section].header?.size(containerView: collectionView) {
+        guard let model = model, model.sections.count > section else { return .zero }
+        if let size = model.sections[section].header?.size(containerView: collectionView) {
             return size
         }
         return .zero

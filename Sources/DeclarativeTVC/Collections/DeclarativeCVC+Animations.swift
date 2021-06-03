@@ -75,6 +75,10 @@ extension UICollectionView {
                     moveItem(at: IndexPath(item: source.element, section: source.section),
                              to: IndexPath(item: target.element, section: target.section))
                 }
+                
+                collectionViewLayout.invalidateLayout()
+                layoutIfNeeded()
+
             },
             completion: { finished in
                 completion?()
