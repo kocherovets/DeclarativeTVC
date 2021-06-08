@@ -44,7 +44,9 @@ extension Collection {
     }
 
     func supplementaryElement(for indexPath: IndexPath, ofKind kind: String) -> UICollectionReusableView {
-        guard let vm = model?.sections[indexPath.section].header else { return UICollectionReusableView() }
+        guard let vm = model?.sections[indexPath.section].header else {
+            return UICollectionReusableView()
+        }
 
         let typeString = vm.reuseIdentifier ?? String(describing: type(of: vm).headerAnyType)
         let cell: UICollectionReusableView
