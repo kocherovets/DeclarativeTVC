@@ -45,7 +45,13 @@ extension Collection {
 
     func supplementaryElement(for indexPath: IndexPath, ofKind kind: String) -> UICollectionReusableView {
         guard let vm = model?.sections[indexPath.section].header else {
-            return UICollectionReusableView()
+            let withReuseIdentifier = "StubSupplementaryElement" + kind
+            collectionView.register(StubSupplementaryElement.self,
+                                    forSupplementaryViewOfKind: kind,
+                                    withReuseIdentifier: withReuseIdentifier)
+            return collectionView.dequeueReusableSupplementaryView(ofKind: kind,
+                                                                   withReuseIdentifier: withReuseIdentifier,
+                                                                   for: indexPath)
         }
 
         let typeString = vm.reuseIdentifier ?? String(describing: type(of: vm).headerAnyType)
@@ -107,5 +113,17 @@ extension Collection {
             return size
         }
         return .zero
+    }
+}
+
+class StubSupplementaryElement: UICollectionReusableView {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+
+        backgroundColor = .clear
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError()
     }
 }
