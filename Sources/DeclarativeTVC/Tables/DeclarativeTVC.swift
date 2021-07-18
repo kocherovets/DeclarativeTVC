@@ -22,18 +22,24 @@ open class DeclarativeTVC: UITableViewController, Table {
         let newModel = model
 
         if let animations = animations, let model = self.model {
+            var cells = [Int: CellAnyModel]()
+
             let source: [ArraySection<CellDifferentiable, CellDifferentiable>] = model.sections.map { section in
                 ArraySection(model: section.cellDifferentiable,
                              elements: section.rows.map {
-                                 CellDifferentiable(hash: $0.innerHashValue(),
-                                                    contentEquatable: $0.innerAnimationEquatableValue())
+                                 let hash = $0.innerHashValue()
+                                 cells[hash] = $0
+                                 return CellDifferentiable(hash: hash,
+                                                           contentEquatable: $0.innerAnimationEquatableValue())
                              })
             }
             let target: [ArraySection<CellDifferentiable, CellDifferentiable>] = newModel.sections.map { section in
                 ArraySection(model: section.cellDifferentiable,
                              elements: section.rows.map {
-                                 CellDifferentiable(hash: $0.innerHashValue(),
-                                                    contentEquatable: $0.innerAnimationEquatableValue())
+                                 let hash = $0.innerHashValue()
+                                 cells[hash] = $0
+                                 return CellDifferentiable(hash: hash,
+                                                           contentEquatable: $0.innerAnimationEquatableValue())
                              })
             }
 
@@ -43,23 +49,82 @@ open class DeclarativeTVC: UITableViewController, Table {
             )
 
             self.model = newModel
-            
-            tableView.customReload(
-                using: changeset,
-                with: animations,
-                setData: { [weak self] in
 
-                    self?.model = newModel
-                },
-                completion: {
-                    completion?()
-                }
-            )
+            if isFirstOption(stagedChangeset: changeset) {
+                tableView.customReload(
+                    using: changeset,
+                    with: animations,
+                    setData: { [weak self] in
+
+                        self?.model = newModel
+                    },
+                    completion: {
+                        completion?()
+                    }
+                )
+            } else {
+                tableView.customReload2(
+                    using: changeset,
+                    with: animations,
+                    setData: { [weak self] data in
+
+                        var sections = [TableSection]()
+
+                        for newSection in data {
+                            var section: TableSection?
+                            if let sourceSection = model.sections.first(where: { newSection.model.hash == $0.cellDifferentiable.hash }) {
+                                section = sourceSection
+                            } else if let sourceSection = newModel.sections.first(where: { newSection.model.hash == $0.cellDifferentiable.hash }) {
+                                section = sourceSection
+                            }
+
+                            print(newSection.elements.compactMap { $0.hash })
+                            print("3-----")
+
+                            sections.append(
+                                TableSection(header: section?.header,
+                                             rows: newSection.elements.compactMap { cells[$0.hash] },
+                                             footer: section?.footer)
+                            )
+                        }
+                        self?.model = TableModel(sections: sections)
+                    },
+                    completion: {
+                        completion?()
+                    }
+                )
+            }
         } else {
             self.model = newModel
             tableView.reloadData()
             completion?()
         }
+    }
+
+    func isFirstOption<C>(stagedChangeset: StagedChangeset<C>) -> Bool {
+        var sectionDeleted = [Int]()
+        var sectionInserted = [Int]()
+        var sectionUpdated = [Int]()
+        var sectionMoved = [(source: Int, target: Int)]()
+
+        var elementDeleted = [ElementPath]()
+        var elementInserted = [ElementPath]()
+        var elementUpdated = [ElementPath]()
+        var elementMoved = [(source: ElementPath, target: ElementPath)]()
+
+        for changeset in stagedChangeset {
+            sectionDeleted.append(contentsOf: changeset.sectionDeleted)
+            sectionInserted.append(contentsOf: changeset.sectionInserted)
+            sectionUpdated.append(contentsOf: changeset.sectionUpdated)
+            sectionMoved.append(contentsOf: changeset.sectionMoved)
+
+            elementDeleted.append(contentsOf: changeset.elementDeleted)
+            elementInserted.append(contentsOf: changeset.elementInserted)
+            elementUpdated.append(contentsOf: changeset.elementUpdated)
+            elementMoved.append(contentsOf: changeset.elementMoved)
+        }
+
+        return elementMoved.count == 0
     }
 
     override open func numberOfSections(in tableView: UITableView) -> Int {

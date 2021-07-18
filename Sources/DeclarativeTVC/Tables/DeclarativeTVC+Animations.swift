@@ -6,11 +6,10 @@
 //  Copyright © 2019 Dmitry Kocherovets. All rights reserved.
 //
 
-import UIKit
 import DifferenceKit
+import UIKit
 
 public extension DeclarativeTVC {
-
     struct Animations: Equatable {
         let deleteSectionsAnimation: UITableView.RowAnimation
         let insertSectionsAnimation: UITableView.RowAnimation
@@ -25,7 +24,6 @@ public extension DeclarativeTVC {
                     deleteRowsAnimation: UITableView.RowAnimation,
                     insertRowsAnimation: UITableView.RowAnimation,
                     reloadRowsAnimation: UITableView.RowAnimation) {
-
             self.deleteSectionsAnimation = deleteSectionsAnimation
             self.insertSectionsAnimation = insertSectionsAnimation
             self.reloadSectionsAnimation = reloadSectionsAnimation
@@ -44,6 +42,66 @@ public extension DeclarativeTVC {
 }
 
 extension UITableView {
+    public func customReload2<C>(
+        using stagedChangeset: StagedChangeset<C>,
+        with animations: DeclarativeTVC.Animations,
+        interrupt: ((Changeset<C>) -> Bool)? = nil,
+        setData: (C) -> Void,
+        completion: (() -> Void)? = nil
+    ) {
+        for changeset in stagedChangeset {
+            if let interrupt = interrupt, interrupt(changeset), let data = stagedChangeset.last?.data {
+                setData(data)
+                return reloadData()
+            }
+
+            performBatchUpdates({
+                setData(changeset.data)
+
+                if !changeset.sectionDeleted.isEmpty {
+                    deleteSections(IndexSet(changeset.sectionDeleted),
+                                   with: animations.deleteSectionsAnimation)
+                }
+
+                if !changeset.sectionInserted.isEmpty {
+                    insertSections(IndexSet(changeset.sectionInserted),
+                                   with: animations.insertSectionsAnimation)
+                }
+
+                if !changeset.sectionUpdated.isEmpty {
+                    reloadSections(IndexSet(changeset.sectionUpdated),
+                                   with: animations.reloadSectionsAnimation)
+                }
+
+                for (source, target) in changeset.sectionMoved {
+                    moveSection(source, toSection: target)
+                }
+
+                if !changeset.elementDeleted.isEmpty {
+                    deleteRows(at: changeset.elementDeleted.map { IndexPath(item: $0.element, section: $0.section) },
+                               with: animations.deleteRowsAnimation)
+                }
+
+                if !changeset.elementInserted.isEmpty {
+                    insertRows(at: changeset.elementInserted.map { IndexPath(item: $0.element, section: $0.section) },
+                               with: animations.insertRowsAnimation)
+                }
+
+                if !changeset.elementUpdated.isEmpty {
+                    reloadRows(at: changeset.elementUpdated.map { IndexPath(item: $0.element, section: $0.section) },
+                               with: animations.reloadRowsAnimation)
+                }
+
+                for (source, target) in changeset.elementMoved {
+                    moveRow(at: IndexPath(item: source.element, section: source.section),
+                            to: IndexPath(item: target.element, section: target.section))
+                }
+
+            }) { _ in
+                completion?()
+            }
+        }
+    }
 
     public func customReload<C>(
         using stagedChangeset: StagedChangeset<C>,
@@ -63,7 +121,6 @@ extension UITableView {
         var elementMoved = [(source: ElementPath, target: ElementPath)]()
 
         for changeset in stagedChangeset {
-
             sectionDeleted.append(contentsOf: changeset.sectionDeleted)
             sectionInserted.append(contentsOf: changeset.sectionInserted)
             sectionUpdated.append(contentsOf: changeset.sectionUpdated)
@@ -118,7 +175,7 @@ extension UITableView {
                             to: IndexPath(row: target.element, section: target.section))
                 }
             },
-            completion: { finished in
+            completion: { _ in
                 completion?()
             })
     }
