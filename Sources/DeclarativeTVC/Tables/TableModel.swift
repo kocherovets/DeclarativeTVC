@@ -48,6 +48,15 @@ public struct TableModel: Equatable {
         }
 
         for i in 0 ..< lhs.sections.count {
+            if lhs.sections[i].header?.innerEquatableValue() != rhs.sections[i].header?.innerEquatableValue() {
+                return false
+            }
+            if lhs.sections[i].footer?.innerEquatableValue() != rhs.sections[i].footer?.innerEquatableValue() {
+                return false
+            }
+        }
+        
+        for i in 0 ..< lhs.sections.count {
             if lhs.sections[i].rows.count != rhs.sections[i].rows.count {
                 return false
             }
