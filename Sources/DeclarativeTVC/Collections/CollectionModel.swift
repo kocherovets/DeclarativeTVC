@@ -45,13 +45,20 @@ public struct CollectionModel: Equatable {
     public var sections: [CollectionSection]
 
     public static func == (lhs: CollectionModel, rhs: CollectionModel) -> Bool {
-
         if lhs.sections.count != rhs.sections.count {
             return false
         }
 
         for i in 0 ..< lhs.sections.count {
+            if lhs.sections[i].header?.innerEquatableValue() != rhs.sections[i].header?.innerEquatableValue() {
+                return false
+            }
+            if lhs.sections[i].footer?.innerEquatableValue() != rhs.sections[i].footer?.innerEquatableValue() {
+                return false
+            }
+        }
 
+        for i in 0 ..< lhs.sections.count {
             if lhs.sections[i].items.count != rhs.sections[i].items.count {
                 return false
             }
