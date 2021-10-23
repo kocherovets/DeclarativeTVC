@@ -56,10 +56,10 @@ extension UICollectionView {
                     moveItem(at: IndexPath(item: source.element, section: source.section), to: IndexPath(item: target.element, section: target.section))
                 }
 
-                if stagedChangeset.count == 1 {
-                    collectionViewLayout.invalidateLayout()
-                    layoutIfNeeded()
-                }
+//                if stagedChangeset.count == 1 {
+//                    collectionViewLayout.invalidateLayout()
+//                    layoutIfNeeded()
+//                }
 
             }) { _ in
                 completion?()

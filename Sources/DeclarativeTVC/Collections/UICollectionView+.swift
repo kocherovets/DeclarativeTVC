@@ -44,6 +44,14 @@ extension Collection {
     }
 
     func supplementaryElement(for indexPath: IndexPath, ofKind kind: String) -> UICollectionReusableView {
+        if kind == "UICollectionElementKindSectionFooter" {
+            return footer(for: indexPath, ofKind: kind)
+        } else {
+            return header(for: indexPath, ofKind: kind)
+        }
+    }
+
+    private func header(for indexPath: IndexPath, ofKind kind: String) -> UICollectionReusableView {
         guard let vm = model?.sections[indexPath.section].header else {
             let withReuseIdentifier = "StubSupplementaryElement" + kind
             collectionView.register(StubSupplementaryElement.self,
@@ -64,6 +72,50 @@ extension Collection {
         case .xib:
             if registeredCells.firstIndex(where: { $0 == typeString }) == nil {
                 let nib = UINib(nibName: typeString, bundle: Bundle(for: type(of: vm).headerAnyType))
+                collectionView.register(nib,
+                                        forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                                        withReuseIdentifier: typeString)
+                registeredCells.append(typeString)
+            }
+            cell = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
+                                                                   withReuseIdentifier: typeString,
+                                                                   for: indexPath)
+        case .code:
+            if registeredCells.firstIndex(where: { $0 == typeString }) == nil {
+                vm.register(collectionView: collectionView, kind: kind, identifier: typeString)
+                registeredCells.append(typeString)
+            }
+            cell = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
+                                                                   withReuseIdentifier: typeString,
+                                                                   for: indexPath)
+        }
+
+        vm.apply(to: cell, containerView: collectionView)
+
+        return cell
+    }
+
+    private func footer(for indexPath: IndexPath, ofKind kind: String) -> UICollectionReusableView {
+        guard let vm = model?.sections[indexPath.section].footer else {
+            let withReuseIdentifier = "StubSupplementaryElement" + kind
+            collectionView.register(StubSupplementaryElement.self,
+                                    forSupplementaryViewOfKind: kind,
+                                    withReuseIdentifier: withReuseIdentifier)
+            return collectionView.dequeueReusableSupplementaryView(ofKind: kind,
+                                                                   withReuseIdentifier: withReuseIdentifier,
+                                                                   for: indexPath)
+        }
+
+        let typeString = vm.reuseIdentifier ?? String(describing: type(of: vm).footerAnyType)
+        let cell: UICollectionReusableView
+        switch vm.cellKind() {
+        case .storyboard:
+            cell = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
+                                                                   withReuseIdentifier: typeString,
+                                                                   for: indexPath)
+        case .xib:
+            if registeredCells.firstIndex(where: { $0 == typeString }) == nil {
+                let nib = UINib(nibName: typeString, bundle: Bundle(for: type(of: vm).footerAnyType))
                 collectionView.register(nib,
                                         forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                         withReuseIdentifier: typeString)
