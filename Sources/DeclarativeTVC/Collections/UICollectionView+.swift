@@ -146,7 +146,7 @@ extension Collection {
         else {
             return .zero
         }
-        if let size = model.sections[indexPath.section].items[indexPath.item].size(containerView: collectionView) {
+        if let size = model.sections[indexPath.section].items[indexPath.item].size(containerView: containerView) {
             return size
         }
         return UICollectionViewFlowLayout.automaticSize
@@ -154,14 +154,14 @@ extension Collection {
 
     func sizeHeaderView(inSection section: Int, containerView: UIScrollView) -> CGSize {
         guard let model = model, model.sections.count > section else { return .zero }
-        if let size = model.sections[section].header?.size(containerView: collectionView) {
+        if let size = model.sections[section].header?.size(containerView: containerView) {
             return size
         }
         return .zero
     }
 
     func sizeFooterView(inSection section: Int, containerView: UIScrollView) -> CGSize {
-        if let size = model?.sections[section].footer?.size(containerView: collectionView) {
+        if let size = model?.sections[section].footer?.size(containerView: containerView) {
             return size
         }
         return .zero
