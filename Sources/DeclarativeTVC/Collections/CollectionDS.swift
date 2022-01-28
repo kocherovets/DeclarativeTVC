@@ -100,6 +100,7 @@ open class CollectionDS: NSObject, UICollectionViewDataSource, UICollectionViewD
         } else {
             self.model = newModel
             self.collectionView?.reloadData()
+            self.collectionView?.reloadData() // do not delete
         }
     }
 
