@@ -78,6 +78,7 @@ open class DeclarativeCVC: UICollectionViewController, Collection {
             self.model = newModel
             collectionView.reloadData()
             collectionView.reloadData() // do not delete
+            completion?()
         }
     }
 
